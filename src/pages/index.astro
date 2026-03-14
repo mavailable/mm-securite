@@ -708,9 +708,10 @@ import Layout from '../layouts/Layout.astro';
           const data = await res.json();
 
           if (data.success) {
-            // Show success, hide form
+            // Show success, hide form, scroll to it
             contactForm.style.display = 'none';
             formSuccess.style.display = 'flex';
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
           } else {
             throw new Error('Erreur serveur');
           }
