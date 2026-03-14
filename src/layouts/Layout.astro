@@ -97,7 +97,34 @@ const { title, description } = Astro.props;
         { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
         { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "12:00" }
       ],
-      "sameAs": []
+      "sameAs": [],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "ratingCount": "3",
+        "reviewCount": "3"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Sophie L." },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Marc a sécurisé ma boulangerie en une journée. Alarme, caméras, tout fonctionne parfaitement. Très professionnel et réactif."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Philippe D." },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Mise en conformité incendie impeccable pour mon restaurant. La commission de sécurité est passée sans aucun souci."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Nadia K." },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Excellent rapport qualité-prix. Marc a pris le temps d'expliquer chaque installation. Je recommande sans hésiter."
+        }
+      ]
     })} />
 
     <!-- Structured Data: FAQ (SEO boost) -->
