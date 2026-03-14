@@ -1,0 +1,1575 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="MM Sécurité | Alarme & Vidéosurveillance pour commerces — Metz & Grand Est"
+  description="Marc Muller, technicien en sécurité pour commerces à Metz. Alarme intrusion, incendie, vidéosurveillance, contrôle d'accès et mise en conformité ERP. Devis gratuit sous 48h."
+>
+
+  <!-- HEADER -->
+  <header class="header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <span class="logo-icon">
+          <svg viewBox="0 0 28 28" width="28" height="28" fill="none">
+            <rect width="28" height="28" rx="6" fill="#1e5ea6"/>
+            <path d="M6 19V9l4.5 5L15 9v10M15 9l4.5 5L24 9v10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="logo-text">Sécurité</span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#commerces">Commerces</a></li>
+          <li><a href="#pourquoi">Avantages</a></li>
+          <li><a href="#zone">Zone</a></li>
+          <li><a href="#contact" class="btn btn-nav">Devis gratuit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-layout">
+      <div class="hero-inner">
+        <div class="hero-badge">Technicien indépendant — Metz & Grand Est</div>
+        <h1>
+          Protégez votre<br />
+          <span class="hero-gradient">commerce</span><br />
+          en toute sérénité.
+        </h1>
+        <p class="hero-sub">
+          Alarme, vidéosurveillance, détection incendie, contrôle d'accès — un seul interlocuteur pour <strong>sécuriser votre établissement</strong> et passer sereinement la commission de sécurité.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary btn-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            Demander un devis gratuit
+          </a>
+          <a href="#services" class="btn btn-ghost">Voir mes services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">48h</span>
+            <span class="stat-label">Devis envoyé</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Indépendant</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">1</span>
+            <span class="stat-label">Interlocuteur</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO VISUAL -->
+      <div class="hero-visual">
+        <div class="hero-dashboard">
+          <!-- Main dashboard card -->
+          <div class="dash-main">
+            <div class="dash-header">
+              <div class="dash-dot green"></div>
+              <span class="dash-title">Système actif</span>
+              <span class="dash-badge-ok">En ligne</span>
+            </div>
+            <!-- Central shield -->
+            <div class="dash-shield-wrap">
+              <svg class="dash-shield" viewBox="0 0 120 140" fill="none">
+                <defs>
+                  <linearGradient id="sg" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#1e5ea6"/>
+                    <stop offset="100%" stop-color="#4a9bdf"/>
+                  </linearGradient>
+                </defs>
+                <path d="M60 8 L110 30 L110 72 C110 104 85 128 60 138 C35 128 10 104 10 72 L10 30 Z" fill="url(#sg)"/>
+                <path d="M60 18 L102 37 L102 72 C102 99 80 120 60 129 C40 120 18 99 18 72 L18 37 Z" fill="rgba(255,255,255,0.12)"/>
+                <path d="M45 70 L55 80 L78 55" stroke="white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" class="shield-check"/>
+              </svg>
+            </div>
+            <!-- Status indicators -->
+            <div class="dash-statuses">
+              <div class="dash-status-line">
+                <div class="dash-status-dot dot-green"></div>
+                <span>Alarme</span>
+                <span class="status-ok">Actif</span>
+              </div>
+              <div class="dash-status-line">
+                <div class="dash-status-dot dot-green"></div>
+                <span>Détection</span>
+                <span class="status-ok">Actif</span>
+              </div>
+              <div class="dash-status-line">
+                <div class="dash-status-dot dot-green"></div>
+                <span>Surveillance</span>
+                <span class="status-ok">Actif</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating card -->
+          <div class="dash-float dash-float-1">
+            <div class="dash-float-icon green-bg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" width="16" height="16"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <span class="dash-float-value">Tout opérationnel</span>
+          </div>
+
+          <div class="dash-float dash-float-2">
+            <div class="dash-float-icon blue-bg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1e5ea6" stroke-width="2" width="16" height="16"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+            </div>
+            <span class="dash-float-value">Conforme</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANDEAU REASSURANCE -->
+  <section class="reassurance">
+    <div class="container reassurance-inner">
+      <div class="reassurance-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+        <span>Matériel certifié NF</span>
+      </div>
+      <div class="reassurance-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H21M3 21V3"/></svg>
+        <span>Conforme RGPD & ERP</span>
+      </div>
+      <div class="reassurance-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span>Intervention rapide</span>
+      </div>
+      <div class="reassurance-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+        <span>Basé à Metz</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Services</span>
+        <h2>Tout ce qu'il faut pour<br /><strong>sécuriser votre commerce</strong></h2>
+        <p class="section-intro">De l'alarme intrusion à la mise en conformité incendie, je m'occupe de tout. Vous, concentrez-vous sur vos clients.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <article class="service-card" data-accent="blue">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/></svg>
+          </div>
+          <div class="service-content">
+            <h3>Alarme intrusion</h3>
+            <p>Protégez votre boutique contre les cambriolages. Détection volumétrique, sirène, alerte sur smartphone, levée de doute vidéo. Centrales certifiées NF&nbsp;A2P.</p>
+          </div>
+          <span class="service-tag">Le plus demandé</span>
+        </article>
+
+        <article class="service-card" data-accent="red">
+          <div class="service-icon icon-red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/><path d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1.001A3.75 3.75 0 0012 18z"/></svg>
+          </div>
+          <div class="service-content">
+            <h3>Alarme incendie</h3>
+            <p>Détection incendie conforme aux obligations ERP. Détecteurs, déclencheurs manuels, centrale SSI, vérification annuelle et tenue du registre de sécurité.</p>
+          </div>
+          <span class="service-tag tag-red">Obligatoire ERP</span>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>
+          </div>
+          <div class="service-content">
+            <h3>Vidéosurveillance</h3>
+            <p>Caméras IP haute définition, vision nocturne, accès en direct sur votre téléphone. Installation conforme RGPD avec affichage légal et déclaration préfecture.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+          </div>
+          <div class="service-content">
+            <h3>Contrôle d'accès</h3>
+            <p>Badges, digicodes, lecteurs biométriques. Gérez qui entre et quand — idéal pour les réserves, bureaux ou zones à accès restreint.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"/></svg>
+          </div>
+          <div class="service-content">
+            <h3>Plans d'évacuation</h3>
+            <p>Plans conformes NF&nbsp;X&nbsp;08-070, balisage de sécurité, signalétique. Indispensable pour passer la commission de sécurité en toute tranquillité.</p>
+          </div>
+        </article>
+
+        <article class="service-card card-pro">
+          <div class="service-icon icon-dark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"/></svg>
+          </div>
+          <div class="service-content">
+            <h3>Sous-traitance pro</h3>
+            <p>Installateurs, intégrateurs : je réalise vos chantiers sécurité en sous-traitance sur Metz et le Grand Est. Qualité, réactivité, flexibilité.</p>
+          </div>
+          <span class="service-tag tag-dark">B2B</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMERCES / ERP -->
+  <section class="commerces" id="commerces">
+    <div class="container">
+      <div class="commerces-layout">
+        <div class="commerces-text">
+          <span class="section-tag tag-light">Spécialisation</span>
+          <h2>Pensé pour les<br /><strong>petits commerces</strong></h2>
+          <p class="commerces-intro">
+            Votre boulangerie, restaurant, salon de coiffure ou cabinet médical doit respecter les mêmes normes de sécurité que les grandes enseignes — mais vous n'avez pas les mêmes budgets ni les mêmes besoins.
+          </p>
+          <p>
+            C'est exactement pour ça que MM&nbsp;Sécurité existe.
+          </p>
+
+          <div class="commerces-benefits">
+            <div class="benefit">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <strong>Tarifs adaptés</strong>
+                <p>Pas de surcoûts de structure. Vous payez l'expertise, pas les bureaux.</p>
+              </div>
+            </div>
+            <div class="benefit">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+              </div>
+              <div>
+                <strong>Interlocuteur unique</strong>
+                <p>Du devis à la maintenance, vous parlez toujours à la même personne.</p>
+              </div>
+            </div>
+            <div class="benefit">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+              </div>
+              <div>
+                <strong>Commission de sécurité</strong>
+                <p>Je connais les attentes des commissions. Zéro mauvaise surprise le jour J.</p>
+              </div>
+            </div>
+            <div class="benefit">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+              </div>
+              <div>
+                <strong>Réactif</strong>
+                <p>Pas de planning de grand groupe. J'interviens vite, je m'adapte à vos horaires.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="commerces-types">
+          <h3>Ils me font confiance</h3>
+          <div class="type-grid">
+            <div class="type-card">
+              <span class="type-emoji">&#x1F35E;</span>
+              <span>Boulangeries</span>
+            </div>
+            <div class="type-card">
+              <span class="type-emoji">&#x1F374;</span>
+              <span>Restaurants</span>
+            </div>
+            <div class="type-card">
+              <span class="type-emoji">&#x1F488;</span>
+              <span>Salons de coiffure</span>
+            </div>
+            <div class="type-card">
+              <span class="type-emoji">&#x1F3E8;</span>
+              <span>Hôtels</span>
+            </div>
+            <div class="type-card">
+              <span class="type-emoji">&#x1FA7A;</span>
+              <span>Cabinets médicaux</span>
+            </div>
+            <div class="type-card">
+              <span class="type-emoji">&#x1F6D2;</span>
+              <span>Boutiques</span>
+            </div>
+            <div class="type-card">
+              <span class="type-emoji">&#x1F4AA;</span>
+              <span>Salles de sport</span>
+            </div>
+            <div class="type-card">
+              <span class="type-emoji">&#x1F48A;</span>
+              <span>Pharmacies</span>
+            </div>
+            <div class="type-card">
+              <span class="type-emoji">&#x1F476;</span>
+              <span>Crèches</span>
+            </div>
+          </div>
+          <div class="type-cta">
+            <p>Votre commerce n'est pas dans la liste ?</p>
+            <a href="#contact" class="btn btn-outline-light">Contactez-moi</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI MOI -->
+  <section class="pourquoi" id="pourquoi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Avantages</span>
+        <h2>Grand groupe vs.<br /><strong>technicien indépendant</strong></h2>
+        <p class="section-intro">Voici ce que vous gagnez en choisissant un vrai pro de terrain plutôt qu'une grosse structure.</p>
+      </div>
+
+      <div class="compare-table">
+        <div class="compare-header">
+          <div class="compare-label"></div>
+          <div class="compare-them">Grand groupe</div>
+          <div class="compare-me">MM Sécurité</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Devis</div>
+          <div class="compare-them">1 à 3 semaines</div>
+          <div class="compare-me highlight">Sous 48h</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Interlocuteur</div>
+          <div class="compare-them">Commercial, puis technicien, puis SAV…</div>
+          <div class="compare-me highlight">Toujours le même</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Réactivité</div>
+          <div class="compare-them">Selon le planning national</div>
+          <div class="compare-me highlight">Intervention rapide locale</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Tarif</div>
+          <div class="compare-them">Inclut la structure, le marketing, les bureaux…</div>
+          <div class="compare-me highlight">Juste le travail bien fait</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Connaissance terrain</div>
+          <div class="compare-them">Technicien différent à chaque visite</div>
+          <div class="compare-me highlight">Je connais votre installation par coeur</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE -->
+  <section class="zone" id="zone">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Zone d'intervention</span>
+        <h2>Basé à Metz,<br /><strong>j'interviens dans tout le Grand Est</strong></h2>
+      </div>
+      <div class="zone-tags">
+        <span class="zone-main">Metz</span>
+        <span>Thionville</span>
+        <span>Nancy</span>
+        <span>Forbach</span>
+        <span>Sarreguemines</span>
+        <span>Épinal</span>
+        <span>Pont-à-Mousson</span>
+        <span>Hagondange</span>
+        <span class="zone-dept">Moselle (57)</span>
+        <span class="zone-dept">Meurthe-et-Moselle (54)</span>
+        <span class="zone-region">Grand Est</span>
+        <span>Luxembourg</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contact</span>
+        <h2>Un projet ? Une question ?<br /><strong>Parlons-en.</strong></h2>
+        <p class="section-intro">Décrivez votre besoin, je vous rappelle sous <strong>48 heures</strong> avec une proposition adaptée.</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form" id="contact-form">
+          <input type="hidden" name="access_key" value="5c0597af-80a9-48ba-b856-5c436e39ea74" />
+          <input type="hidden" name="subject" value="Nouveau message depuis mm-securite.fr" />
+          <input type="hidden" name="from_name" value="MM Sécurité - Formulaire" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">Nom *</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="telephone">Téléphone *</label>
+              <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" required autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="vous@exemple.fr" autocomplete="email" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="commerce">Type de commerce</label>
+              <select id="commerce" name="commerce">
+                <option value="">-- Votre activité --</option>
+                <option value="boulangerie">Boulangerie / Pâtisserie</option>
+                <option value="restaurant">Restaurant / Bar</option>
+                <option value="salon">Salon de coiffure / beauté</option>
+                <option value="boutique">Boutique / Magasin</option>
+                <option value="pharmacie">Pharmacie</option>
+                <option value="cabinet">Cabinet médical</option>
+                <option value="hotel">Hôtel / Hébergement</option>
+                <option value="salle-sport">Salle de sport</option>
+                <option value="bureau">Bureau / Coworking</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="service">Besoin principal</label>
+              <select id="service" name="service">
+                <option value="">-- Service souhaité --</option>
+                <option value="alarme-intrusion">Alarme intrusion</option>
+                <option value="alarme-incendie">Alarme incendie / SSI</option>
+                <option value="videosurveillance">Vidéosurveillance</option>
+                <option value="controle-acces">Contrôle d'accès</option>
+                <option value="plan-evacuation">Plan d'évacuation</option>
+                <option value="mise-en-conformite">Mise en conformité ERP</option>
+                <option value="pack-complet">Pack complet sécurité</option>
+                <option value="sous-traitance">Sous-traitance (pro)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Décrivez votre besoin *</label>
+            <textarea id="message" name="message" rows="4" placeholder="Décrivez votre projet, la taille de vos locaux, vos contraintes…" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+            <span class="btn-text">Envoyer ma demande</span>
+            <span class="btn-loading" style="display:none">Envoi en cours…</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+          </button>
+          <p class="form-note">Gratuit & sans engagement — réponse sous 48h</p>
+        </form>
+
+        <!-- Message de succès (remplace le formulaire après envoi) -->
+        <div class="form-success" id="form-success" style="display:none">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" width="48" height="48"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3>Message envoyé !</h3>
+          <p>Merci pour votre demande. Je vous recontacte sous <strong>48 heures</strong>.</p>
+          <button class="btn btn-ghost" id="reset-form">Envoyer un autre message</button>
+        </div>
+
+        <div class="contact-sidebar">
+          <div class="contact-card">
+            <div class="contact-avatar">M</div>
+            <h3>Marc Muller</h3>
+            <p class="contact-role">Technicien en systèmes de sécurité</p>
+
+            <div class="contact-links">
+              <a href="mailto:marc@muller.im" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                marc@muller.im
+              </a>
+              <a href="tel:+33688766648" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                06 88 76 66 48
+              </a>
+              <div class="contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                Metz, Moselle
+              </div>
+            </div>
+          </div>
+
+          <div class="hours-card">
+            <h4>Disponibilités</h4>
+            <div class="hours-row"><span>Lundi – Vendredi</span><strong>8h – 18h</strong></div>
+            <div class="hours-row"><span>Samedi</span><strong>Sur RDV</strong></div>
+            <div class="hours-row hours-highlight"><span>Urgence</span><strong>Me contacter</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#top" class="logo">
+            <span class="logo-icon">
+              <svg viewBox="0 0 28 28" width="24" height="24" fill="none">
+                <rect width="28" height="28" rx="6" fill="#4a9bdf"/>
+                <path d="M6 19V9l4.5 5L15 9v10M15 9l4.5 5L24 9v10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="logo-text" style="color:#fff">Sécurité</span>
+          </a>
+          <p>Marc Muller EI — Systèmes de sécurité<br />pour commerces à Metz et Grand Est</p>
+        </div>
+        <nav class="footer-nav" aria-label="Pied de page">
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="#services">Services</a>
+            <a href="#commerces">Commerces</a>
+            <a href="#pourquoi">Avantages</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="#services">Alarme intrusion</a>
+            <a href="#services">Alarme incendie</a>
+            <a href="#services">Vidéosurveillance</a>
+            <a href="#services">Contrôle d'accès</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal-links">
+          <a href="/mentions-legales">Mentions légales</a>
+          <span>·</span>
+          <a href="/politique-de-confidentialite">Politique de confidentialité</a>
+        </div>
+        <p>&copy; {new Date().getFullYear()} MM Sécurité — Marc Muller EI — SIRET 505 045 450 00069 — Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Mobile nav
+    const toggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+    if (toggle && navList) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        navList.classList.toggle('open');
+        toggle.classList.toggle('active');
+      });
+      navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          toggle.setAttribute('aria-expanded', 'false');
+          navList.classList.remove('open');
+          toggle.classList.remove('active');
+        });
+      });
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href')!);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Header scroll
+    const header = document.querySelector('.header');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+      });
+    }
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.service-card, .benefit, .compare-row, .type-card').forEach(el => {
+      el.classList.add('fade-up');
+      observer.observe(el);
+    });
+
+    // Contact form — AJAX submit
+    const contactForm = document.getElementById('contact-form') as HTMLFormElement;
+    const formSuccess = document.getElementById('form-success');
+    const submitBtn = document.getElementById('submit-btn');
+    const resetBtn = document.getElementById('reset-form');
+
+    if (contactForm && formSuccess && submitBtn) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const btnText = submitBtn.querySelector('.btn-text') as HTMLElement;
+        const btnLoading = submitBtn.querySelector('.btn-loading') as HTMLElement;
+        const btnArrow = submitBtn.querySelector('.btn-arrow') as HTMLElement;
+
+        // Loading state
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline';
+        btnArrow.style.display = 'none';
+        submitBtn.setAttribute('disabled', 'true');
+        submitBtn.style.opacity = '0.7';
+
+        try {
+          const formData = new FormData(contactForm);
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData,
+          });
+          const data = await res.json();
+
+          if (data.success) {
+            // Show success, hide form
+            contactForm.style.display = 'none';
+            formSuccess.style.display = 'flex';
+          } else {
+            throw new Error('Erreur serveur');
+          }
+        } catch (err) {
+          // Reset button
+          btnText.style.display = 'inline';
+          btnLoading.style.display = 'none';
+          btnArrow.style.display = 'inline';
+          submitBtn.removeAttribute('disabled');
+          submitBtn.style.opacity = '1';
+
+          alert('Une erreur est survenue. Veuillez réessayer ou me contacter directement au 06 88 76 66 48.');
+        }
+      });
+
+      // Reset form
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          contactForm.reset();
+          contactForm.style.display = 'flex';
+          formSuccess.style.display = 'none';
+
+          const btnText = submitBtn.querySelector('.btn-text') as HTMLElement;
+          const btnLoading = submitBtn.querySelector('.btn-loading') as HTMLElement;
+          const btnArrow = submitBtn.querySelector('.btn-arrow') as HTMLElement;
+          btnText.style.display = 'inline';
+          btnLoading.style.display = 'none';
+          btnArrow.style.display = 'inline';
+          submitBtn.removeAttribute('disabled');
+          submitBtn.style.opacity = '1';
+        });
+      }
+    }
+  </script>
+</Layout>
+
+<style is:global>
+  /* ============================================
+     RESET & VARS
+     ============================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue-900: #0c2340;
+    --blue-800: #102e52;
+    --blue-700: #1a4a7a;
+    --blue-600: #1e5ea6;
+    --blue-500: #2874c2;
+    --blue-400: #4a9bdf;
+    --blue-300: #7bb8ea;
+    --blue-200: #b3d4f5;
+    --blue-100: #dbeafe;
+    --blue-50: #eff6ff;
+    --gray-900: #111827;
+    --gray-800: #1f2937;
+    --gray-700: #374151;
+    --gray-600: #4b5563;
+    --gray-500: #6b7280;
+    --gray-400: #9ca3af;
+    --gray-300: #d1d5db;
+    --gray-200: #e5e7eb;
+    --gray-100: #f3f4f6;
+    --gray-50: #f9fafb;
+    --white: #ffffff;
+    --red-500: #ef4444;
+    --red-50: #fef2f2;
+    --green-500: #22c55e;
+    --green-50: #f0fdf4;
+    --amber-500: #f59e0b;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+    --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--gray-700);
+    line-height: 1.7;
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .hidden { display: none !important; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+  h1, h2, h3, h4 { color: var(--blue-900); line-height: 1.25; }
+  h2 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+  h2 strong { color: var(--blue-600); }
+
+  .section-header { text-align: center; margin-bottom: 3.5rem; }
+  .section-tag {
+    display: inline-block;
+    background: var(--blue-50);
+    color: var(--blue-600);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+  .tag-light {
+    background: rgba(255,255,255,0.15);
+    color: var(--blue-200);
+  }
+  .section-intro {
+    text-align: center;
+    max-width: 560px;
+    margin: 0.5rem auto 0;
+    color: var(--gray-500);
+    font-size: 1.05rem;
+  }
+
+  /* Animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============================================
+     BUTTONS
+     ============================================ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.6rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: 2px solid transparent;
+    line-height: 1.4;
+  }
+  .btn-primary {
+    background: var(--blue-600);
+    color: var(--white);
+    border-color: var(--blue-600);
+  }
+  .btn-primary:hover {
+    background: var(--blue-700);
+    border-color: var(--blue-700);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(30, 94, 166, 0.3);
+  }
+  .btn-glow {
+    box-shadow: 0 4px 16px rgba(30, 94, 166, 0.25);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--gray-700);
+    border-color: var(--gray-300);
+  }
+  .btn-ghost:hover {
+    border-color: var(--blue-600);
+    color: var(--blue-600);
+    background: var(--blue-50);
+  }
+  .btn-outline-light {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.3);
+    font-size: 0.9rem;
+    padding: 0.55rem 1.2rem;
+  }
+  .btn-outline-light:hover {
+    background: var(--white);
+    color: var(--blue-900);
+    border-color: var(--white);
+  }
+  .btn-nav {
+    padding: 0.45rem 1.1rem;
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+  }
+
+  /* ============================================
+     HEADER
+     ============================================ */
+  .header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: var(--transition);
+    border-bottom: 1px solid transparent;
+  }
+  .header.scrolled {
+    background: rgba(255,255,255,0.95);
+    border-bottom-color: var(--gray-200);
+    box-shadow: var(--shadow-xs);
+  }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
+  .logo-text { color: var(--blue-900); font-size: 1.3rem; font-weight: 700; }
+  .nav-list { display: flex; list-style: none; align-items: center; gap: 1.8rem; }
+  .nav-list a { text-decoration: none; color: var(--gray-600); font-weight: 500; font-size: 0.9rem; transition: var(--transition); }
+  .nav-list a:hover { color: var(--blue-600); }
+  .nav-toggle {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .nav-toggle span {
+    display: block; width: 22px; height: 2px; background: var(--gray-700);
+    border-radius: 2px; transition: var(--transition);
+  }
+  .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  /* ============================================
+     HERO
+     ============================================ */
+  .hero {
+    position: relative;
+    padding: 9rem 0 4.5rem;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 50% 60% at 75% 30%, rgba(30,94,166,0.1) 0%, transparent 70%),
+      radial-gradient(ellipse 30% 40% at 85% 70%, rgba(74,155,223,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 50% at 10% 80%, rgba(74,155,223,0.04) 0%, transparent 70%),
+      linear-gradient(180deg, var(--blue-50) 0%, var(--white) 40%, var(--gray-50) 100%);
+  }
+  /* Subtle grid pattern */
+  .hero-bg::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(30,94,166,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30,94,166,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 60% at 60% 40%, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 60% 40%, black 20%, transparent 70%);
+  }
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-block;
+    background: var(--blue-50);
+    color: var(--blue-600);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--blue-100);
+  }
+  .hero h1 { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 1.25rem; }
+  .hero-gradient {
+    background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-400) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--gray-500);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    max-width: 560px;
+  }
+  .hero-cta { display: flex; gap: 0.75rem; margin-bottom: 3rem; flex-wrap: wrap; }
+
+  .hero-stats {
+    display: flex; align-items: center; gap: 2rem;
+    padding: 1.25rem 1.75rem;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-100);
+    width: fit-content;
+  }
+  .stat { text-align: center; }
+  .stat-num { display: block; font-size: 1.5rem; font-weight: 800; color: var(--blue-600); line-height: 1.2; }
+  .stat-label { font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
+  .stat-divider { width: 1px; height: 32px; background: var(--gray-200); }
+
+  /* Hero visual / dashboard */
+  .hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    perspective: 1000px;
+  }
+  .hero-dashboard {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    padding: 1rem;
+  }
+
+  /* Main dashboard card */
+  .dash-main {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1px solid var(--gray-200);
+    box-shadow:
+      0 4px 6px rgba(0,0,0,0.04),
+      0 12px 24px rgba(30,94,166,0.08),
+      0 24px 48px rgba(30,94,166,0.04);
+    padding: 1.5rem;
+    transform: rotateY(-2deg) rotateX(1deg);
+    transition: transform 0.4s ease;
+  }
+  .dash-main:hover { transform: rotateY(0) rotateX(0); }
+  .dash-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .dash-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+  }
+  .dash-dot.green {
+    background: #22c55e;
+    box-shadow: 0 0 6px rgba(34,197,94,0.5);
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+  @keyframes dotPulse {
+    0%, 100% { box-shadow: 0 0 4px rgba(34,197,94,0.4); }
+    50% { box-shadow: 0 0 10px rgba(34,197,94,0.7); }
+  }
+  .dash-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    flex: 1;
+  }
+  .dash-badge-ok {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #16a34a;
+    background: #f0fdf4;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    border: 1px solid #bbf7d0;
+  }
+
+  /* Shield inside dashboard */
+  .dash-shield-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 1.25rem;
+  }
+  .dash-shield {
+    width: 80px; height: auto;
+    filter: drop-shadow(0 4px 12px rgba(30,94,166,0.25));
+  }
+  .shield-check {
+    stroke-dasharray: 80;
+    stroke-dashoffset: 80;
+    animation: drawCheck 1s ease 0.6s forwards;
+  }
+  @keyframes drawCheck {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* Status lines */
+  .dash-statuses {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .dash-status-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--gray-600);
+  }
+  .dash-status-line span:first-of-type { flex: 1; }
+  .dash-status-dot {
+    width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+  }
+  .dot-green {
+    background: #22c55e;
+    box-shadow: 0 0 5px rgba(34,197,94,0.4);
+  }
+  .status-ok {
+    font-weight: 600;
+    color: #16a34a;
+    font-size: 0.72rem;
+  }
+
+  /* Floating cards */
+  .dash-float {
+    position: absolute;
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    white-space: nowrap;
+    animation: floatUp 4s ease-in-out infinite;
+  }
+  .dash-float-1 {
+    top: -8px; right: -16px;
+    animation-delay: 0s;
+  }
+  .dash-float-2 {
+    bottom: 10px; left: -24px;
+    animation-delay: 2s;
+  }
+  @keyframes floatUp {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .dash-float-icon {
+    width: 28px; height: 28px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .green-bg { background: #f0fdf4; }
+  .blue-bg { background: var(--blue-50); }
+  .dash-float-value {
+    font-size: 0.78rem;
+    color: var(--gray-800);
+    font-weight: 600;
+  }
+
+  /* ============================================
+     REASSURANCE
+     ============================================ */
+  .reassurance {
+    border-top: 1px solid var(--gray-100);
+    border-bottom: 1px solid var(--gray-100);
+    padding: 1rem 0;
+    background: var(--gray-50);
+  }
+  .reassurance-inner {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;
+  }
+  .reassurance-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    color: var(--gray-600); font-size: 0.85rem; font-weight: 500;
+  }
+  .reassurance-item svg { color: var(--blue-500); flex-shrink: 0; }
+
+  /* ============================================
+     SERVICES
+     ============================================ */
+  .services { padding: 6rem 0; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .service-card {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    transition: var(--transition);
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--blue-500);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transition);
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover {
+    border-color: var(--blue-200);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+  .service-icon {
+    width: 48px; height: 48px;
+    background: var(--blue-50);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--blue-600);
+    transition: var(--transition);
+  }
+  .service-card:hover .service-icon {
+    background: var(--blue-600);
+    color: var(--white);
+  }
+  .icon-red { background: var(--red-50); color: var(--red-500); }
+  .service-card:hover .icon-red { background: var(--red-500); color: var(--white); }
+  .icon-dark { background: var(--gray-100); color: var(--gray-700); }
+  .service-card:hover .icon-dark { background: var(--gray-800); color: var(--white); }
+
+  .service-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .service-card p { color: var(--gray-500); font-size: 0.9rem; line-height: 1.6; }
+  .service-tag {
+    position: absolute; top: 1rem; right: 1rem;
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem; border-radius: 4px;
+    background: var(--blue-50); color: var(--blue-600);
+  }
+  .tag-red { background: var(--red-50); color: var(--red-500); }
+  .tag-dark { background: var(--gray-100); color: var(--gray-700); }
+  .card-pro { border-style: dashed; }
+
+  /* ============================================
+     COMMERCES
+     ============================================ */
+  .commerces {
+    padding: 6rem 0;
+    background: var(--blue-900);
+    color: var(--gray-300);
+    position: relative;
+    overflow: hidden;
+  }
+  .commerces::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(74,155,223,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .commerces-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: start;
+    position: relative; z-index: 1;
+  }
+  .commerces h2 { color: var(--white); text-align: left; font-size: 2rem; }
+  .commerces h2 strong { color: var(--blue-300); }
+  .commerces-intro { font-size: 1.05rem; line-height: 1.8; margin-bottom: 0.5rem; }
+
+  .commerces-benefits { margin-top: 2rem; display: grid; gap: 1.25rem; }
+  .benefit {
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .benefit-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: rgba(255,255,255,0.08);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--blue-300);
+  }
+  .benefit strong { color: var(--white); display: block; margin-bottom: 0.15rem; font-size: 0.95rem; }
+  .benefit p { font-size: 0.88rem; color: var(--gray-400); line-height: 1.5; margin: 0; }
+
+  .commerces-types {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+  }
+  .commerces-types h3 { color: var(--white); font-size: 1.1rem; margin-bottom: 1.25rem; text-align: center; }
+  .type-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  .type-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    transition: var(--transition);
+    font-size: 0.8rem;
+    color: var(--gray-300);
+  }
+  .type-card:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+  }
+  .type-emoji { display: block; font-size: 1.5rem; margin-bottom: 0.3rem; }
+  .type-cta { text-align: center; margin-top: 1.5rem; }
+  .type-cta p { font-size: 0.85rem; color: var(--gray-400); margin-bottom: 0.75rem; }
+
+  /* ============================================
+     POURQUOI / COMPARE
+     ============================================ */
+  .pourquoi { padding: 6rem 0; background: var(--gray-50); }
+  .compare-table {
+    max-width: 780px;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-200);
+  }
+  .compare-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    background: var(--gray-100);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-500);
+  }
+  .compare-header > div { padding: 0.9rem 1.25rem; }
+  .compare-me { color: var(--blue-600); }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    border-top: 1px solid var(--gray-100);
+    background: var(--white);
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+  }
+  .compare-row:hover { background: var(--blue-50); }
+  .compare-row > div { padding: 1rem 1.25rem; }
+  .compare-label { font-weight: 600; color: var(--gray-800); }
+  .compare-them { color: var(--gray-500); }
+  .highlight {
+    color: var(--blue-600);
+    font-weight: 600;
+    position: relative;
+  }
+
+  /* ============================================
+     ZONE
+     ============================================ */
+  .zone { padding: 5rem 0; }
+  .zone-tags {
+    display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center;
+    max-width: 640px; margin: 0 auto;
+  }
+  .zone-tags span {
+    padding: 0.45rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: var(--gray-100);
+    color: var(--gray-600);
+    transition: var(--transition);
+  }
+  .zone-tags span:hover { background: var(--blue-50); color: var(--blue-600); }
+  .zone-main {
+    background: var(--blue-600) !important;
+    color: var(--white) !important;
+    font-weight: 700 !important;
+  }
+  .zone-dept { background: var(--blue-50) !important; color: var(--blue-700) !important; font-weight: 600 !important; }
+  .zone-region { background: var(--blue-100) !important; color: var(--blue-800) !important; font-weight: 600 !important; }
+
+  /* ============================================
+     CONTACT
+     ============================================ */
+  .contact { padding: 6rem 0; background: var(--gray-50); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .contact-form {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-200);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group label {
+    display: block; font-weight: 600; font-size: 0.85rem;
+    color: var(--gray-700); margin-bottom: 0.35rem;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: var(--transition);
+    background: var(--white);
+    color: var(--gray-800);
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--gray-400); }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 3px rgba(30,94,166,0.1);
+  }
+  .btn-submit {
+    width: 100%; justify-content: center;
+    padding: 0.9rem; font-size: 1rem;
+  }
+  .form-note {
+    text-align: center; font-size: 0.8rem; color: var(--gray-400); margin-top: -0.25rem;
+  }
+
+  .form-success {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow-md);
+    animation: fadeInUp 0.4s ease;
+  }
+  .success-icon {
+    width: 72px; height: 72px;
+    background: var(--green-50);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+  .form-success h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .form-success p {
+    color: var(--gray-500);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    max-width: 360px;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .contact-sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
+  .contact-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-align: center;
+  }
+  .contact-avatar {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--blue-600), var(--blue-400));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; font-weight: 700;
+    margin: 0 auto 1rem;
+  }
+  .contact-card h3 { font-size: 1.15rem; margin-bottom: 0.15rem; }
+  .contact-role { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 1.25rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 0.65rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-size: 0.9rem; color: var(--gray-600); text-decoration: none;
+    transition: var(--transition);
+  }
+  a.contact-link:hover { color: var(--blue-600); }
+  .contact-link svg { color: var(--blue-500); flex-shrink: 0; }
+
+  .hours-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .hours-card h4 { font-size: 0.95rem; margin-bottom: 1rem; }
+  .hours-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 0.88rem; color: var(--gray-600);
+  }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row strong { color: var(--gray-800); }
+  .hours-highlight { background: var(--blue-50); margin: 0.5rem -1rem -0.5rem; padding: 0.6rem 1rem; border-radius: var(--radius-sm); border-bottom: none; }
+  .hours-highlight strong { color: var(--blue-600); }
+
+  /* ============================================
+     FOOTER
+     ============================================ */
+  .footer {
+    background: var(--blue-900); color: var(--gray-400);
+    padding: 3.5rem 0 0;
+  }
+  .footer-top {
+    display: flex; justify-content: space-between; gap: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand p { font-size: 0.85rem; margin-top: 0.75rem; line-height: 1.6; }
+  .footer-nav { display: flex; gap: 4rem; }
+  .footer-col { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-col h4 { color: var(--white); font-size: 0.85rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .footer-col a { color: var(--gray-400); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom {
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.78rem; color: var(--gray-500);
+  }
+  .footer-legal-links {
+    display: flex; justify-content: center; align-items: center; gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .footer-legal-links a {
+    color: var(--gray-400); text-decoration: none; font-size: 0.78rem; transition: var(--transition);
+  }
+  .footer-legal-links a:hover { color: var(--white); }
+  .footer-legal-links span { color: var(--gray-500); }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 900px) {
+    .hero-layout { grid-template-columns: 1fr; }
+    .hero-visual { margin-top: 1rem; }
+    .hero-dashboard { max-width: 340px; margin: 0 auto; }
+    .dash-main { transform: none; }
+    .dash-float { display: none; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .commerces-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-top { flex-direction: column; gap: 2rem; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-toggle { display: flex; }
+    .nav-list {
+      position: fixed; top: 68px; left: 0; right: 0;
+      background: var(--white);
+      flex-direction: column; padding: 1.5rem;
+      gap: 1.25rem;
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-110%);
+      opacity: 0; pointer-events: none;
+      transition: var(--transition);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .nav-list.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+
+    .hero { padding: 7rem 0 3rem; }
+    .hero-layout { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .hero h1 { font-size: 2.4rem; }
+    .hero-sub { font-size: 1rem; }
+    .hero-stats { flex-wrap: wrap; gap: 1rem; }
+    .stat-divider { display: none; }
+
+    .services-grid { grid-template-columns: 1fr; }
+    .type-grid { grid-template-columns: repeat(3, 1fr); }
+    .compare-table { font-size: 0.82rem; }
+    .compare-header > div, .compare-row > div { padding: 0.7rem 0.75rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-nav { gap: 2rem; }
+
+    h2 { font-size: 1.75rem; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 2rem; }
+    .hero-cta { flex-direction: column; }
+    .hero-cta .btn { width: 100%; justify-content: center; }
+    .hero-stats { width: 100%; justify-content: space-around; }
+    .type-grid { grid-template-columns: repeat(2, 1fr); }
+    .compare-table { grid-template-columns: 1fr; }
+    .compare-header { display: none; }
+    .compare-row { grid-template-columns: 1fr; gap: 0; }
+    .compare-row > div { padding: 0.4rem 1rem; }
+    .compare-label { padding-top: 0.8rem !important; }
+    .compare-them::before { content: 'Grand groupe : '; font-weight: 400; color: var(--gray-400); }
+    .compare-me::before { content: 'MM Sécurité : '; font-weight: 400; }
+    .footer-nav { flex-direction: column; }
+  }
+</style>

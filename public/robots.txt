@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mm-securite.fr/sitemap-index.xml

@@ -1,0 +1,128 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Marc Muller" />
+    <meta name="keywords" content="alarme Metz, vidéosurveillance Metz, sécurité commerce Metz, alarme incendie ERP, contrôle accès Grand Est, plan évacuation, technicien sécurité Moselle, alarme boutique, caméra surveillance magasin" />
+
+    <!-- SEO Geo -->
+    <meta name="geo.region" content="FR-GES" />
+    <meta name="geo.placename" content="Metz" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content="https://mm-securite.fr" />
+    <meta property="og:site_name" content="MM Sécurité" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://mm-securite.fr" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Preconnect Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <title>{title}</title>
+
+    <!-- Structured Data: LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "MM Sécurité - Marc Muller EI",
+      "legalName": "Marc Muller EI",
+      "taxID": "505045450",
+      "identifier": { "@type": "PropertyValue", "name": "SIRET", "value": "50504545000069" },
+      "description": "Technicien en systèmes de sécurité pour commerces à Metz et Grand Est. Alarme incendie, intrusion, vidéosurveillance, contrôle d'accès, plans d'évacuation et mise en conformité ERP.",
+      "url": "https://mm-securite.fr",
+      "telephone": "+33688766648",
+      "email": "marc@muller.im",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Metz",
+        "postalCode": "57000",
+        "addressRegion": "Grand Est",
+        "addressCountry": "FR"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Metz" },
+        { "@type": "City", "name": "Thionville" },
+        { "@type": "City", "name": "Nancy" },
+        { "@type": "City", "name": "Forbach" },
+        { "@type": "City", "name": "Sarreguemines" },
+        { "@type": "AdministrativeArea", "name": "Moselle" },
+        { "@type": "AdministrativeArea", "name": "Meurthe-et-Moselle" },
+        { "@type": "AdministrativeArea", "name": "Grand Est" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services de sécurité pour commerces",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alarme intrusion pour commerce", "description": "Installation et maintenance de systèmes d'alarme anti-intrusion pour boutiques et commerces" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alarme incendie ERP", "description": "Système de sécurité incendie conforme aux normes ERP pour commerces" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vidéosurveillance", "description": "Installation de caméras IP pour commerces, conforme RGPD" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contrôle d'accès", "description": "Badges, digicodes et contrôle d'accès pour commerces et bureaux" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plans d'évacuation", "description": "Conception de plans d'évacuation conformes NF X 08-070" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mise en conformité ERP", "description": "Audit et mise en conformité sécurité pour petits ERP" } }
+        ]
+      },
+      "priceRange": "€€",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "12:00" }
+      ],
+      "sameAs": []
+    })} />
+
+    <!-- Structured Data: FAQ (SEO boost) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quelles sont les obligations de sécurité pour un petit commerce ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tout commerce recevant du public (ERP) doit disposer d'un système de détection incendie, de plans d'évacuation, d'un balisage de sécurité et d'un registre de sécurité à jour. Les obligations varient selon la catégorie et le type d'ERP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien coûte une installation d'alarme pour un commerce à Metz ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le coût dépend de la surface, du nombre de points de détection et du type de système choisi. En tant que technicien indépendant, mes tarifs sont adaptés aux petits commerces sans surcoût de structure. Contactez-moi pour un devis gratuit sous 48h."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Intervenez-vous en dehors de Metz ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, j'interviens dans toute la Moselle (Thionville, Forbach, Sarreguemines), en Meurthe-et-Moselle (Nancy, Pont-à-Mousson) et plus largement dans le Grand Est, y compris au Luxembourg."
+          }
+        }
+      ]
+    })} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

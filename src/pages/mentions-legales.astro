@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Mentions légales | MM Sécurité"
+  description="Mentions légales du site MM Sécurité — Marc Muller EI, technicien en systèmes de sécurité à Metz."
+>
+  <main class="legal">
+    <div class="container">
+      <a href="/" class="back-link">&larr; Retour à l'accueil</a>
+      <h1>Mentions légales</h1>
+
+      <section>
+        <h2>Éditeur du site</h2>
+        <p>
+          <strong>Marc Muller EI</strong><br />
+          Entreprise individuelle<br />
+          SIRET : 505 045 450 00069<br />
+          Activité : Installation et maintenance de systèmes de sécurité<br />
+        </p>
+        <p>
+          Adresse : Metz, 57000, France<br />
+          Téléphone : <a href="tel:+33688766648">06 88 76 66 48</a><br />
+          Email : <a href="mailto:marc@muller.im">marc@muller.im</a>
+        </p>
+        <p>
+          Directeur de la publication : Marc Muller
+        </p>
+      </section>
+
+      <section>
+        <h2>Hébergement</h2>
+        <p>
+          Ce site est hébergé par :<br />
+          <strong>Cloudflare, Inc.</strong><br />
+          101 Townsend St, San Francisco, CA 94107, États-Unis<br />
+          <a href="https://www.cloudflare.com" target="_blank" rel="noopener">www.cloudflare.com</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Propriété intellectuelle</h2>
+        <p>
+          L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, etc.) est la propriété exclusive de Marc Muller EI, sauf mention contraire. Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site est interdite sans autorisation écrite préalable.
+        </p>
+      </section>
+
+      <section>
+        <h2>Données personnelles</h2>
+        <p>
+          Les informations recueillies via le formulaire de contact sont destinées uniquement à Marc Muller EI pour le traitement de votre demande. Elles ne sont ni cédées, ni vendues à des tiers.
+        </p>
+        <p>
+          Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi « Informatique et Libertés », vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données vous concernant. Pour exercer ces droits, contactez-nous à <a href="mailto:marc@muller.im">marc@muller.im</a>.
+        </p>
+        <p>
+          Pour plus de détails, consultez notre <a href="/politique-de-confidentialite">politique de confidentialité</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Cookies</h2>
+        <p>
+          Ce site n'utilise pas de cookies de suivi ou publicitaires. Aucun cookie tiers n'est déposé. Seuls des cookies techniques strictement nécessaires au fonctionnement du site peuvent être utilisés.
+        </p>
+      </section>
+
+      <section>
+        <h2>Responsabilité</h2>
+        <p>
+          Marc Muller EI s'efforce de fournir des informations aussi précises que possible sur ce site. Toutefois, il ne pourra être tenu responsable des omissions, inexactitudes ou carences dans la mise à jour, qu'elles soient de son fait ou du fait de tiers.
+        </p>
+        <p>
+          Les liens hypertextes mis en place vers d'autres sites ne sauraient engager la responsabilité de Marc Muller EI quant au contenu de ces sites.
+        </p>
+      </section>
+
+      <section>
+        <h2>Crédits</h2>
+        <p>
+          Conception et développement : Marc Muller<br />
+          Icônes : <a href="https://heroicons.com" target="_blank" rel="noopener">Heroicons</a> (licence MIT)
+        </p>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style is:global>
+  .legal {
+    padding: 8rem 0 5rem;
+    min-height: 100vh;
+  }
+  .legal .container {
+    max-width: 720px;
+  }
+  .back-link {
+    display: inline-block;
+    color: #1e5ea6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    transition: 0.2s;
+  }
+  .back-link:hover { opacity: 0.7; }
+  .legal h1 {
+    font-size: 2.25rem;
+    color: #0c2340;
+    margin-bottom: 2.5rem;
+    line-height: 1.2;
+  }
+  .legal section {
+    margin-bottom: 2.5rem;
+  }
+  .legal h2 {
+    font-size: 1.2rem;
+    color: #0c2340;
+    margin-bottom: 0.75rem;
+    text-align: left;
+  }
+  .legal p {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+  .legal a {
+    color: #1e5ea6;
+    text-decoration: none;
+  }
+  .legal a:hover { text-decoration: underline; }
+  .legal .note {
+    background: #eff6ff;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    color: #1a4a7a;
+  }
+</style>
