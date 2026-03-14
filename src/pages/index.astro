@@ -27,7 +27,7 @@ import Layout from '../layouts/Layout.astro';
           <li><a href="#services">Services</a></li>
           <li><a href="#commerces">Commerces</a></li>
           <li><a href="#pourquoi">Avantages</a></li>
-          <li><a href="#zone">Zone</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact" class="btn btn-nav">Devis gratuit</a></li>
         </ul>
       </nav>
@@ -407,6 +407,42 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Questions fréquentes</span>
+        <h2>Tout ce qu'il faut savoir sur<br /><strong>la sécurité de votre commerce</strong></h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Quelles sont les obligations de sécurité pour un petit commerce ?</summary>
+          <p>Tout commerce recevant du public (ERP) doit disposer d'un système de détection incendie, de plans d'évacuation conformes à la norme NF X 08-070, d'un balisage de sécurité et d'un registre de sécurité à jour. Les obligations précises varient selon la catégorie de l'ERP (de 1 à 5, déterminée par la capacité d'accueil) et le type d'activité (M pour magasin, N pour restaurant, O pour hôtel, etc.). Un commerce de catégorie 5 (moins de 200 personnes) a des obligations allégées mais reste soumis aux règles de base en matière de sécurité incendie.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Combien coûte une installation d'alarme pour un commerce à Metz ?</summary>
+          <p>Le coût dépend de la surface de vos locaux, du nombre de points de détection nécessaires et du type de système choisi (filaire ou sans fil). En tant que technicien indépendant basé à Metz, mes tarifs sont adaptés aux petits commerces — vous payez l'expertise technique sans les surcoûts de structure d'un grand groupe. Contactez-moi pour recevoir un devis gratuit et personnalisé sous 48 heures.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quelle est la différence entre une alarme intrusion et une alarme incendie ?</summary>
+          <p>L'alarme intrusion protège votre commerce contre les cambriolages et effractions. Elle utilise des détecteurs de mouvement, des contacts d'ouverture de portes et de fenêtres, et peut déclencher une sirène ou une alerte sur votre smartphone. L'alarme incendie (ou SSI — Système de Sécurité Incendie) détecte les départs de feu grâce à des détecteurs de fumée et de chaleur. Pour un ERP, l'alarme incendie est une obligation légale. L'alarme intrusion est fortement recommandée mais pas obligatoire.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Qu'est-ce qu'un ERP et mon commerce est-il concerné ?</summary>
+          <p>Un ERP (Établissement Recevant du Public) est tout bâtiment, local ou enceinte accueillant des personnes extérieures à l'entreprise. Si vous avez une boulangerie, un restaurant, un salon de coiffure, un cabinet médical ou tout commerce ouvert au public, vous êtes un ERP. Vos obligations de sécurité dépendent de votre catégorie (1 à 5) et de votre type d'activité. La grande majorité des petits commerces sont classés en catégorie 5 (capacité inférieure à 200 personnes).</p>
+        </details>
+        <details class="faq-item">
+          <summary>La vidéosurveillance dans mon commerce est-elle conforme au RGPD ?</summary>
+          <p>Oui, à condition de respecter un cadre précis : un panneau d'information visible doit être affiché à l'entrée, une déclaration en préfecture est nécessaire pour les lieux ouverts au public, la durée de conservation des images est limitée (généralement 30 jours maximum), et l'accès aux enregistrements doit être restreint. MM Sécurité installe des systèmes 100% conformes et vous accompagne dans toutes les démarches administratives (déclaration préfecture, affichage, documentation RGPD).</p>
+        </details>
+        <details class="faq-item">
+          <summary>Intervenez-vous en dehors de Metz ?</summary>
+          <p>Oui, MM Sécurité intervient dans toute la Moselle (Metz, Thionville, Forbach, Sarreguemines, Hagondange), en Meurthe-et-Moselle (Nancy, Pont-à-Mousson, Lunéville), et plus largement dans l'ensemble de la région Grand Est. J'interviens également au Luxembourg pour les entreprises frontalières. Mon ancrage local à Metz me permet d'assurer une grande réactivité sur l'ensemble de cette zone.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="container">
@@ -550,6 +586,7 @@ import Layout from '../layouts/Layout.astro';
             <a href="#services">Services</a>
             <a href="#commerces">Commerces</a>
             <a href="#pourquoi">Avantages</a>
+            <a href="#faq">FAQ</a>
             <a href="#contact">Contact</a>
           </div>
           <div class="footer-col">
@@ -618,7 +655,7 @@ import Layout from '../layouts/Layout.astro';
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.service-card, .benefit, .compare-row, .type-card').forEach(el => {
+    document.querySelectorAll('.service-card, .benefit, .compare-row, .type-card, .faq-item').forEach(el => {
       el.classList.add('fade-up');
       observer.observe(el);
     });
@@ -1339,6 +1376,50 @@ import Layout from '../layouts/Layout.astro';
   }
   .zone-dept { background: var(--blue-50) !important; color: var(--blue-700) !important; font-weight: 600 !important; }
   .zone-region { background: var(--blue-100) !important; color: var(--blue-800) !important; font-weight: 600 !important; }
+
+  /* ============================================
+     FAQ
+     ============================================ */
+  .faq { padding: 5rem 0; background: var(--white); }
+  .faq-list { max-width: 740px; margin: 0 auto; }
+  .faq-item {
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  .faq-item:hover { border-color: var(--blue-200); }
+  .faq-item[open] { border-color: var(--blue-300); box-shadow: 0 2px 8px rgba(30,94,166,0.06); }
+  .faq-item summary {
+    padding: 1.1rem 1.4rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--gray-800);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--blue-500);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p {
+    padding: 0 1.4rem 1.2rem;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin: 0;
+  }
 
   /* ============================================
      CONTACT
