@@ -40,6 +40,7 @@ const canonical = new URL(Astro.url.pathname, 'https://mm-securite.fr').href;
 
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
@@ -48,16 +49,10 @@ const canonical = new URL(Astro.url.pathname, 'https://mm-securite.fr').href;
 
     <title>{title}</title>
 
-    <!-- Google Analytics 4 -->
-    <!--
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    -->
+    <!-- Cloudflare Web Analytics : injection automatique via Cloudflare Pages -->
+    <meta name="theme-color" content="#0c2340" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     {schemaService && (
       <script type="application/ld+json" set:html={JSON.stringify({
@@ -381,6 +376,12 @@ const canonical = new URL(Astro.url.pathname, 'https://mm-securite.fr').href;
         text-decoration: none;
       }
 
+      /* Focus visible for accessibility */
+      a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+        outline: 2px solid var(--blue-600);
+        outline-offset: 2px;
+      }
+
       @media (max-width: 600px) {
         .sp-hero h1 { font-size: 1.6rem; }
         .sp-content { padding: 2rem 1.25rem 2rem; }
@@ -431,7 +432,7 @@ const canonical = new URL(Astro.url.pathname, 'https://mm-securite.fr').href;
     <slot name="related" />
 
     <footer class="sp-footer">
-      <p>&copy; {new Date().getFullYear()} MM Sécurité — Marc Muller EI | <a href="/">Accueil</a> | <a href="/blog">Blog</a> | <a href="/mentions-legales">Mentions légales</a></p>
+      <p>&copy; {new Date().getFullYear()} MM Sécurité — Marc Muller EI | <a href="/">Accueil</a> | <a href="/blog">Blog</a> | <a href="/mentions-legales">Mentions légales</a> | <a href="/politique-de-confidentialite">Confidentialité</a></p>
     </footer>
   </body>
 </html>

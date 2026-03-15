@@ -1,0 +1,129 @@
+---
+// Custom 404 page
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Page introuvable — MM Sécurité" />
+    <title>Page introuvable | MM Sécurité</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
+    <!-- Cloudflare Web Analytics : injection automatique via Cloudflare Pages -->
+    <meta name="theme-color" content="#0c2340" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: 'Inter', -apple-system, sans-serif;
+        color: #1f2937;
+        background: #fff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .header-404 {
+        background: #111827;
+        padding: 1rem 1.5rem;
+      }
+      .header-404 a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+      .content-404 {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+      }
+      .content-404 h1 {
+        font-size: 6rem;
+        font-weight: 800;
+        color: #e5e7eb;
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+      .content-404 h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 0.75rem;
+      }
+      .content-404 p {
+        color: #6b7280;
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+        max-width: 440px;
+        line-height: 1.6;
+      }
+      .links-404 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+      }
+      .btn-404 {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.7rem 1.4rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      .btn-primary-404 {
+        background: #1e5ea6;
+        color: #fff;
+      }
+      .btn-primary-404:hover { background: #174d8a; }
+      .btn-ghost-404 {
+        background: transparent;
+        color: #1e5ea6;
+        border: 1px solid #d1d5db;
+      }
+      .btn-ghost-404:hover { background: #eef4fb; }
+      .footer-404 {
+        background: #111827;
+        color: rgba(255,255,255,0.6);
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 0.85rem;
+      }
+      .footer-404 a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <header class="header-404">
+      <a href="/">MM Sécurité</a>
+    </header>
+
+    <main class="content-404">
+      <div>
+        <h1>404</h1>
+        <h2>Page introuvable</h2>
+        <p>La page que vous cherchez n'existe pas ou a été déplacée. Pas d'inquiétude, voici quelques liens utiles.</p>
+        <div class="links-404">
+          <a href="/" class="btn-404 btn-primary-404">Retour à l'accueil</a>
+          <a href="/devis-gratuit" class="btn-404 btn-ghost-404">Demander un devis</a>
+          <a href="/blog" class="btn-404 btn-ghost-404">Lire le blog</a>
+          <a href="tel:+33688766648" class="btn-404 btn-ghost-404">Appeler</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer-404">
+      <p>&copy; 2026 MM Sécurité — Marc Muller EI | <a href="/mentions-legales">Mentions légales</a></p>
+    </footer>
+  </body>
+</html>

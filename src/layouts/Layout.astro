@@ -49,6 +49,7 @@ const canonical = new URL(Astro.url.pathname, 'https://mm-securite.fr').href;
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 
     <!-- Google Fonts — non render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,15 +60,14 @@ const canonical = new URL(Astro.url.pathname, 'https://mm-securite.fr').href;
 
     <title>{title}</title>
 
-    <!-- Google Analytics 4 — décommenté quand l'ID sera configuré
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    -->
+    <!-- Cloudflare Web Analytics : injection automatique via Cloudflare Pages (Automatic setup) -->
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#0c2340" />
+
+    <!-- Favicon complet -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Structured Data: LocalBusiness -->
     <script type="application/ld+json" set:html={JSON.stringify({

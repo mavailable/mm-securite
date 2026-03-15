@@ -59,6 +59,12 @@ const canonical = `https://mm-securite.fr${Astro.url.pathname}`;
 
     <title>{title} | MM Sécurité Blog</title>
 
+    <!-- Cloudflare Web Analytics : injection automatique via Cloudflare Pages -->
+    <meta name="theme-color" content="#0c2340" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <!-- Schema.org Article -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
