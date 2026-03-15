@@ -1,0 +1,334 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  updated?: Date;
+  tags?: string[];
+}
+
+const { title, description, date, updated, tags = [] } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+const formattedUpdated = updated?.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+const isoDate = date.toISOString();
+const isoUpdated = updated?.toISOString();
+const canonical = `https://mm-securite.fr${Astro.url.pathname}`;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Marc Muller" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="MM Sécurité" />
+    <meta property="og:image" content="https://mm-securite.fr/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MM Sécurité — Alarme & Vidéosurveillance pour commerces à Metz" />
+    <meta property="article:published_time" content={isoDate} />
+    {isoUpdated && <meta property="article:modified_time" content={isoUpdated} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://mm-securite.fr/og-image.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <title>{title} | MM Sécurité Blog</title>
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": title,
+      "description": description,
+      "datePublished": isoDate,
+      ...(isoUpdated && { "dateModified": isoUpdated }),
+      "author": {
+        "@type": "Person",
+        "name": "Marc Muller",
+        "jobTitle": "Technicien en sécurité électronique",
+        "url": "https://mm-securite.fr"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MM Sécurité",
+        "url": "https://mm-securite.fr"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": canonical
+      },
+      "keywords": tags.join(", ")
+    })} />
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://mm-securite.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mm-securite.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": title, "item": canonical }
+      ]
+    })} />
+  </head>
+  <body>
+    <style>
+      :root {
+        --blue-600: #1e5ea6;
+        --blue-700: #174d8a;
+        --blue-50: #eef4fb;
+        --gray-50: #f8f9fa;
+        --gray-100: #f1f3f5;
+        --gray-200: #e1e5e9;
+        --gray-500: #6b7280;
+        --gray-600: #4b5563;
+        --gray-700: #374151;
+        --gray-800: #1f2937;
+        --gray-900: #111827;
+        --white: #ffffff;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: 'Inter', -apple-system, sans-serif;
+        color: var(--gray-800);
+        line-height: 1.7;
+        background: var(--white);
+      }
+      .blog-header {
+        background: var(--gray-900);
+        padding: 1rem 0;
+      }
+      .blog-header-inner {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .blog-header a {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .blog-header .back-link {
+        color: rgba(255,255,255,0.7);
+        font-weight: 400;
+        font-size: 0.85rem;
+        transition: color 0.2s;
+      }
+      .blog-header .back-link:hover { color: var(--white); }
+
+      .article-hero {
+        background: linear-gradient(135deg, var(--gray-900) 0%, var(--blue-700) 100%);
+        padding: 4rem 1.5rem 3rem;
+        color: var(--white);
+      }
+      .article-hero-inner {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .article-hero .breadcrumb {
+        font-size: 0.8rem;
+        color: rgba(255,255,255,0.6);
+        margin-bottom: 1.5rem;
+      }
+      .article-hero .breadcrumb a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+      }
+      .article-hero .breadcrumb a:hover { color: var(--white); }
+      .article-hero h1 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        line-height: 1.25;
+        margin-bottom: 1rem;
+      }
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        font-size: 0.85rem;
+        color: rgba(255,255,255,0.7);
+        flex-wrap: wrap;
+      }
+      .article-tags {
+        display: flex;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+      }
+      .article-tags span {
+        background: rgba(255,255,255,0.15);
+        padding: 0.2rem 0.6rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.85);
+      }
+
+      .article-body {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 4rem;
+      }
+      .article-body h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--gray-900);
+        margin: 2.5rem 0 1rem;
+        line-height: 1.3;
+      }
+      .article-body h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        margin: 2rem 0 0.75rem;
+      }
+      .article-body p {
+        margin-bottom: 1.25rem;
+        color: var(--gray-700);
+        font-size: 1.05rem;
+      }
+      .article-body ul, .article-body ol {
+        margin: 0 0 1.25rem 1.5rem;
+        color: var(--gray-700);
+      }
+      .article-body li {
+        margin-bottom: 0.4rem;
+        font-size: 1.05rem;
+      }
+      .article-body strong {
+        color: var(--gray-900);
+      }
+      .article-body a {
+        color: var(--blue-600);
+        text-decoration: underline;
+        text-decoration-color: rgba(30,94,166,0.3);
+        text-underline-offset: 2px;
+      }
+      .article-body a:hover {
+        text-decoration-color: var(--blue-600);
+      }
+      .article-body blockquote {
+        border-left: 3px solid var(--blue-600);
+        padding: 1rem 1.5rem;
+        margin: 1.5rem 0;
+        background: var(--blue-50);
+        border-radius: 0 8px 8px 0;
+        color: var(--gray-700);
+        font-style: italic;
+      }
+
+      /* CTA box at end of article */
+      .article-cta {
+        background: linear-gradient(135deg, var(--blue-50) 0%, var(--gray-50) 100%);
+        border: 1px solid var(--gray-200);
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 3rem 0 0;
+        text-align: center;
+      }
+      .article-cta h3 {
+        margin: 0 0 0.5rem;
+        color: var(--gray-900);
+      }
+      .article-cta p {
+        color: var(--gray-600);
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+      }
+      .article-cta .btn {
+        display: inline-block;
+        background: var(--blue-600);
+        color: var(--white);
+        padding: 0.75rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: background 0.2s;
+      }
+      .article-cta .btn:hover { background: var(--blue-700); }
+
+      .blog-footer {
+        background: var(--gray-900);
+        color: rgba(255,255,255,0.6);
+        text-align: center;
+        padding: 2rem 1.5rem;
+        font-size: 0.85rem;
+      }
+      .blog-footer a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .article-hero h1 { font-size: 1.6rem; }
+        .article-body { padding: 2rem 1.25rem 3rem; }
+      }
+    </style>
+
+    <header class="blog-header">
+      <div class="blog-header-inner">
+        <a href="/">MM Sécurité</a>
+        <a href="/blog" class="back-link">&larr; Tous les articles</a>
+      </div>
+    </header>
+
+    <div class="article-hero">
+      <div class="article-hero-inner">
+        <div class="breadcrumb">
+          <a href="/">Accueil</a> &rsaquo; <a href="/blog">Blog</a> &rsaquo; {title}
+        </div>
+        <h1>{title}</h1>
+        <div class="article-meta">
+          <span>Par Marc Muller</span>
+          <span>{formattedDate}</span>
+          {formattedUpdated && <span>Mis à jour : {formattedUpdated}</span>}
+          {tags.length > 0 && (
+            <div class="article-tags">
+              {tags.map(tag => <span>{tag}</span>)}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+
+    <article class="article-body">
+      <slot />
+
+      <div class="article-cta">
+        <h3>Besoin d'un devis pour votre commerce ?</h3>
+        <p>Alarme, vidéosurveillance, mise en conformité ERP — contactez-moi pour un diagnostic gratuit.</p>
+        <a href="/#contact" class="btn">Demander un devis gratuit</a>
+      </div>
+    </article>
+
+    <footer class="blog-footer">
+      <p>&copy; {new Date().getFullYear()} MM Sécurité — Marc Muller | <a href="/">Retour au site</a> | <a href="/mentions-legales">Mentions légales</a></p>
+    </footer>
+  </body>
+</html>

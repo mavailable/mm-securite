@@ -19,6 +19,10 @@ import Layout from '../layouts/Layout.astro';
         </span>
         <span class="logo-text">Sécurité</span>
       </a>
+      <a href="tel:+33688766648" class="header-phone" aria-label="Appeler">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        <span class="header-phone-text">06 88 76 66 48</span>
+      </a>
       <nav class="nav" aria-label="Navigation principale">
         <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -26,9 +30,10 @@ import Layout from '../layouts/Layout.astro';
         <ul class="nav-list">
           <li><a href="#services">Services</a></li>
           <li><a href="#commerces">Commerces</a></li>
-          <li><a href="#pourquoi">Avantages</a></li>
+          <li><a href="/a-propos">À propos</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact" class="btn btn-nav">Devis gratuit</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/devis-gratuit" class="btn btn-nav">Devis gratuit</a></li>
         </ul>
       </nav>
     </div>
@@ -49,7 +54,7 @@ import Layout from '../layouts/Layout.astro';
           Alarme, vidéosurveillance, détection incendie, contrôle d'accès — un seul interlocuteur pour <strong>sécuriser votre établissement</strong> et passer sereinement la commission de sécurité.
         </p>
         <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary btn-glow">
+          <a href="/devis-gratuit" class="btn btn-primary btn-glow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
             Demander un devis gratuit
           </a>
@@ -62,13 +67,13 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <span class="stat-num">100%</span>
-            <span class="stat-label">Indépendant</span>
+            <span class="stat-num">50+</span>
+            <span class="stat-label">Commerces protégés</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
             <span class="stat-num">1</span>
-            <span class="stat-label">Interlocuteur</span>
+            <span class="stat-label">Interlocuteur unique</span>
           </div>
         </div>
       </div>
@@ -140,24 +145,53 @@ import Layout from '../layouts/Layout.astro';
   <section class="reassurance">
     <div class="container reassurance-inner">
       <div class="reassurance-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-        <span>Matériel certifié NF</span>
+        <div class="reassurance-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+        </div>
+        <div class="reassurance-text">
+          <strong>Certifié NF</strong>
+          <span>Matériel aux normes</span>
+        </div>
       </div>
+      <div class="reassurance-divider"></div>
       <div class="reassurance-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H21M3 21V3"/></svg>
-        <span>Conforme RGPD & ERP</span>
+        <div class="reassurance-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="reassurance-text">
+          <strong>Conforme</strong>
+          <span>RGPD & ERP</span>
+        </div>
       </div>
+      <div class="reassurance-divider"></div>
       <div class="reassurance-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Intervention rapide</span>
+        <div class="reassurance-icon icon-accent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        </div>
+        <div class="reassurance-text">
+          <strong>Rapide</strong>
+          <span>Intervention express</span>
+        </div>
       </div>
+      <div class="reassurance-divider"></div>
       <div class="reassurance-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-        <span>Basé à Metz</span>
+        <div class="reassurance-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+        </div>
+        <div class="reassurance-text">
+          <strong>Local</strong>
+          <span>Basé à Metz</span>
+        </div>
       </div>
+      <div class="reassurance-divider"></div>
       <div class="reassurance-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75"/></svg>
-        <span>Conformité garantie</span>
+        <div class="reassurance-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75"/></svg>
+        </div>
+        <div class="reassurance-text">
+          <strong>Clé en main</strong>
+          <span>Conformité incluse</span>
+        </div>
       </div>
     </div>
   </section>
@@ -173,7 +207,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="services-grid">
 
-        <article class="service-card" data-accent="blue">
+        <a href="/alarme-intrusion-commerce" class="service-card" data-accent="blue" style="text-decoration:none;color:inherit;">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/></svg>
           </div>
@@ -182,9 +216,9 @@ import Layout from '../layouts/Layout.astro';
             <p>Protégez votre boutique contre les cambriolages. Détection volumétrique, sirène, alerte sur smartphone, levée de doute vidéo. Centrales certifiées NF&nbsp;A2P.</p>
           </div>
           <span class="service-tag">Le plus demandé</span>
-        </article>
+        </a>
 
-        <article class="service-card" data-accent="red">
+        <a href="/alarme-incendie-erp" class="service-card" data-accent="red" style="text-decoration:none;color:inherit;">
           <div class="service-icon icon-red">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/><path d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1.001A3.75 3.75 0 0012 18z"/></svg>
           </div>
@@ -193,9 +227,9 @@ import Layout from '../layouts/Layout.astro';
             <p>Détection incendie conforme aux obligations ERP. Détecteurs, déclencheurs manuels, centrale SSI, vérification annuelle et tenue du registre de sécurité.</p>
           </div>
           <span class="service-tag tag-red">Obligatoire ERP</span>
-        </article>
+        </a>
 
-        <article class="service-card">
+        <a href="/videosurveillance-commerce" class="service-card" style="text-decoration:none;color:inherit;">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>
           </div>
@@ -203,9 +237,9 @@ import Layout from '../layouts/Layout.astro';
             <h3>Vidéosurveillance</h3>
             <p>Caméras IP haute définition, vision nocturne, accès en direct sur votre téléphone. Installation conforme RGPD avec affichage légal et déclaration préfecture.</p>
           </div>
-        </article>
+        </a>
 
-        <article class="service-card">
+        <a href="/controle-acces-commerce" class="service-card" style="text-decoration:none;color:inherit;">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
           </div>
@@ -213,9 +247,9 @@ import Layout from '../layouts/Layout.astro';
             <h3>Contrôle d'accès</h3>
             <p>Badges, digicodes, lecteurs biométriques. Gérez qui entre et quand — idéal pour les réserves, bureaux ou zones à accès restreint.</p>
           </div>
-        </article>
+        </a>
 
-        <article class="service-card">
+        <a href="/plan-evacuation-erp" class="service-card" style="text-decoration:none;color:inherit;">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"/></svg>
           </div>
@@ -223,7 +257,7 @@ import Layout from '../layouts/Layout.astro';
             <h3>Plans d'évacuation</h3>
             <p>Plans conformes NF&nbsp;X&nbsp;08-070, balisage de sécurité, signalétique. Indispensable pour passer la commission de sécurité en toute tranquillité.</p>
           </div>
-        </article>
+        </a>
 
         <article class="service-card card-pro">
           <div class="service-icon icon-dark">
@@ -242,164 +276,91 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- COMMERCES / ERP -->
   <section class="commerces" id="commerces">
+    <div class="commerces-glow commerces-glow-1"></div>
+    <div class="commerces-glow commerces-glow-2"></div>
     <div class="container">
-      <div class="commerces-layout">
-        <div class="commerces-text">
-          <span class="section-tag tag-light">Spécialisation</span>
-          <h2>Pensé pour les<br /><strong>petits commerces</strong></h2>
-          <p class="commerces-intro">
-            Votre boulangerie, restaurant, salon de coiffure ou cabinet médical doit respecter les mêmes normes de sécurité que les grandes enseignes — mais vous n'avez pas les mêmes budgets ni les mêmes besoins.
-          </p>
-          <p>
-            C'est exactement pour ça que MM&nbsp;Sécurité existe.
-          </p>
-
-          <div class="commerces-benefits">
-            <div class="benefit">
-              <div class="benefit-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              </div>
-              <div>
-                <strong>Tarifs adaptés</strong>
-                <p>Pas de surcoûts de structure. Vous payez l'expertise, pas les bureaux.</p>
-              </div>
-            </div>
-            <div class="benefit">
-              <div class="benefit-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
-              </div>
-              <div>
-                <strong>Interlocuteur unique</strong>
-                <p>Du devis à la maintenance, vous parlez toujours à la même personne.</p>
-              </div>
-            </div>
-            <div class="benefit">
-              <div class="benefit-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-              </div>
-              <div>
-                <strong>Commission de sécurité</strong>
-                <p>Je connais les attentes des commissions. Zéro mauvaise surprise le jour J.</p>
-              </div>
-            </div>
-            <div class="benefit">
-              <div class="benefit-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
-              </div>
-              <div>
-                <strong>Réactif</strong>
-                <p>Pas de planning de grand groupe. J'interviens vite, je m'adapte à vos horaires.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="commerces-types">
-          <h3>Types d'établissements accompagnés</h3>
-          <div class="type-grid">
-            <div class="type-card">
-              <div class="type-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.15c0 .415.336.75.75.75z"/></svg>
-              </div>
-              <span>Boulangeries</span>
-            </div>
-            <div class="type-card">
-              <div class="type-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.871c1.355 0 2.697.056 4.024.166C17.155 8.51 18 9.473 18 10.608v2.513M15 8.25v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m15-3.379a48.474 48.474 0 00-6-.371c-2.032 0-4.034.126-6 .371m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.169c0 .621-.504 1.125-1.125 1.125H4.125A1.125 1.125 0 013 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 016 13.12M12.265 3.11a.375.375 0 11-.53 0L12 2.845l.265.265z"/></svg>
-              </div>
-              <span>Restaurants</span>
-            </div>
-            <div class="type-card">
-              <div class="type-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
-              </div>
-              <span>Salons de coiffure</span>
-            </div>
-            <div class="type-card">
-              <div class="type-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/></svg>
-              </div>
-              <span>Hôtels</span>
-            </div>
-            <div class="type-card">
-              <div class="type-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
-              </div>
-              <span>Cabinets médicaux</span>
-            </div>
-            <div class="type-card">
-              <div class="type-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
-              </div>
-              <span>Boutiques</span>
-            </div>
-            <div class="type-card">
-              <div class="type-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
-              </div>
-              <span>Salles de sport</span>
-            </div>
-            <div class="type-card">
-              <div class="type-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
-              </div>
-              <span>Pharmacies</span>
-            </div>
-            <div class="type-card">
-              <div class="type-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
-              </div>
-              <span>Crèches</span>
-            </div>
-          </div>
-          <div class="type-cta">
-            <p>Votre commerce n'est pas dans la liste ?</p>
-            <a href="#contact" class="btn btn-outline-light">Contactez-moi</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- POURQUOI MOI -->
-  <section class="pourquoi" id="pourquoi">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Avantages</span>
-        <h2>Grand groupe vs.<br /><strong>technicien indépendant</strong></h2>
-        <p class="section-intro">Voici ce que vous gagnez en choisissant un vrai pro de terrain plutôt qu'une grosse structure.</p>
+      <div class="commerces-header">
+        <span class="section-tag tag-light">Spécialisation</span>
+        <h2>Pensé pour les<br /><strong>petits commerces</strong></h2>
+        <p class="commerces-subtitle">
+          Votre boulangerie, restaurant ou cabinet médical doit respecter les mêmes normes que les grandes enseignes — mais avec un budget adapté. C'est exactement pour ça que MM&nbsp;Sécurité existe.
+        </p>
       </div>
 
-      <div class="compare-table">
-        <div class="compare-header">
-          <div class="compare-label"></div>
-          <div class="compare-them">Grand groupe</div>
-          <div class="compare-me">MM Sécurité</div>
+      <div class="commerces-benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <strong>Tarifs adaptés</strong>
+          <p>Pas de surcoûts de structure. Vous payez l'expertise, pas les bureaux.</p>
         </div>
-        <div class="compare-row">
-          <div class="compare-label">Devis</div>
-          <div class="compare-them">1 à 3 semaines</div>
-          <div class="compare-me highlight">Sous 48h</div>
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+          </div>
+          <strong>Interlocuteur unique</strong>
+          <p>Du devis à la maintenance, vous parlez toujours à la même personne.</p>
         </div>
-        <div class="compare-row">
-          <div class="compare-label">Interlocuteur</div>
-          <div class="compare-them">Commercial, puis technicien, puis SAV…</div>
-          <div class="compare-me highlight">Toujours le même</div>
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <strong>Commission de sécurité</strong>
+          <p>Je connais les attentes des commissions. Zéro mauvaise surprise le jour J.</p>
         </div>
-        <div class="compare-row">
-          <div class="compare-label">Réactivité</div>
-          <div class="compare-them">Selon le planning national</div>
-          <div class="compare-me highlight">Intervention rapide locale</div>
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+          </div>
+          <strong>Réactif</strong>
+          <p>Pas de planning de grand groupe. J'interviens vite, je m'adapte à vos horaires.</p>
         </div>
-        <div class="compare-row">
-          <div class="compare-label">Tarif</div>
-          <div class="compare-them">Inclut la structure, le marketing, les bureaux…</div>
-          <div class="compare-me highlight">Juste le travail bien fait</div>
+      </div>
+
+      <div class="commerces-types-section">
+        <h3 class="types-title">Établissements accompagnés</h3>
+        <div class="type-pills">
+          <a href="/securite-commerce-metz" class="type-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.15c0 .415.336.75.75.75z"/></svg>
+            Boulangeries
+          </a>
+          <a href="/securite-commerce-metz" class="type-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.871c1.355 0 2.697.056 4.024.166C17.155 8.51 18 9.473 18 10.608v2.513M15 8.25v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m15-3.379a48.474 48.474 0 00-6-.371c-2.032 0-4.034.126-6 .371m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.169c0 .621-.504 1.125-1.125 1.125H4.125A1.125 1.125 0 013 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 016 13.12M12.265 3.11a.375.375 0 11-.53 0L12 2.845l.265.265z"/></svg>
+            Restaurants
+          </a>
+          <a href="/securite-commerce-metz" class="type-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+            Salons de coiffure
+          </a>
+          <a href="/securite-commerce-metz" class="type-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/></svg>
+            Hôtels
+          </a>
+          <a href="/securite-commerce-metz" class="type-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+            Cabinets médicaux
+          </a>
+          <a href="/securite-commerce-metz" class="type-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+            Boutiques
+          </a>
+          <a href="/securite-commerce-metz" class="type-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+            Salles de sport
+          </a>
+          <a href="/securite-commerce-metz" class="type-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+            Pharmacies
+          </a>
+          <a href="/securite-commerce-metz" class="type-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+            Crèches
+          </a>
         </div>
-        <div class="compare-row">
-          <div class="compare-label">Connaissance terrain</div>
-          <div class="compare-them">Technicien différent à chaque visite</div>
-          <div class="compare-me highlight">Je connais votre installation par coeur</div>
+        <div class="type-cta">
+          <span>Votre commerce n'est pas dans la liste ?</span>
+          <a href="/devis-gratuit" class="btn btn-primary btn-sm">Demander un devis gratuit</a>
         </div>
       </div>
     </div>
@@ -686,17 +647,20 @@ import Layout from '../layouts/Layout.astro';
           <div class="footer-col">
             <h4>Navigation</h4>
             <a href="#services">Services</a>
-            <a href="#commerces">Commerces</a>
-            <a href="#pourquoi">Avantages</a>
+            <a href="/a-propos">À propos</a>
+            <a href="/devis-gratuit">Devis gratuit</a>
             <a href="#faq">FAQ</a>
+            <a href="/blog">Blog</a>
             <a href="#contact">Contact</a>
           </div>
           <div class="footer-col">
             <h4>Services</h4>
-            <a href="#services">Alarme intrusion</a>
-            <a href="#services">Alarme incendie</a>
-            <a href="#services">Vidéosurveillance</a>
-            <a href="#services">Contrôle d'accès</a>
+            <a href="/alarme-intrusion-commerce">Alarme intrusion</a>
+            <a href="/alarme-incendie-erp">Alarme incendie</a>
+            <a href="/videosurveillance-commerce">Vidéosurveillance</a>
+            <a href="/controle-acces-commerce">Contrôle d'accès</a>
+            <a href="/plan-evacuation-erp">Plans d'évacuation</a>
+            <a href="/mise-en-conformite-erp">Conformité ERP</a>
           </div>
         </nav>
       </div>
@@ -769,7 +733,7 @@ import Layout from '../layouts/Layout.astro';
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.service-card, .benefit, .compare-row, .type-card, .faq-item').forEach(el => {
+    document.querySelectorAll('.service-card, .benefit-card, .type-pill, .faq-item').forEach(el => {
       el.classList.add('fade-up');
       observer.observe(el);
     });
@@ -998,9 +962,19 @@ import Layout from '../layouts/Layout.astro';
     border-color: var(--white);
   }
   .btn-nav {
-    padding: 0.45rem 1.1rem;
+    padding: 0.5rem 1.2rem;
     font-size: 0.85rem;
     border-radius: var(--radius-sm);
+    background: var(--blue-600);
+    color: var(--white) !important;
+    border-color: var(--blue-600);
+    box-shadow: 0 2px 8px rgba(30, 94, 166, 0.25);
+  }
+  .btn-nav:hover {
+    background: var(--blue-700);
+    border-color: var(--blue-700);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(30, 94, 166, 0.35);
   }
 
   /* ============================================
@@ -1019,7 +993,16 @@ import Layout from '../layouts/Layout.astro';
     border-bottom-color: var(--gray-200);
     box-shadow: var(--shadow-xs);
   }
-  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 1rem; }
+  .header-phone {
+    display: flex; align-items: center; gap: 0.4rem;
+    text-decoration: none; color: var(--blue-600); font-weight: 600; font-size: 0.9rem;
+    margin-left: auto; margin-right: 0.5rem;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+  .header-phone:hover { color: var(--blue-700); }
+  .header-phone svg { flex-shrink: 0; }
   .logo { text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
   .logo-text { color: var(--blue-900); font-size: 1.3rem; font-weight: 700; }
   .nav-list { display: flex; list-style: none; align-items: center; gap: 1.8rem; }
@@ -1042,7 +1025,7 @@ import Layout from '../layouts/Layout.astro';
      ============================================ */
   .hero {
     position: relative;
-    padding: 9rem 0 4.5rem;
+    padding: 6.5rem 0 3rem;
     overflow: hidden;
   }
   .hero-bg {
@@ -1275,17 +1258,51 @@ import Layout from '../layouts/Layout.astro';
   .reassurance {
     border-top: 1px solid var(--gray-100);
     border-bottom: 1px solid var(--gray-100);
-    padding: 1rem 0;
-    background: var(--gray-50);
+    padding: 1.25rem 0;
+    background: var(--white);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   }
   .reassurance-inner {
-    display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;
+    display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.5rem;
   }
   .reassurance-item {
-    display: flex; align-items: center; gap: 0.5rem;
-    color: var(--gray-600); font-size: 0.85rem; font-weight: 500;
+    display: flex; align-items: center; gap: 0.6rem;
   }
-  .reassurance-item svg { color: var(--blue-500); flex-shrink: 0; }
+  .reassurance-icon {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: var(--blue-50);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--blue-600);
+    transition: var(--transition);
+  }
+  .reassurance-icon.icon-accent {
+    background: linear-gradient(135deg, var(--blue-600), var(--blue-400));
+    color: var(--white);
+  }
+  .reassurance-item:hover .reassurance-icon {
+    background: var(--blue-600);
+    color: var(--white);
+    transform: scale(1.05);
+  }
+  .reassurance-item:hover .reassurance-icon.icon-accent {
+    box-shadow: 0 4px 12px rgba(30,94,166,0.3);
+  }
+  .reassurance-text {
+    display: flex; flex-direction: column; line-height: 1.3;
+  }
+  .reassurance-text strong {
+    font-size: 0.82rem; font-weight: 700; color: var(--blue-900);
+  }
+  .reassurance-text span {
+    font-size: 0.72rem; color: var(--gray-500); font-weight: 400;
+  }
+  .reassurance-divider {
+    width: 1px; height: 28px; background: var(--gray-200);
+  }
 
   /* ============================================
      SERVICES
@@ -1361,135 +1378,141 @@ import Layout from '../layouts/Layout.astro';
     position: relative;
     overflow: hidden;
   }
-  .commerces::before {
-    content: '';
-    position: absolute; top: -200px; right: -200px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(74,155,223,0.12) 0%, transparent 70%);
+  .commerces-glow {
+    position: absolute;
+    border-radius: 50%;
     pointer-events: none;
+    filter: blur(80px);
   }
-  .commerces-layout {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 4rem;
-    align-items: start;
-    position: relative; z-index: 1;
+  .commerces-glow-1 {
+    top: -120px; right: -80px;
+    width: 500px; height: 500px;
+    background: rgba(74,155,223,0.1);
   }
-  .commerces h2 { color: var(--white); text-align: left; font-size: 2rem; }
-  .commerces h2 strong { color: var(--blue-300); }
-  .commerces-intro { font-size: 1.05rem; line-height: 1.8; margin-bottom: 0.5rem; }
+  .commerces-glow-2 {
+    bottom: -100px; left: -60px;
+    width: 400px; height: 400px;
+    background: rgba(59,130,246,0.07);
+  }
+  .commerces .container { position: relative; z-index: 1; }
 
-  .commerces-benefits { margin-top: 2rem; display: grid; gap: 1.25rem; }
-  .benefit {
-    display: flex; gap: 1rem; align-items: flex-start;
+  .commerces-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 3.5rem;
   }
-  .benefit-icon {
-    width: 40px; height: 40px; flex-shrink: 0;
-    background: rgba(255,255,255,0.08);
-    border-radius: var(--radius-sm);
+  .commerces h2 { color: var(--white); font-size: 2.25rem; margin-bottom: 1rem; }
+  .commerces h2 strong { color: var(--blue-300); }
+  .commerces-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .commerces-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 3.5rem;
+  }
+  .benefit-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  .benefit-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(74,155,223,0.3);
+    transform: translateY(-3px);
+  }
+  .benefit-icon-wrap {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(74,155,223,0.2), rgba(59,130,246,0.1));
+    border: 1px solid rgba(74,155,223,0.2);
     display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem;
     color: var(--blue-300);
   }
-  .benefit strong { color: var(--white); display: block; margin-bottom: 0.15rem; font-size: 0.95rem; }
-  .benefit p { font-size: 0.88rem; color: var(--gray-400); line-height: 1.5; margin: 0; }
-
-  .commerces-types {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: var(--radius-lg);
-    padding: 2.25rem 2rem;
+  .benefit-card strong {
+    color: var(--white);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
   }
-  .commerces-types h3 {
-    color: var(--blue-200);
-    font-size: 0.75rem;
+  .benefit-card p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .commerces-types-section {
+    text-align: center;
+  }
+  .types-title {
+    color: rgba(255,255,255,0.45);
+    font-size: 0.72rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 1.5rem;
-    text-align: center;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.25rem;
   }
-  .type-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  .type-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.6rem;
+    margin-bottom: 2rem;
   }
-  .type-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 10px;
-    padding: 1rem 0.6rem;
-    text-align: center;
-    transition: var(--transition);
-    font-size: 0.78rem;
+  .type-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50px;
+    font-size: 0.82rem;
     font-weight: 500;
     color: rgba(255,255,255,0.7);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+    transition: all 0.25s ease;
+    text-decoration: none;
   }
-  .type-card:hover {
-    background: rgba(74,155,223,0.1);
-    border-color: rgba(74,155,223,0.25);
-    transform: translateY(-2px);
-    color: var(--white);
+  .type-pill svg {
+    stroke: rgba(255,255,255,0.4);
+    transition: all 0.25s ease;
+    flex-shrink: 0;
   }
-  .type-card:hover .type-icon {
-    background: rgba(74,155,223,0.2);
+  .type-pill:hover {
+    background: rgba(74,155,223,0.15);
     border-color: rgba(74,155,223,0.35);
+    color: var(--white);
+    transform: translateY(-1px);
   }
-  .type-card:hover .type-icon svg { stroke: var(--blue-300); }
-  .type-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
+  .type-pill:hover svg { stroke: var(--blue-300); }
+
+  .type-cta {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transition);
+    gap: 1.25rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
   }
-  .type-icon svg { stroke: rgba(255,255,255,0.5); transition: var(--transition); }
-  .type-cta { text-align: center; margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.06); }
-  .type-cta p { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-bottom: 0.75rem; }
+  .type-cta span {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.45);
+  }
+  .btn-sm {
+    padding: 0.55rem 1.25rem;
+    font-size: 0.85rem;
+  }
 
-  /* ============================================
-     POURQUOI / COMPARE
-     ============================================ */
-  .pourquoi { padding: 6rem 0; background: var(--gray-50); }
-  .compare-table {
-    max-width: 780px;
-    margin: 0 auto;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--gray-200);
-  }
-  .compare-header {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
-    background: var(--gray-100);
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--gray-500);
-  }
-  .compare-header > div { padding: 0.9rem 1.25rem; }
-  .compare-me { color: var(--blue-600); }
-  .compare-row {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
-    border-top: 1px solid var(--gray-100);
-    background: var(--white);
-    font-size: 0.9rem;
-    transition: var(--transition-fast);
-  }
-  .compare-row:hover { background: var(--blue-50); }
-  .compare-row > div { padding: 1rem 1.25rem; }
-  .compare-label { font-weight: 600; color: var(--gray-800); }
-  .compare-them { color: var(--gray-500); }
+  /* (Section Avantages supprimée — contenu fusionné dans Spécialisation) */
   .highlight {
     color: var(--blue-600);
     font-weight: 600;
@@ -1863,7 +1886,7 @@ import Layout from '../layouts/Layout.astro';
     .dash-main { transform: none; }
     .dash-float { display: none; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
-    .commerces-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .commerces-benefits-grid { grid-template-columns: repeat(2, 1fr); }
     .temoignages-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
     .contact-grid { grid-template-columns: 1fr; }
     .footer-top { flex-direction: column; gap: 2rem; }
@@ -1889,7 +1912,7 @@ import Layout from '../layouts/Layout.astro';
     }
     .nav-list.open { transform: translateY(0); opacity: 1; pointer-events: all; }
 
-    .hero { padding: 7rem 0 3rem; }
+    .hero { padding: 6rem 0 2.5rem; }
     .hero-layout { grid-template-columns: 1fr; }
     .hero-visual { display: none; }
     .hero h1 { font-size: 2.4rem; }
@@ -1897,10 +1920,13 @@ import Layout from '../layouts/Layout.astro';
     .hero-stats { flex-wrap: wrap; gap: 1rem; }
     .stat-divider { display: none; }
 
+    .reassurance-inner { gap: 1rem; }
+    .reassurance-divider { display: none; }
+    .reassurance-item { flex: 0 0 auto; }
+
     .services-grid { grid-template-columns: 1fr; }
-    .type-grid { grid-template-columns: repeat(3, 1fr); }
-    .compare-table { font-size: 0.82rem; }
-    .compare-header > div, .compare-row > div { padding: 0.7rem 0.75rem; }
+    .commerces-benefits-grid { grid-template-columns: 1fr 1fr; }
+    .type-cta { flex-direction: column; gap: 0.75rem; }
     .form-row { grid-template-columns: 1fr; }
     .footer-nav { gap: 2rem; }
 
@@ -1912,14 +1938,13 @@ import Layout from '../layouts/Layout.astro';
     .hero-cta { flex-direction: column; }
     .hero-cta .btn { width: 100%; justify-content: center; }
     .hero-stats { width: 100%; justify-content: space-around; }
-    .type-grid { grid-template-columns: repeat(2, 1fr); }
-    .compare-table { grid-template-columns: 1fr; }
-    .compare-header { display: none; }
-    .compare-row { grid-template-columns: 1fr; gap: 0; }
-    .compare-row > div { padding: 0.4rem 1rem; }
-    .compare-label { padding-top: 0.8rem !important; }
-    .compare-them::before { content: 'Grand groupe : '; font-weight: 400; color: var(--gray-400); }
-    .compare-me::before { content: 'MM Sécurité : '; font-weight: 400; }
+    .commerces-benefits-grid { grid-template-columns: 1fr; }
     .footer-nav { flex-direction: column; }
+
+    .reassurance-inner { gap: 0.75rem; justify-content: flex-start; }
+    .reassurance-icon { width: 32px; height: 32px; border-radius: 8px; }
+    .reassurance-icon svg { width: 16px; height: 16px; }
+    .reassurance-text strong { font-size: 0.78rem; }
+    .reassurance-text span { font-size: 0.68rem; }
   }
 </style>

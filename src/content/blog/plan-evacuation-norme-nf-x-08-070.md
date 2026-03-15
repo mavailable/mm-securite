@@ -1,0 +1,60 @@
+---
+title: "Plans d'évacuation : la norme NF X 08-070 expliquée simplement"
+description: "Votre commerce doit afficher un plan d'évacuation conforme à la norme NF X 08-070. Contenu obligatoire, format, emplacement : tout ce qu'il faut savoir."
+date: 2026-02-07
+tags: ["plan d'évacuation", "norme NF", "ERP", "sécurité incendie"]
+---
+
+Le plan d'évacuation est un des documents les plus vérifiés lors du passage de la commission de sécurité. Pourtant, beaucoup de commerces n'en ont pas, ou affichent un plan qui ne respecte pas la norme. Voici ce que la norme NF X 08-070 exige concrètement.
+
+## Pourquoi un plan d'évacuation est obligatoire
+
+Dans un ERP, l'objectif premier en cas d'incendie est l'évacuation rapide et ordonnée du public. Le plan d'évacuation est l'outil visuel qui permet à toute personne — client, employé, pompier — de repérer immédiatement les sorties de secours, les cheminements d'évacuation et les équipements de sécurité.
+
+L'obligation s'applique à tous les ERP, y compris ceux de catégorie 5. Le plan doit être affiché de manière visible dans les parties communes et à proximité des escaliers et des ascenseurs.
+
+## Ce que doit contenir un plan conforme
+
+La norme NF X 08-070 définit précisément le contenu et la présentation du plan d'évacuation.
+
+**Le plan des locaux** représente l'étage ou le niveau concerné, à l'échelle, avec les murs, les cloisons, les portes et les ouvertures. L'orientation du plan doit correspondre à l'orientation réelle du bâtiment vu depuis l'emplacement d'affichage — si vous regardez vers le nord en lisant le plan, le nord doit être en haut.
+
+**Les cheminements d'évacuation** sont représentés par des flèches vertes indiquant le chemin le plus court vers les sorties de secours depuis l'emplacement du plan. Le fameux "Vous êtes ici" doit être clairement indiqué.
+
+**Les sorties de secours** sont signalées par le pictogramme normalisé (personnage blanc sur fond vert courant vers une porte). Toutes les sorties accessibles doivent figurer sur le plan.
+
+**Les équipements de sécurité** sont représentés par leurs pictogrammes normalisés. Cela inclut les extincteurs (pictogramme rouge), les déclencheurs manuels d'alarme (pictogramme rouge), les robinets d'incendie armés (RIA) s'il y en a, et les espaces d'attente sécurisés pour les personnes à mobilité réduite.
+
+**Les consignes de sécurité** doivent figurer sur le plan ou à côté. Elles rappellent les réflexes en cas d'incendie : donner l'alerte, ne pas utiliser les ascenseurs, ne pas revenir en arrière, se diriger vers le point de rassemblement.
+
+## Les règles de présentation
+
+La norme impose des couleurs et des pictogrammes standardisés pour que le plan soit compréhensible par tous, quelle que soit la langue. Le vert est utilisé pour les cheminements d'évacuation et les sorties. Le rouge pour les équipements de lutte contre l'incendie. Le fond du plan est clair (blanc ou crème) pour une bonne lisibilité.
+
+La taille minimale recommandée est le format A3 (420 x 297 mm) pour garantir que le plan soit lisible à distance. Pour les grands locaux ou les niveaux complexes, le format A2 peut être nécessaire.
+
+Le plan doit être protégé (sous verre, plastifié ou dans un cadre) et installé à une hauteur comprise entre 0,90 m et 1,30 m du sol pour être accessible aux personnes en fauteuil roulant.
+
+## Plan d'évacuation vs plan d'intervention
+
+Attention à ne pas confondre les deux. Le **plan d'évacuation** est destiné au public et aux occupants. Il montre comment sortir du bâtiment. Le **plan d'intervention** est destiné aux pompiers. Il montre l'implantation des équipements de sécurité, les vannes de coupure (gaz, électricité, eau), les locaux à risque et les accès pour les secours. Il est généralement affiché à l'entrée principale du bâtiment, à destination exclusive des services de secours.
+
+Pour un petit commerce de catégorie 5, le plan d'évacuation est toujours obligatoire. Le plan d'intervention peut être exigé selon le type d'activité et les demandes de la commission.
+
+## Les erreurs courantes
+
+Plusieurs erreurs reviennent fréquemment lors des contrôles de la commission de sécurité.
+
+Le plan n'est pas orienté correctement. Un plan dont le nord ne correspond pas à l'orientation réelle du lecteur est désorientant et potentiellement dangereux en situation d'urgence.
+
+Le plan n'est pas à jour. Si vous avez réorganisé vos locaux, ajouté une cloison ou déplacé un extincteur, le plan doit être mis à jour en conséquence.
+
+Les pictogrammes ne sont pas conformes à la norme. Des symboles fantaisistes ou des annotations manuscrites ne remplacent pas les pictogrammes normalisés ISO 7010.
+
+Le plan est affiché mais invisible. Un plan caché derrière une porte, posé sur un meuble ou placé trop haut n'est pas conforme.
+
+## Faire réaliser ses plans par un professionnel
+
+La conception d'un plan d'évacuation conforme à la norme NF X 08-070 demande une bonne connaissance de la réglementation et des pictogrammes normalisés. Un plan réalisé par un professionnel garantit la conformité et vous évite des remarques lors du passage de la commission.
+
+Je réalise les plans d'évacuation pour les commerces et petits ERP à Metz et dans le Grand Est. Le processus est simple : relevé sur place, conception du plan conforme, impression sur support rigide et installation. Le plan est livré prêt à afficher, avec les consignes de sécurité intégrées.

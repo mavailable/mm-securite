@@ -58,8 +58,25 @@ Un ERP (Établissement Recevant du Public) est tout bâtiment ou local accueilla
 **La vidéosurveillance est-elle conforme au RGPD ?**
 Oui, à condition de respecter certaines règles : affichage d'un panneau d'information visible, déclaration en préfecture pour les lieux ouverts au public, durée de conservation des images limitée (généralement 30 jours), et accès restreint aux images. MM Sécurité installe des systèmes conformes et vous accompagne dans les démarches administratives.
 
+## Articles de blog
+
+MM Sécurité publie régulièrement des guides pratiques pour aider les commerçants à comprendre leurs obligations et à choisir les bons équipements de sécurité.
+
+- [Obligations de sécurité pour un ERP de catégorie 5](https://mm-securite.fr/blog/obligations-securite-erp-categorie-5): Guide complet des obligations incendie, alarme et évacuation pour les petits commerces classés ERP catégorie 5.
+- [Comment choisir une alarme intrusion pour son commerce](https://mm-securite.fr/blog/choisir-alarme-intrusion-commerce): Guide pratique — filaire vs sans fil, composants essentiels, télésurveillance, erreurs à éviter et budget.
+- [Vidéosurveillance en commerce et conformité RGPD](https://mm-securite.fr/blog/videosurveillance-commerce-rgpd): Obligations légales pour installer des caméras dans un commerce — déclaration préfecture, affichage, durée de conservation, zones interdites.
+- [Préparer la visite de la commission de sécurité](https://mm-securite.fr/blog/preparer-commission-securite-commerce): Checklist complète pour passer la commission de sécurité sans stress — registre, extincteurs, plans, balisage.
+- [Cambriolage de commerce : que faire avant, pendant et après](https://mm-securite.fr/blog/cambriolage-commerce-que-faire): Réflexes immédiats, démarches assurance, et solutions de protection pour éviter un nouveau cambriolage.
+- [Contrôle d'accès pour commerce : badges, digicodes et solutions modernes](https://mm-securite.fr/blog/controle-acces-commerce-guide): Guide des technologies de contrôle d'accès — digicode, badge RFID, smartphone, biométrie — et intégration avec l'alarme.
+- [Détecteur incendie en commerce : obligations et choix du matériel](https://mm-securite.fr/blog/detecteur-incendie-obligatoire-commerce): DAAF, SSI, détecteurs de fumée vs chaleur — tout comprendre pour choisir le bon équipement selon votre activité.
+- [Plans d'évacuation : la norme NF X 08-070 expliquée](https://mm-securite.fr/blog/plan-evacuation-norme-nf-x-08-070): Contenu obligatoire, pictogrammes normalisés, format et emplacement des plans d'évacuation conformes.
+- [Sécurité d'un restaurant : obligations des ERP de type N](https://mm-securite.fr/blog/securite-restaurant-obligations-erp-type-n): Guide complet pour restaurateurs — détection incendie en cuisine, extraction, gaz, extincteurs et conformité ERP.
+- [Alarme connectée pour commerce : gérer la sécurité depuis votre smartphone](https://mm-securite.fr/blog/alarme-connectee-smartphone-commerce): Notifications temps réel, levée de doute vidéo, activation à distance — fonctionnement et avantages des alarmes connectées.
+- [Sécurité d'une boulangerie-pâtisserie : alarme, incendie et conformité](https://mm-securite.fr/blog/securite-boulangerie-patisserie): Solutions adaptées aux horaires décalés, détection incendie en fournil, alarme et vidéosurveillance pour boulangers.
+
 ## Pages du site
 
 - [Accueil](https://mm-securite.fr): Page principale avec présentation des services, zone d'intervention et formulaire de contact.
+- [Blog](https://mm-securite.fr/blog): Articles et guides pratiques sur la sécurité des commerces.
 - [Mentions légales](https://mm-securite.fr/mentions-legales): Informations légales sur l'entreprise Marc Muller EI.
 - [Politique de confidentialité](https://mm-securite.fr/politique-de-confidentialite): Politique RGPD et traitement des données personnelles.
