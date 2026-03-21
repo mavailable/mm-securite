@@ -1,0 +1,195 @@
+/**
+ * MM Sécurité — Design System Tokens
+ * Source de vérité pour toutes les couleurs, shadows, radius et transitions.
+ * Importé dans Layout.astro pour être disponible sur toutes les pages.
+ *
+ * POLICES : Inter auto-hébergée (woff2 dans public/fonts/).
+ * Aucune requête vers Google. Conforme RGPD.
+ * Pour télécharger les fichiers : bash scripts/download-inter-fonts.sh
+ */
+
+/* ──────────────────────────────────────────────────────
+   POLICES AUTO-HÉBERGÉES — Inter (Latin subset)
+   Fichiers : public/fonts/inter-latin-{weight}-normal.woff2
+   Téléchargement : bash scripts/download-inter-fonts.sh
+────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter-latin-500-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter-latin-600-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/inter-latin-800-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* ─────────────────────────────────────────────────────
+     PALETTE BLUE (primary) — 11 nuances (50 → 950)
+  ───────────────────────────────────────────────────── */
+  --blue-950: #071527;
+  --blue-900: #0c2340;
+  --blue-800: #102e52;
+  --blue-700: #1a4a7a;
+  --blue-600: #1e5ea6;
+  --blue-500: #2874c2;
+  --blue-400: #4a9bdf;
+  --blue-300: #7bb8ea;
+  --blue-200: #b3d4f5;
+  --blue-100: #dbeafe;
+  --blue-50:  #eff6ff;
+
+  /* ─────────────────────────────────────────────────────
+     PALETTE GRAY (neutral) — 11 nuances (50 → 950)
+  ───────────────────────────────────────────────────── */
+  --gray-950: #030712;
+  --gray-900: #111827;
+  --gray-800: #1f2937;
+  --gray-700: #374151;
+  --gray-600: #4b5563;
+  --gray-500: #6b7280;
+  --gray-400: #9ca3af;
+  --gray-300: #d1d5db;
+  --gray-200: #e5e7eb;
+  --gray-100: #f3f4f6;
+  --gray-50:  #f9fafb;
+
+  /* ─────────────────────────────────────────────────────
+     PALETTE RED (danger/alerte) — 9 nuances
+  ───────────────────────────────────────────────────── */
+  --red-900: #7f1d1d;
+  --red-700: #b91c1c;
+  --red-600: #dc2626;
+  --red-500: #ef4444;
+  --red-400: #f87171;
+  --red-300: #fca5a5;
+  --red-200: #fecaca;
+  --red-100: #fee2e2;
+  --red-50:  #fef2f2;
+
+  /* ─────────────────────────────────────────────────────
+     PALETTE GREEN (succès/sécurité) — 9 nuances
+  ───────────────────────────────────────────────────── */
+  --green-900: #14532d;
+  --green-700: #15803d;
+  --green-600: #16a34a;
+  --green-500: #22c55e;
+  --green-400: #4ade80;
+  --green-300: #86efac;
+  --green-200: #bbf7d0;
+  --green-100: #dcfce7;
+  --green-50:  #f0fdf4;
+
+  /* ─────────────────────────────────────────────────────
+     PALETTE AMBER (avertissement) — 9 nuances
+  ───────────────────────────────────────────────────── */
+  --amber-900: #78350f;
+  --amber-700: #b45309;
+  --amber-600: #d97706;
+  --amber-500: #f59e0b;
+  --amber-400: #fbbf24;
+  --amber-300: #fcd34d;
+  --amber-200: #fde68a;
+  --amber-100: #fef3c7;
+  --amber-50:  #fffbeb;
+
+  /* Blanc pur (alias explicite) */
+  --white: #ffffff;
+
+  /* ─────────────────────────────────────────────────────
+     BORDER RADIUS
+  ───────────────────────────────────────────────────── */
+  --radius-sm:   8px;
+  --radius:     10px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-full: 9999px;
+
+  /* ─────────────────────────────────────────────────────
+     SHADOWS
+  ───────────────────────────────────────────────────── */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+  /* ─────────────────────────────────────────────────────
+     TRANSITIONS
+  ───────────────────────────────────────────────────── */
+  --transition:      0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ─────────────────────────────────────────────────────
+     TYPOGRAPHIE
+  ───────────────────────────────────────────────────── */
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --font-size-xs:   0.75rem;   /* 12px */
+  --font-size-sm:   0.875rem;  /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg:   1.125rem;  /* 18px */
+  --font-size-xl:   1.25rem;   /* 20px */
+  --font-size-2xl:  1.5rem;    /* 24px */
+  --font-size-3xl:  1.875rem;  /* 30px */
+  --font-size-4xl:  2.25rem;   /* 36px */
+}
+
+/* ──────────────────────────────────────────────────────
+   RÈGLES WCAG AA — Opacités texte blanc sur fond sombre
+   Règle : color opacity ≥ 0.9 sur tout fond sombre
+   (--blue-700+, --gray-800+)
+────────────────────────────────────────────────────── */
+/* Rappel pour les développeurs :
+   ✅  color: rgba(255,255,255,0.9)   — texte secondaire
+   ✅  color: #ffffff                  — texte principal
+   ❌  color: rgba(255,255,255,0.6)   — WCAG FAIL (~3.5:1 sur --blue-900)
+   ❌  color: rgba(255,255,255,0.7)   — WCAG FAIL (~4.2:1 sur --blue-900)
+*/

@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="MM Sécurité | Alarme & Vidéosurveillance pour commerces — Metz & Grand Est"
+  title="MM Sécurité | Alarme & Vidéosurveillance commerces Metz"
   description="Marc Muller, technicien en sécurité pour commerces à Metz. Alarme intrusion, incendie, vidéosurveillance, contrôle d'accès et mise en conformité ERP. Devis gratuit sous 48h."
 >
 
@@ -887,6 +887,14 @@ import Layout from '../layouts/Layout.astro';
     --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* Focus visible — accessibilité clavier */
+  :focus-visible {
+    outline: 2px solid var(--blue-500);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+  :focus:not(:focus-visible) { outline: none; }
+
   html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
   body {
@@ -1340,7 +1348,7 @@ import Layout from '../layouts/Layout.astro';
   /* ============================================
      SERVICES
      ============================================ */
-  .services { padding: 6rem 0; }
+  .services { padding: 6rem 0; background: var(--gray-50); }
   .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1439,7 +1447,7 @@ import Layout from '../layouts/Layout.astro';
   .commerces-subtitle {
     font-size: 1.05rem;
     line-height: 1.75;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.9);
   }
 
   .commerces-benefits-grid {
@@ -1478,7 +1486,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .benefit-card p {
     font-size: 0.85rem;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.9);
     line-height: 1.55;
     margin: 0;
   }
@@ -1487,7 +1495,7 @@ import Layout from '../layouts/Layout.astro';
     text-align: center;
   }
   .types-title {
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.9);
     font-size: 0.72rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1511,7 +1519,7 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 50px;
     font-size: 0.82rem;
     font-weight: 500;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.9);
     transition: all 0.25s ease;
     text-decoration: none;
   }
@@ -1538,7 +1546,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .type-cta span {
     font-size: 0.88rem;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.9);
   }
   .btn-sm {
     padding: 0.55rem 1.25rem;
@@ -1622,7 +1630,7 @@ import Layout from '../layouts/Layout.astro';
   /* ============================================
      ZONE
      ============================================ */
-  .zone { padding: 5rem 0; }
+  .zone { padding: 5rem 0; background: var(--gray-50); }
   .zone-content {
     display: grid;
     grid-template-columns: 1fr 1fr;

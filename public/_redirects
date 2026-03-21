@@ -1,0 +1,12 @@
+# Redirects 301 — blog slugs avec .md (URLs cassées générées par Astro 5)
+/blog/alarme-connectee-smartphone-commerce.md /blog/alarme-connectee-smartphone-commerce 301
+/blog/cambriolage-commerce-que-faire.md /blog/cambriolage-commerce-que-faire 301
+/blog/choisir-alarme-intrusion-commerce.md /blog/choisir-alarme-intrusion-commerce 301
+/blog/controle-acces-commerce-guide.md /blog/controle-acces-commerce-guide 301
+/blog/detecteur-incendie-obligatoire-commerce.md /blog/detecteur-incendie-obligatoire-commerce 301
+/blog/obligations-securite-erp-categorie-5.md /blog/obligations-securite-erp-categorie-5 301
+/blog/plan-evacuation-norme-nf-x-08-070.md /blog/plan-evacuation-norme-nf-x-08-070 301
+/blog/preparer-commission-securite-commerce.md /blog/preparer-commission-securite-commerce 301
+/blog/securite-boulangerie-patisserie.md /blog/securite-boulangerie-patisserie 301
+/blog/securite-restaurant-obligations-erp-type-n.md /blog/securite-restaurant-obligations-erp-type-n 301
+/blog/videosurveillance-commerce-rgpd.md /blog/videosurveillance-commerce-rgpd 301
