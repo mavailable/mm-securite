@@ -59,7 +59,8 @@ const canonical = new URL(Astro.url.pathname, 'https://mm-securite.fr').href;
     <!-- Google Fonts — non render-blocking -->
     <title>{title}</title>
 
-    <!-- Cloudflare Web Analytics : injection automatique via Cloudflare Pages (Automatic setup) -->
+    <!-- Umami Analytics — privacy-first, no cookies, RGPD natif -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="13c56d5e-7dcb-4c57-a8fe-b46e9d359550"></script>
 
     <!-- Theme color -->
     <meta name="theme-color" content="#0c2340" />

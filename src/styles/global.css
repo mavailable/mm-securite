@@ -193,3 +193,67 @@
    ❌  color: rgba(255,255,255,0.6)   — WCAG FAIL (~3.5:1 sur --blue-900)
    ❌  color: rgba(255,255,255,0.7)   — WCAG FAIL (~4.2:1 sur --blue-900)
 */
+
+/* ──────────────────────────────────────────────────────
+   ARTICLES ASSOCIÉS — Section commune aux pages service
+────────────────────────────────────────────────────── */
+.sp-related {
+  background: var(--blue-50, #eff6ff);
+  border-top: 1px solid var(--blue-100, #dbeafe);
+  padding: 3rem 1.5rem;
+}
+.sp-related-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.sp-related h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+}
+.sp-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.sp-related-card {
+  background: #fff;
+  border: 1px solid var(--blue-100, #dbeafe);
+  border-left: 4px solid var(--blue-600, #1e5ea6);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.sp-related-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(30, 94, 166, 0.1);
+  border-left-color: var(--blue-700, #1a4f8f);
+}
+.sp-related-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--blue-700, #1a4f8f);
+  margin: 0;
+  line-height: 1.4;
+}
+.sp-related-card p {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  margin: 0;
+  line-height: 1.5;
+}
+.sp-related-card::after {
+  content: '→';
+  font-size: 0.9rem;
+  color: var(--blue-400, #60a5fa);
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
