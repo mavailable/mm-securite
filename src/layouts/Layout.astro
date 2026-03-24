@@ -56,11 +56,10 @@ const canonical = new URL(Astro.url.pathname, 'https://mm-securite.fr').href;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 
-    <!-- Google Fonts — non render-blocking -->
     <title>{title}</title>
 
     <!-- Umami Analytics — privacy-first, no cookies, RGPD natif -->
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="13c56d5e-7dcb-4c57-a8fe-b46e9d359550"></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="13c56d5e-7dcb-4c57-a8fe-b46e9d359550" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous" is:inline></script>
 
     <!-- Theme color -->
     <meta name="theme-color" content="#0c2340" />
@@ -221,10 +220,36 @@ const canonical = new URL(Astro.url.pathname, 'https://mm-securite.fr').href;
     })} />
   </head>
   <body>
-    <a href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.cssText='position:fixed;top:1rem;left:1rem;z-index:9999;background:#1e5ea6;color:#fff;padding:.5rem 1rem;border-radius:.375rem;font-weight:600;text-decoration:none;';" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;';">
+    <a href="#main-content" id="skip-link" class="skip-link">
       Aller au contenu principal
     </a>
-    <div id="main-content" tabindex="-1" style="outline:none;"></div>
-    <slot />
+    <style>
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .skip-link:focus {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 9999;
+        background: #1e5ea6;
+        color: #fff;
+        padding: .5rem 1rem;
+        border-radius: .375rem;
+        font-weight: 600;
+        text-decoration: none;
+        width: auto;
+        height: auto;
+        overflow: visible;
+      }
+    </style>
+    <main id="main-content" tabindex="-1" style="outline:none;">
+      <slot />
+    </main>
   </body>
 </html>
