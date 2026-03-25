@@ -11,7 +11,17 @@ import '../styles/global.css';
     <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content="Page introuvable — MM Sécurité" />
     <title>Page introuvable | MM Sécurité</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />    <!-- Cloudflare Web Analytics : injection automatique via Cloudflare Pages -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Umami Analytics — track 404 errors -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="13c56d5e-7dcb-4c57-a8fe-b46e9d359550" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous" is:inline></script>
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof umami !== 'undefined') {
+          umami.track('404-page-view', { path: window.location.pathname + window.location.search });
+        }
+      });
+    </script>
+    <!-- Cloudflare Web Analytics : injection automatique via Cloudflare Pages -->
     <meta name="theme-color" content="#0c2340" />
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }

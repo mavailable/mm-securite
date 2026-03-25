@@ -1,0 +1,20 @@
+---
+import { business } from '../data/business';
+---
+
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Questions fréquentes</span>
+      <h2>Tout ce qu'il faut savoir sur<br /><strong>la sécurité de votre commerce</strong></h2>
+    </div>
+    <div class="faq-list">
+      {business.faq.map(item => (
+        <details class="faq-item">
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

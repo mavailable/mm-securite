@@ -7,9 +7,11 @@ interface Props {
   date: Date;
   updated?: Date;
   tags?: string[];
+  image?: string;
 }
 
-const { title, description, date, updated, tags = [] } = Astro.props;
+const { title, description, date, updated, tags = [], image } = Astro.props;
+const ogImage = image ? new URL(image, 'https://mm-securite.fr').href : 'https://mm-securite.fr/og-image.png';
 
 const formattedDate = date.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
 const formattedUpdated = updated?.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -33,10 +35,10 @@ const canonical = `https://mm-securite.fr${Astro.url.pathname}`;
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="MM Sécurité" />
-    <meta property="og:image" content="https://mm-securite.fr/og-image.png" />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="MM Sécurité — Alarme & Vidéosurveillance pour commerces à Metz" />
+    <meta property="og:image:alt" content={`${title} — MM Sécurité`} />
     <meta property="article:published_time" content={isoDate} />
     {isoUpdated && <meta property="article:modified_time" content={isoUpdated} />}
 
@@ -44,7 +46,7 @@ const canonical = `https://mm-securite.fr${Astro.url.pathname}`;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://mm-securite.fr/og-image.png" />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Canonical -->
     <link rel="canonical" href={canonical} />
@@ -333,7 +335,7 @@ const canonical = `https://mm-securite.fr${Astro.url.pathname}`;
 
     <footer class="blog-footer">
       <p>&copy; {new Date().getFullYear()} MM Sécurité — Marc Muller | <a href="/">Retour au site</a> | <a href="/mentions-legales">Mentions légales</a></p>
-      <p style="font-size:0.75rem;opacity:0.5;margin-top:0.4rem;"><a href="https://marcm.fr/100-sites-artisans/" style="color:inherit;text-decoration:none;" target="_blank" rel="noopener noreferrer">Site réalisé par Marc M. · Spécialiste sites web pour techniciens sécurité</a></p>
+      <p style="font-size:0.75rem;opacity:0.7;margin-top:0.4rem;"><a href="https://marcm.fr/100-sites-artisans/" style="color:inherit;text-decoration:none;" target="_blank" rel="noopener noreferrer">Site réalisé par Marc M. · Spécialiste sites web pour techniciens sécurité</a></p>
     </footer>
   </body>
 </html>

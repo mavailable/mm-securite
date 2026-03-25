@@ -100,9 +100,11 @@
   --gray-50:  #f9fafb;
 
   /* ─────────────────────────────────────────────────────
-     PALETTE RED (danger/alerte) — 9 nuances
+     PALETTE RED (danger/alerte) — 11 nuances (50 → 950)
   ───────────────────────────────────────────────────── */
+  --red-950: #450a0a;
   --red-900: #7f1d1d;
+  --red-800: #991b1b;
   --red-700: #b91c1c;
   --red-600: #dc2626;
   --red-500: #ef4444;
@@ -113,9 +115,11 @@
   --red-50:  #fef2f2;
 
   /* ─────────────────────────────────────────────────────
-     PALETTE GREEN (succès/sécurité) — 9 nuances
+     PALETTE GREEN (succès/sécurité) — 11 nuances (50 → 950)
   ───────────────────────────────────────────────────── */
+  --green-950: #052e16;
   --green-900: #14532d;
+  --green-800: #166534;
   --green-700: #15803d;
   --green-600: #16a34a;
   --green-500: #22c55e;
@@ -126,9 +130,11 @@
   --green-50:  #f0fdf4;
 
   /* ─────────────────────────────────────────────────────
-     PALETTE AMBER (avertissement) — 9 nuances
+     PALETTE AMBER (avertissement) — 11 nuances (50 → 950)
   ───────────────────────────────────────────────────── */
+  --amber-950: #451a03;
   --amber-900: #78350f;
+  --amber-800: #92400e;
   --amber-700: #b45309;
   --amber-600: #d97706;
   --amber-500: #f59e0b;

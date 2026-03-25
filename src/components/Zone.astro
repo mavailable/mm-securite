@@ -1,0 +1,34 @@
+---
+import { business } from '../data/business';
+---
+
+<section class="zone" id="zone">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Zone d'intervention</span>
+      <h2>Basé à Metz,<br /><strong>j'interviens dans tout le Grand Est</strong></h2>
+    </div>
+    <div class="zone-content">
+      <div class="zone-tags">
+        <span class="zone-main">{business.areaServed.cities[0]}</span>
+        {business.areaServed.cities.slice(1).map(city => (
+          <span>{city}</span>
+        ))}
+        {business.areaServed.departments.map(dept => (
+          <span class="zone-dept">{dept}</span>
+        ))}
+        <span class="zone-region">{business.areaServed.region}</span>
+        {business.areaServed.international.map(country => (
+          <span>{country}</span>
+        ))}
+      </div>
+      <div class="zone-map" id="map-container">
+        <button type="button" id="map-placeholder" style="width:100%;height:320px;border-radius:var(--radius-md);background:var(--gray-200);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;border:1px solid var(--gray-300);transition:background 0.2s;font-family:inherit;" onclick="window.loadMap()">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="var(--gray-500)" stroke-width="1.5" width="40" height="40" style="margin-bottom:0.75rem;"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+          <span style="font-weight:600;color:var(--gray-700);font-size:0.95rem;">Voir la carte interactive</span>
+          <span style="font-size:0.8rem;color:var(--gray-500);margin-top:0.25rem;">Metz et Grand Est</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

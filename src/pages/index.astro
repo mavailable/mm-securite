@@ -1,5 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FAQ from '../components/FAQ.astro';
+import Temoignages from '../components/Temoignages.astro';
+import Zone from '../components/Zone.astro';
+import Contact from '../components/Contact.astro';
+import MobileStickyCTA from '../components/MobileStickyCTA.astro';
+import { business } from '../data/business';
 ---
 
 <Layout
@@ -7,37 +15,7 @@ import Layout from '../layouts/Layout.astro';
   description="Marc Muller, technicien en sécurité pour commerces à Metz. Alarme intrusion, incendie, vidéosurveillance, contrôle d'accès et mise en conformité ERP. Devis gratuit sous 48h."
 >
 
-  <!-- HEADER -->
-  <header class="header" id="top">
-    <div class="container header-inner">
-      <a href="#top" class="logo">
-        <span class="logo-icon">
-          <svg aria-hidden="true" viewBox="0 0 28 28" width="28" height="28" fill="none">
-            <rect width="28" height="28" rx="6" fill="#1e5ea6"/>
-            <path d="M6 19V9l4.5 5L15 9v10M15 9l4.5 5L24 9v10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span class="logo-text">Sécurité</span>
-      </a>
-      <a href="tel:+33688766648" class="header-phone" aria-label="Appeler">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-        <span class="header-phone-text">06 88 76 66 48</span>
-      </a>
-      <nav class="nav" aria-label="Navigation principale">
-        <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-list">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#commerces">Commerces</a></li>
-          <li><a href="/a-propos">À propos</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/devis-gratuit" class="btn btn-nav">Devis gratuit</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <Header />
 
   <!-- HERO -->
   <section class="hero">
@@ -366,329 +344,17 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- TEMOIGNAGES -->
-  <section class="temoignages" id="avis">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Avis clients</span>
-        <h2>Ce que disent<br /><strong>mes clients</strong></h2>
-      </div>
-      <div class="temoignages-grid">
-        <blockquote class="temoignage-card">
-          <div class="temoignage-stars" aria-label="5 étoiles">
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="temoignage-text">Marc a installé notre système d'alarme et les caméras en une journée. Tout fonctionne parfaitement, l'application sur le téléphone est très pratique. Je recommande à tous les commerçants du quartier.</p>
-          <footer class="temoignage-author">
-            <div class="temoignage-avatar">S</div>
-            <div>
-              <strong>Sophie L.</strong>
-              <span>Boulangerie — Metz Centre</span>
-            </div>
-          </footer>
-        </blockquote>
+  <Temoignages />
 
-        <blockquote class="temoignage-card">
-          <div class="temoignage-stars" aria-label="5 étoiles">
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="temoignage-text">On avait la commission de sécurité en urgence. Marc a fait l'audit, installé la détection incendie et préparé tous les documents en 10 jours. Commission passée sans remarque. Sérieux et efficace.</p>
-          <footer class="temoignage-author">
-            <div class="temoignage-avatar">P</div>
-            <div>
-              <strong>Philippe D.</strong>
-              <span>Restaurant — Thionville</span>
-            </div>
-          </footer>
-        </blockquote>
+  <Zone />
 
-        <blockquote class="temoignage-card">
-          <div class="temoignage-stars" aria-label="5 étoiles">
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="#f59e0b" width="16" height="16"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="temoignage-text">Très bon contact, Marc prend le temps d'expliquer le fonctionnement de chaque équipement. Le suivi après installation est top. Mon salon est maintenant bien protégé et je gère tout depuis mon téléphone.</p>
-          <footer class="temoignage-author">
-            <div class="temoignage-avatar">N</div>
-            <div>
-              <strong>Nadia K.</strong>
-              <span>Salon de coiffure — Nancy</span>
-            </div>
-          </footer>
-        </blockquote>
-      </div>
-      <p class="temoignage-note">Ces témoignages reflètent l'expérience de clients réels. Les prénoms ont été modifiés par souci de confidentialité.</p>
-    </div>
-  </section>
+  <FAQ />
 
-  <!-- ZONE -->
-  <section class="zone" id="zone">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Zone d'intervention</span>
-        <h2>Basé à Metz,<br /><strong>j'interviens dans tout le Grand Est</strong></h2>
-      </div>
-      <div class="zone-content">
-        <div class="zone-tags">
-          <span class="zone-main">Metz</span>
-          <span>Thionville</span>
-          <span>Nancy</span>
-          <span>Forbach</span>
-          <span>Sarreguemines</span>
-          <span>Épinal</span>
-          <span>Pont-à-Mousson</span>
-          <span>Hagondange</span>
-          <span class="zone-dept">Moselle (57)</span>
-          <span class="zone-dept">Meurthe-et-Moselle (54)</span>
-          <span class="zone-region">Grand Est</span>
-          <span>Luxembourg</span>
-        </div>
-        <div class="zone-map" id="map-container">
-          <div id="map-placeholder" role="button" tabindex="0" style="width:100%;height:320px;border-radius:12px;background:#e5e7eb;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;border:1px solid #d1d5db;transition:background 0.2s;" onclick="window.loadMap()" onkeydown="if(event.key==='Enter'||event.key===' ')window.loadMap()">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.5" width="40" height="40" style="margin-bottom:0.75rem;"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-            <span style="font-weight:600;color:#374151;font-size:0.95rem;">Voir la carte interactive</span>
-            <span style="font-size:0.8rem;color:#6b7280;margin-top:0.25rem;">Metz et Grand Est</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Contact />
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Questions fréquentes</span>
-        <h2>Tout ce qu'il faut savoir sur<br /><strong>la sécurité de votre commerce</strong></h2>
-      </div>
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>Quelles sont les obligations de sécurité pour un petit commerce ?</summary>
-          <p>Tout commerce recevant du public (ERP) doit disposer d'un système de détection incendie, de plans d'évacuation conformes à la norme NF X 08-070, d'un balisage de sécurité et d'un registre de sécurité à jour. Les obligations précises varient selon la catégorie de l'ERP (de 1 à 5, déterminée par la capacité d'accueil) et le type d'activité (M pour magasin, N pour restaurant, O pour hôtel, etc.). Un commerce de catégorie 5 (moins de 200 personnes) a des obligations allégées mais reste soumis aux règles de base en matière de sécurité incendie.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Combien coûte une installation d'alarme pour un commerce à Metz ?</summary>
-          <p>Le coût dépend de la surface de vos locaux, du nombre de points de détection nécessaires et du type de système choisi (filaire ou sans fil). En tant que technicien indépendant basé à Metz, mes tarifs sont adaptés aux petits commerces — vous payez l'expertise technique sans les surcoûts de structure d'un grand groupe. Contactez-moi pour recevoir un devis gratuit et personnalisé sous 48 heures.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Quelle est la différence entre une alarme intrusion et une alarme incendie ?</summary>
-          <p>L'alarme intrusion protège votre commerce contre les cambriolages et effractions. Elle utilise des détecteurs de mouvement, des contacts d'ouverture de portes et de fenêtres, et peut déclencher une sirène ou une alerte sur votre smartphone. L'alarme incendie (ou SSI — Système de Sécurité Incendie) détecte les départs de feu grâce à des détecteurs de fumée et de chaleur. Pour un ERP, l'alarme incendie est une obligation légale. L'alarme intrusion est fortement recommandée mais pas obligatoire.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Qu'est-ce qu'un ERP et mon commerce est-il concerné ?</summary>
-          <p>Un ERP (Établissement Recevant du Public) est tout bâtiment, local ou enceinte accueillant des personnes extérieures à l'entreprise. Si vous avez une boulangerie, un restaurant, un salon de coiffure, un cabinet médical ou tout commerce ouvert au public, vous êtes un ERP. Vos obligations de sécurité dépendent de votre catégorie (1 à 5) et de votre type d'activité. La grande majorité des petits commerces sont classés en catégorie 5 (capacité inférieure à 200 personnes).</p>
-        </details>
-        <details class="faq-item">
-          <summary>La vidéosurveillance dans mon commerce est-elle conforme au RGPD ?</summary>
-          <p>Oui, à condition de respecter un cadre précis : un panneau d'information visible doit être affiché à l'entrée, une déclaration en préfecture est nécessaire pour les lieux ouverts au public, la durée de conservation des images est limitée (généralement 30 jours maximum), et l'accès aux enregistrements doit être restreint. MM Sécurité installe des systèmes 100% conformes et vous accompagne dans toutes les démarches administratives (déclaration préfecture, affichage, documentation RGPD).</p>
-        </details>
-        <details class="faq-item">
-          <summary>Intervenez-vous en dehors de Metz ?</summary>
-          <p>Oui, MM Sécurité intervient dans toute la Moselle (Metz, Thionville, Forbach, Sarreguemines, Hagondange), en Meurthe-et-Moselle (Nancy, Pont-à-Mousson, Lunéville), et plus largement dans l'ensemble de la région Grand Est. J'interviens également au Luxembourg pour les entreprises frontalières. Mon ancrage local à Metz me permet d'assurer une grande réactivité sur l'ensemble de cette zone.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+  <Footer />
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Contact</span>
-        <h2>Un projet ? Une question ?<br /><strong>Parlons-en.</strong></h2>
-        <p class="section-intro">Décrivez votre besoin, je vous rappelle sous <strong>48 heures</strong> avec une proposition adaptée.</p>
-      </div>
-
-      <div class="contact-grid">
-        <form class="contact-form" id="contact-form">
-          <input type="hidden" name="access_key" value="5c0597af-80a9-48ba-b856-5c436e39ea74" />
-          <input type="hidden" name="subject" value="Nouveau message depuis mm-securite.fr" />
-          <input type="hidden" name="from_name" value="MM Sécurité - Formulaire" />
-          <input type="hidden" name="replyto" value="email" />
-          <input type="hidden" name="autoreply" value="Bonjour, merci pour votre demande ! Je l'ai bien reçue et je vous recontacte sous 48 heures avec une proposition personnalisée. À très vite — Marc Muller, MM Sécurité | 06 88 76 66 48" />
-          <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nom">Nom *</label>
-              <input type="text" id="nom" name="nom" placeholder="Votre nom" required autocomplete="name" />
-            </div>
-            <div class="form-group">
-              <label for="telephone">Téléphone *</label>
-              <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" required autocomplete="tel" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="vous@exemple.fr" autocomplete="email" />
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="commerce">Type de commerce</label>
-              <select id="commerce" name="commerce">
-                <option value="">-- Votre activité --</option>
-                <option value="boulangerie">Boulangerie / Pâtisserie</option>
-                <option value="restaurant">Restaurant / Bar</option>
-                <option value="salon">Salon de coiffure / beauté</option>
-                <option value="boutique">Boutique / Magasin</option>
-                <option value="pharmacie">Pharmacie</option>
-                <option value="cabinet">Cabinet médical</option>
-                <option value="hotel">Hôtel / Hébergement</option>
-                <option value="salle-sport">Salle de sport</option>
-                <option value="bureau">Bureau / Coworking</option>
-                <option value="autre">Autre</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="service">Besoin principal</label>
-              <select id="service" name="service">
-                <option value="">-- Service souhaité --</option>
-                <option value="alarme-intrusion">Alarme intrusion</option>
-                <option value="alarme-incendie">Alarme incendie / SSI</option>
-                <option value="videosurveillance">Vidéosurveillance</option>
-                <option value="controle-acces">Contrôle d'accès</option>
-                <option value="plan-evacuation">Plan d'évacuation</option>
-                <option value="mise-en-conformite">Mise en conformité ERP</option>
-                <option value="pack-complet">Pack complet sécurité</option>
-                <option value="sous-traitance">Sous-traitance (pro)</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Décrivez votre besoin *</label>
-            <textarea id="message" name="message" rows="4" placeholder="Décrivez votre projet, la taille de vos locaux, vos contraintes…" required></textarea>
-          </div>
-
-          <p class="form-rgpd" style="font-size:0.8rem;color:#6b7280;margin-bottom:1rem;line-height:1.5;">
-            En soumettant ce formulaire, vous acceptez que vos données soient traitées conformément à notre
-            <a href="/politique-de-confidentialite" style="color:#1e5ea6;text-decoration:underline;">politique de confidentialité</a>.
-            Vos données ne seront jamais partagées avec des tiers.
-          </p>
-          <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
-            <span class="btn-text">Envoyer ma demande</span>
-            <span class="btn-loading" style="display:none">Envoi en cours…</span>
-            <svg aria-hidden="true" class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </button>
-          <p class="form-note">Gratuit & sans engagement — réponse sous 48h</p>
-        </form>
-
-        <!-- Message de succès (remplace le formulaire après envoi) -->
-        <div class="form-success" id="form-success" role="status" aria-live="polite" style="display:none">
-          <div class="success-icon">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" width="48" height="48"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3>Message envoyé !</h3>
-          <p>Merci pour votre demande. Je vous recontacte sous <strong>48 heures</strong>.</p>
-          <button class="btn btn-ghost" id="reset-form">Envoyer un autre message</button>
-        </div>
-
-        <div class="contact-sidebar">
-          <div class="contact-card">
-            <div class="contact-avatar">M</div>
-            <h3>Marc Muller</h3>
-            <p class="contact-role">Technicien en systèmes de sécurité</p>
-
-            <div class="contact-links">
-              <a href="mailto:marc@muller.im" class="contact-link">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                marc@muller.im
-              </a>
-              <a href="tel:+33688766648" class="contact-link">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-                06 88 76 66 48
-              </a>
-              <div class="contact-link">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-                Metz, Moselle
-              </div>
-            </div>
-          </div>
-
-          <div class="hours-card">
-            <h4>Disponibilités</h4>
-            <div class="hours-row"><span>Lundi – Vendredi</span><strong>8h – 18h</strong></div>
-            <div class="hours-row"><span>Samedi</span><strong>Sur RDV</strong></div>
-            <div class="hours-row hours-highlight"><span>Urgence</span><strong>Me contacter</strong></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#top" class="logo">
-            <span class="logo-icon">
-              <svg aria-hidden="true" viewBox="0 0 28 28" width="24" height="24" fill="none">
-                <rect width="28" height="28" rx="6" fill="#4a9bdf"/>
-                <path d="M6 19V9l4.5 5L15 9v10M15 9l4.5 5L24 9v10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span class="logo-text" style="color:#fff">Sécurité</span>
-          </a>
-          <p>Marc Muller EI — Systèmes de sécurité<br />pour commerces à Metz et Grand Est</p>
-        </div>
-        <nav class="footer-nav" aria-label="Pied de page">
-          <div class="footer-col">
-            <h4>Navigation</h4>
-            <a href="#services">Services</a>
-            <a href="/a-propos">À propos</a>
-            <a href="/devis-gratuit">Devis gratuit</a>
-            <a href="#faq">FAQ</a>
-            <a href="/blog">Blog</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <div class="footer-col">
-            <h4>Services</h4>
-            <a href="/alarme-intrusion-commerce">Alarme intrusion</a>
-            <a href="/alarme-incendie-erp">Alarme incendie</a>
-            <a href="/videosurveillance-commerce">Vidéosurveillance</a>
-            <a href="/controle-acces-commerce">Contrôle d'accès</a>
-            <a href="/plan-evacuation-erp">Plans d'évacuation</a>
-            <a href="/mise-en-conformite-erp">Conformité ERP</a>
-          </div>
-        </nav>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-legal-links">
-          <a href="/mentions-legales">Mentions légales</a>
-          <span>·</span>
-          <a href="/politique-de-confidentialite">Politique de confidentialité</a>
-        </div>
-        <p>&copy; {new Date().getFullYear()} MM Sécurité — Marc Muller EI — SIRET 505 045 450 00069 — Tous droits réservés</p>
-        <p style="font-size:0.75rem;opacity:0.5;margin-top:0.5rem;"><a href="https://marcm.fr/100-sites-artisans/" style="color:inherit;text-decoration:none;" target="_blank" rel="noopener noreferrer">Site réalisé par Marc M. · Spécialiste sites web pour techniciens sécurité</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- STICKY MOBILE CTA -->
-  <div class="mobile-sticky-cta">
-    <a href="tel:+33688766648" class="sticky-btn sticky-call">
-      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-      Appeler
-    </a>
-    <a href="#contact" class="sticky-btn sticky-devis">
-      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-      Devis gratuit
-    </a>
-  </div>
+  <MobileStickyCTA />
 
   <!-- SCRIPTS -->
   <script>
@@ -836,7 +502,7 @@ import Layout from '../layouts/Layout.astro';
     window.loadMap = function() {
       const container = document.getElementById('map-container');
       if (container) {
-        container.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d330000!2d6.1757!3d49.1193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1710000000000" width="100%" height="320" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Zone d intervention MM Sécurité — Metz et Grand Est"></iframe>';
+        container.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d330000!2d6.1757!3d49.1193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1710000000000" width="100%" height="320" style="border:0;border-radius: var(--radius-md);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Zone d intervention MM Sécurité — Metz et Grand Est"></iframe>';
       }
     }
   </script>
@@ -848,45 +514,7 @@ import Layout from '../layouts/Layout.astro';
      ============================================ */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --blue-900: #0c2340;
-    --blue-800: #102e52;
-    --blue-700: #1a4a7a;
-    --blue-600: #1e5ea6;
-    --blue-500: #2874c2;
-    --blue-400: #4a9bdf;
-    --blue-300: #7bb8ea;
-    --blue-200: #b3d4f5;
-    --blue-100: #dbeafe;
-    --blue-50: #eff6ff;
-    --gray-900: #111827;
-    --gray-800: #1f2937;
-    --gray-700: #374151;
-    --gray-600: #4b5563;
-    --gray-500: #6b7280;
-    --gray-400: #9ca3af;
-    --gray-300: #d1d5db;
-    --gray-200: #e5e7eb;
-    --gray-100: #f3f4f6;
-    --gray-50: #f9fafb;
-    --white: #ffffff;
-    --red-500: #ef4444;
-    --red-50: #fef2f2;
-    --green-500: #22c55e;
-    --green-50: #f0fdf4;
-    --amber-500: #f59e0b;
-    --radius: 12px;
-    --radius-sm: 8px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
-    --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.04);
-    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
-    --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
-    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  }
+  /* Tokens hérités de global.css via Layout — ne pas dupliquer ici */
 
   /* Focus visible — accessibilité clavier */
   :focus-visible {
@@ -1157,7 +785,7 @@ import Layout from '../layouts/Layout.astro';
   /* Main dashboard card */
   .dash-main {
     background: var(--white);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--gray-200);
     box-shadow:
       0 4px 6px rgba(0,0,0,0.04),
@@ -1180,7 +808,7 @@ import Layout from '../layouts/Layout.astro';
     width: 8px; height: 8px; border-radius: 50%;
   }
   .dash-dot.green {
-    background: #22c55e;
+    background: var(--green-500);
     box-shadow: 0 0 6px rgba(34,197,94,0.5);
     animation: dotPulse 2s ease-in-out infinite;
   }
@@ -1199,11 +827,11 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #16a34a;
-    background: #f0fdf4;
+    color: var(--green-600);
+    background: var(--green-50);
     padding: 0.2rem 0.55rem;
     border-radius: 4px;
-    border: 1px solid #bbf7d0;
+    border: 1px solid var(--green-200);
   }
 
   /* Shield inside dashboard */
@@ -1243,12 +871,12 @@ import Layout from '../layouts/Layout.astro';
     width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
   }
   .dot-green {
-    background: #22c55e;
+    background: var(--green-500);
     box-shadow: 0 0 5px rgba(34,197,94,0.4);
   }
   .status-ok {
     font-weight: 600;
-    color: #16a34a;
+    color: var(--green-600);
     font-size: 0.72rem;
   }
 
@@ -1256,7 +884,7 @@ import Layout from '../layouts/Layout.astro';
   .dash-float {
     position: absolute;
     background: var(--white);
-    border-radius: 10px;
+    border-radius: var(--radius);
     border: 1px solid var(--gray-200);
     box-shadow: 0 4px 16px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
     display: flex;
@@ -1286,7 +914,7 @@ import Layout from '../layouts/Layout.astro';
     justify-content: center;
     flex-shrink: 0;
   }
-  .green-bg { background: #f0fdf4; }
+  .green-bg { background: var(--green-50); }
   .blue-bg { background: var(--blue-50); }
   .dash-float-value {
     font-size: 0.78rem;
@@ -1314,7 +942,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .reassurance-icon {
     width: 38px; height: 38px;
-    border-radius: 10px;
+    border-radius: var(--radius);
     background: var(--blue-50);
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
@@ -1472,7 +1100,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .benefit-icon-wrap {
     width: 48px; height: 48px;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     background: linear-gradient(135deg, rgba(74,155,223,0.2), rgba(59,130,246,0.1));
     border: 1px solid rgba(74,155,223,0.2);
     display: flex; align-items: center; justify-content: center;
@@ -1645,7 +1273,7 @@ import Layout from '../layouts/Layout.astro';
     align-content: center;
   }
   .zone-map {
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
   }
@@ -1984,7 +1612,7 @@ import Layout from '../layouts/Layout.astro';
     .footer-nav { flex-direction: column; }
 
     .reassurance-inner { gap: 0.75rem; justify-content: flex-start; }
-    .reassurance-icon { width: 32px; height: 32px; border-radius: 8px; }
+    .reassurance-icon { width: 32px; height: 32px; border-radius: var(--radius-sm); }
     .reassurance-icon svg { width: 16px; height: 16px; }
     .reassurance-text strong { font-size: 0.78rem; }
     .reassurance-text span { font-size: 0.68rem; }
