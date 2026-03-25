@@ -1,8 +1,9 @@
 # Audit Discovery — MM Sécurité
 
-**Date** : 2026-03-21
+**Date** : 2026-03-23
 **URL** : https://mm-securite.fr
-**Objectif** : Amélioration globale (audit complet de A à Z)
+**Objectif** : Amélioration globale
+**Auditeur** : Claude (pipeline sa-00)
 
 ---
 
@@ -11,65 +12,100 @@
 | Donnée | Valeur |
 |--------|--------|
 | Langue | fr |
-| Pays cible | FR (Grand Est — Metz, Moselle, Meurthe-et-Moselle) |
-| Type de client | Entreprise locale (freelance/technicien indépendant EI) |
-| Framework | Astro 5.0.0 |
-| CSS | CSS custom inline (pas de Tailwind) |
-| Hébergement | Cloudflare Pages |
-| TypeScript | ✅ (strict mode) |
-| Build system | Vite (via Astro) |
-| Analytics | ✅ Cloudflare Web Analytics (injection automatique) |
-| Formulaire contact | ✅ Web3Forms |
+| Pays cible | FR (Grand Est, Metz) |
+| Type de client | Entreprise locale (technicien sécurité indépendant) |
+| Framework | Astro 5.x |
+| CSS | CSS custom avec variables (design tokens dans global.css) — **pas de Tailwind** |
+| Hébergement | Cloudflare Pages (projet `mm-securite`) |
+| TypeScript | Oui (strict) |
+| Build system | Vite (intégré Astro) |
+| Node.js | v22 |
+| Analytics | Umami (cloud.umami.is) — privacy-first, pas de cookies |
+| Formulaire | Web3Forms |
+| Polices | Inter auto-hébergée (5 graisses woff2, ~24 Ko chacune) |
+| Contenu blog | Astro Content Collections (Markdown) |
 
 ---
 
 ## Structure du projet
 
-### Pages (29 URLs dans le sitemap)
+### Pages (16 pages + blog dynamique)
 
-| Route | Fichier | H1 / Titre |
-|-------|---------|-----------|
-| `/` | src/pages/index.astro | "Protégez votre commerce en toute sérénité." |
-| `/a-propos` | src/pages/a-propos.astro | — |
-| `/alarme-intrusion-commerce` | src/pages/alarme-intrusion-commerce.astro | "Alarme intrusion pour votre commerce" |
-| `/alarme-incendie-erp` | src/pages/alarme-incendie-erp.astro | — |
-| `/videosurveillance-commerce` | src/pages/videosurveillance-commerce.astro | — |
-| `/controle-acces-commerce` | src/pages/controle-acces-commerce.astro | — |
-| `/plan-evacuation-erp` | src/pages/plan-evacuation-erp.astro | — |
-| `/mise-en-conformite-erp` | src/pages/mise-en-conformite-erp.astro | — |
-| `/devis-gratuit` | src/pages/devis-gratuit.astro | — |
-| `/securite-commerce-metz` | src/pages/securite-commerce-metz.astro | — |
-| `/securite-commerce-thionville` | src/pages/securite-commerce-thionville.astro | — |
-| `/securite-commerce-nancy` | src/pages/securite-commerce-nancy.astro | — |
-| `/securite-commerce-forbach` | src/pages/securite-commerce-forbach.astro | — |
-| `/securite-commerce-sarreguemines` | src/pages/securite-commerce-sarreguemines.astro | — |
-| `/blog` | src/pages/blog/index.astro | — |
-| `/blog/[...slug]` | src/pages/blog/[...slug].astro | — |
-| `/mentions-legales` | src/pages/mentions-legales.astro | — |
-| `/politique-de-confidentialite` | src/pages/politique-de-confidentialite.astro | — |
-| `/404` | src/pages/404.astro | — (noindex) |
-| `/merci` | src/pages/merci.astro | — (noindex) |
+| Route | Fichier | Type |
+|-------|---------|------|
+| `/` | src/pages/index.astro | Accueil |
+| `/a-propos` | src/pages/a-propos.astro | À propos |
+| `/devis-gratuit` | src/pages/devis-gratuit.astro | Formulaire devis |
+| `/alarme-intrusion-commerce` | src/pages/alarme-intrusion-commerce.astro | Service |
+| `/alarme-incendie-erp` | src/pages/alarme-incendie-erp.astro | Service |
+| `/videosurveillance-commerce` | src/pages/videosurveillance-commerce.astro | Service |
+| `/controle-acces-commerce` | src/pages/controle-acces-commerce.astro | Service |
+| `/plan-evacuation-erp` | src/pages/plan-evacuation-erp.astro | Service |
+| `/mise-en-conformite-erp` | src/pages/mise-en-conformite-erp.astro | Service |
+| `/securite-commerce-metz` | src/pages/securite-commerce-metz.astro | Ville/Geo |
+| `/securite-commerce-thionville` | src/pages/securite-commerce-thionville.astro | Ville/Geo |
+| `/securite-commerce-nancy` | src/pages/securite-commerce-nancy.astro | Ville/Geo |
+| `/securite-commerce-forbach` | src/pages/securite-commerce-forbach.astro | Ville/Geo |
+| `/securite-commerce-sarreguemines` | src/pages/securite-commerce-sarreguemines.astro | Ville/Geo |
+| `/mentions-legales` | src/pages/mentions-legales.astro | Légal |
+| `/politique-de-confidentialite` | src/pages/politique-de-confidentialite.astro | Légal |
+| `/merci` | src/pages/merci.astro | Confirmation formulaire |
+| `/404` | src/pages/404.astro | Erreur |
+| `/blog` | src/pages/blog/index.astro | Liste articles |
+| `/blog/[slug]` | src/pages/blog/[...slug].astro | Article (11 articles) |
 
-**Articles de blog (11)** : alarme-connectee, cambriolage-commerce, choisir-alarme-intrusion, controle-acces-guide, detecteur-incendie, obligations-erp-cat5, plan-evacuation-norme, preparer-commission, securite-boulangerie, securite-restaurant, videosurveillance-rgpd
+### Layouts (3)
 
-### Layouts
 | Layout | Fichier | Utilisé pour |
 |--------|---------|-------------|
-| Layout | src/layouts/Layout.astro | Page d'accueil, blog index, pages légales |
-| ServicePage | src/layouts/ServicePage.astro | Pages de services |
+| Layout | src/layouts/Layout.astro | Pages principales |
 | BlogPost | src/layouts/BlogPost.astro | Articles de blog |
+| ServicePage | src/layouts/ServicePage.astro | Pages service |
+
+### Composants
+
+**Aucun dossier `src/components/` détecté.** Tous les composants sont inline dans les pages Astro.
+
+### Articles de blog (11)
+
+| Slug | Sujet |
+|------|-------|
+| obligations-securite-erp-categorie-5 | Obligations ERP cat.5 |
+| choisir-alarme-intrusion-commerce | Guide alarme intrusion |
+| videosurveillance-commerce-rgpd | Vidéosurveillance & RGPD |
+| preparer-commission-securite-commerce | Commission de sécurité |
+| cambriolage-commerce-que-faire | Réaction cambriolage |
+| controle-acces-commerce-guide | Guide contrôle d'accès |
+| detecteur-incendie-obligatoire-commerce | Détection incendie |
+| plan-evacuation-norme-nf-x-08-070 | Plans d'évacuation NF |
+| securite-restaurant-obligations-erp-type-n | Sécurité restaurant ERP N |
+| alarme-connectee-smartphone-commerce | Alarme connectée smartphone |
+| securite-boulangerie-patisserie | Sécurité boulangerie |
 
 ### Assets
 
-| Type | Nombre | Détail |
-|------|--------|--------|
-| Favicon | ✅ | favicon.svg, favicon-32x32.png, favicon.ico |
-| OG Image | ✅ | og-image.png (1200×630) |
-| Apple touch icon | ✅ | apple-touch-icon.png |
-| PWA icons | ✅ | icon-192x192.png, icon-512x512.png |
-| **Images contenu** | ❌ **0** | Aucune photo de chantier, équipement ou prestation |
-| Polices locales | ❌ 0 | Google Fonts CDN (Inter) |
-| Polices .woff2 | ❌ 0 | Aucun fichier local |
+| Type | Nombre | Taille | Problèmes |
+|------|--------|--------|-----------|
+| Images | 0 (hors favicon/OG) | — | Pas de photos de réalisations |
+| Polices woff2 | 5 (Inter 400-800) | ~121 Ko total | ✅ Tailles correctes |
+| Favicon SVG | 1 | 4 Ko | ✅ |
+| Favicon ICO | 1 | 4 Ko | ✅ |
+| Favicon PNG 32x32 | 1 | 4 Ko | ✅ |
+| Apple Touch Icon | 1 | 4 Ko | ✅ |
+| Icons PWA | 2 (192, 512) | 12 Ko | ✅ |
+| OG Image | 1 | 48 Ko | ✅ |
+
+### Données et configuration
+
+| Fichier | Rôle |
+|---------|------|
+| src/content.config.ts | Définition collection blog (title, description, date, tags, image) |
+| src/styles/global.css | Design tokens (259 lignes) — palette, shadows, radius, transitions, typo |
+| contenu.md | Contenu texte du site |
+| public/_headers | Headers sécurité Cloudflare (CSP, HSTS, X-Frame-Options) |
+| public/_redirects | Redirects 301 pour slugs .md cassés |
+| .env.example | Variables Web3Forms + SITE_URL |
+| TEMPLATE-SITE-ASTRO.md | Documentation template |
 
 ---
 
@@ -77,67 +113,72 @@
 
 ### SEO
 
-| Élément | Statut | Détail |
-|---------|--------|--------|
-| Meta title | ✅ | Dynamique par page, bien formaté |
-| Meta description | ✅ | Dynamique, ~160 caractères |
-| Meta keywords | ⚠️ | Présent mais ignoré par Google |
-| Schema JSON-LD | ✅ | LocalBusiness + FAQ + AggregateRating + Reviews |
-| Schema AggregateRating | ⚠️ | 3 avis seulement (risque affichage Google) |
-| OG tags complets | ✅ | title, description, image, locale, url, site_name |
+| Critère | État | Détails |
+|---------|------|---------|
+| Meta title | ✅ | "MM Sécurité \| Alarme & Vidéosurveillance commerces Metz" |
+| Meta description | ✅ | Présente et descriptive |
+| Meta keywords | ✅ | Présentes (pertinence à vérifier) |
+| Schema LocalBusiness | ✅ | Complet (nom, SIRET, adresse, téléphone, email, services) |
+| Schema FAQPage | ✅ | Présent sur accueil |
+| Schema WebSite | ✅ | Présent |
+| OG tags | ✅ | Complets (title, desc, image 1200×630, locale fr_FR, url) |
 | Twitter Card | ✅ | summary_large_image |
-| Canonical | ✅ | Généré dynamiquement |
-| sitemap.xml | ✅ | sitemap-index.xml → sitemap-0.xml (29 URLs) |
-| **URLs blog dans sitemap** | ❌ | Extension `.md` dans les slugs (ex: `blog/choisir-alarme-intrusion-commerce.md/`) |
-| robots.txt | ⚠️ | **CONFLIT** : Cloudflare managed section bloque IA bots avant les règles custom |
-| llms.txt | ✅ | Présent, très complet (FAQ, articles, pages) |
-| Geo meta tags | ✅ | geo.region, geo.placename, geo.position, ICBM |
+| Canonical | ✅ | Dynamique via Astro.url |
+| sitemap.xml | ✅ | Via @astrojs/sitemap (exclut /merci) |
+| robots.txt | ✅ | Allow: /, bots IA autorisés (GPTBot, ClaudeBot, PerplexityBot) |
+| llms.txt | ✅ | Complet et détaillé |
+| Geo meta | ✅ | geo.region FR-GES, geo.placename Metz, ICBM |
+| LLMs link tag | ✅ | `<link rel="alternate" type="text/markdown">` |
 
 ### Design & Accessibilité
 
-| Élément | Statut | Détail |
-|---------|--------|--------|
-| Responsive | ✅ | viewport meta présent, menu hamburger |
-| lang HTML | ✅ | `lang="fr"` |
+| Critère | État | Détails |
+|---------|------|---------|
+| Responsive | ✅ | Viewport meta présent, header desktop + mobile |
+| Police Inter | ✅ | Auto-hébergée, font-display: swap, latin subset |
+| Design tokens | ✅ | CSS custom properties (palette blue 50-950, gray 50-950) |
+| WCAG AA contraste | ⚠️ | Guide dans global.css mais à vérifier en pratique |
 | Skip-to-content | ❌ | Absent |
-| Alt-text images | ✅ | Pas d'`<img>` sans alt (mais pas d'images contenu) |
+| Alt-text images | ✅ | 0 images sans alt (0 images total sur accueil) |
 | Focus visible | ⚠️ | À vérifier |
-| CSS framework | ⚠️ | CSS custom inline, pas de design system unifié (Tailwind absent) |
-| Contrastes WCAG | ⚠️ | À vérifier (palette #0c2340 / blanc — a priori OK) |
-| Touch targets | ⚠️ | À vérifier sur mobile |
+| Touch targets 44px | ⚠️ | À vérifier |
 
 ### Legal & RGPD
 
-| Élément | Statut | Détail |
-|---------|--------|--------|
-| Mentions légales | ✅ | `/mentions-legales` présente |
-| Politique de confidentialité | ✅ | `/politique-de-confidentialite` présente |
-| Bannière cookies | ❌ | Absente (Cloudflare Analytics peut nécessiter consentement) |
-| RGPD mention formulaire | ✅ | Mention présente dans le formulaire |
-| Page /merci | ✅ | Présente, noindex, nofollow |
-| Page 404 | ✅ | Présente, noindex, nofollow |
+| Critère | État | Détails |
+|---------|------|---------|
+| Mentions légales | ✅ | Page `/mentions-legales` |
+| Politique confidentialité | ✅ | Page `/politique-de-confidentialite` |
+| Bannière cookies | ✅ Non nécessaire | Umami = pas de cookies, Web3Forms = pas de cookies |
+| RGPD mention formulaire | ✅ | Texte + lien politique de confidentialité |
+| Lien politique dans formulaire | ✅ | Lien cliquable vers /politique-de-confidentialite |
 
 ### Formulaire
 
-| Élément | Statut | Détail |
-|---------|--------|--------|
-| Formulaire contact | ✅ | Web3Forms (access_key présent) |
-| Champs | ✅ | Nom*, Téléphone*, Email, Type commerce, Service, Message* |
-| Anti-spam | ✅ | Honeypot (checkbox cachée) |
-| Page /merci | ✅ | Confirmation après envoi |
-| AJAX | ✅ | Envoi sans rechargement, état d'envoi visible |
+| Critère | État | Détails |
+|---------|------|---------|
+| Formulaire contact | ✅ | Sur accueil (section #contact) + page /devis-gratuit |
+| Service | ✅ | Web3Forms |
+| Champs | ✅ | Nom*, Téléphone*, Email, Type de commerce, Besoin, Message* |
+| Anti-spam | ⚠️ | À vérifier (honeypot Web3Forms ?) |
+| Page /merci | ✅ | Existe |
+| CSP form-action | ✅ | `form-action 'self' https://api.web3forms.com` |
 
-### Performance
+### Performance & Technique
 
-| Élément | Statut | Détail |
-|---------|--------|--------|
-| Analytics | ✅ | Cloudflare Web Analytics (injection CF automatique) |
-| Polices locales | ❌ | Google Fonts CDN (impact perf + RGPD) |
-| HTML compressé | ✅ | compressHTML: true dans astro.config.mjs |
-| Cache assets | ✅ | _headers avec Cache-Control immutable sur /_astro/* |
-| Images optimisées | N/A | Pas d'images contenu |
-| Security headers | ✅ | X-Content-Type-Options, X-Frame-Options, Referrer-Policy |
-| webmanifest | ⚠️ | Icons ne référence que favicon.svg (pas les PNG 192/512) |
+| Critère | État | Détails |
+|---------|------|---------|
+| Analytics | ✅ | Umami (privacy-first, RGPD natif) |
+| Polices locales | ✅ | woff2 auto-hébergées (pas de Google Fonts) |
+| Preload fonts | ✅ | Inter 400 et 700 preloadées |
+| compressHTML | ✅ | `compressHTML: true` dans astro.config |
+| CSS minifié | ✅ | `cssMinify: true` dans vite config |
+| Inline stylesheets | ✅ | `inlineStylesheets: 'always'` |
+| Headers sécurité | ✅ | CSP, HSTS, X-Frame-Options DENY, Referrer-Policy, Permissions-Policy |
+| Cache statique | ✅ | `/_astro/*` → 1 an immutable, favicon 1 jour, OG 1 semaine |
+| Webmanifest | ✅ | PWA-ready (icons, theme_color, lang) |
+| theme-color | ✅ | #0c2340 |
+| Redirects .md | ✅ | 11 redirects 301 pour slugs Astro 5 cassés |
 
 ---
 
@@ -145,76 +186,63 @@
 
 ### Critiques (bloquants)
 
-1. **URLs blog cassées dans le sitemap** — Les 11 articles ont l'extension `.md` dans leurs URLs sitemap (ex: `https://mm-securite.fr/blog/choisir-alarme-intrusion-commerce.md/`). Ces URLs peuvent être invalides ou en double avec les URLs sans extension. Localisation : configuration Astro content layer (`src/content.config.ts`).
-
-2. **Conflit robots.txt — Cloudflare Managed Section** — Cloudflare injecte automatiquement une section managed qui précède le robots.txt custom. Cette section bloque explicitement les bots IA (`ClaudeBot Disallow: /`, `GPTBot Disallow: /`, `Google-Extended Disallow: /`, `ai-train=no`) AVANT les règles custom qui les autorisent. Le résultat est conflictuel et potentiellement bloquant pour l'indexation IA. La section Cloudflare doit être désactivée dans le dashboard Cloudflare (Security > Bots > Managed Robots.txt).
+*Aucun problème critique détecté.*
 
 ### Majeurs
 
-3. **Aucune image de contenu** — Aucune photo dans les pages services, blog, à-propos. Ni photos du technicien, ni photos de chantiers, équipements ou réalisations. Impact fort sur la crédibilité, l'engagement et le SEO (pas d'images alt à indexer).
-
-4. **Google Fonts CDN** — Les polices Inter sont chargées depuis `fonts.googleapis.com`. Problèmes : (a) requête tiers bloquante avant rendu, (b) transfert de données vers Google (RGPD), (c) impact sur le score Lighthouse. Solution : télécharger les woff2 et les héberger localement.
-
-5. **Pas de skip-to-content** — Lien d'évitement absent, problème d'accessibilité WCAG 2.4.1 niveau A.
-
-6. **CSS sans design system** — Le CSS est écrit en style inline et `<style>` dans chaque page/composant Astro. Pas de Tailwind, pas de tokens partagés. Risque d'incohérences visuelles entre les pages et difficulté de maintenance.
-
-7. **Pas de bannière cookies** — Cloudflare Web Analytics est injecté automatiquement. Selon les configurations CF, des cookies peuvent être déposés. En l'absence de bannière, la conformité RGPD n'est pas garantie.
-
-8. **AggregateRating avec 3 avis seulement** — Google peut refuser d'afficher les rich snippets d'étoiles si les avis ne sont pas vérifiables ou trop peu nombreux. Les prénoms sont anonymisés dans le code source, ce qui réduit la crédibilité.
+1. **Pas de dossier `src/components/`** — Tous les composants sont inline dans les pages. Maintenance difficile, pas de réutilisation. Hero, Services, Témoignages, FAQ, CTA, Header, Footer devraient être des composants séparés.
+2. **Pas de `business.ts` / fichier de données centralisé** — Les données métier (nom, SIRET, téléphone, services) sont hardcodées dans les pages et le Layout plutôt que centralisées.
+3. **Pas de Tailwind CSS** — CSS custom avec variables uniquement. Moins maintenable qu'un framework utilitaire, plus sujet aux incohérences.
+4. **Commentaire résiduel** — Layout.astro ligne 59 : `<!-- Google Fonts — non render-blocking -->` alors qu'aucun Google Fonts n'est utilisé.
+5. **Mots collés dans les H2** — "Tout ce qu'il faut poursécuriser", "Pensé pour lespetits commerces", "Ce que disentmes clients", "Basé à Metz,j'interviens" — espaces manquants entre les lignes du HTML.
 
 ### Mineurs
 
-9. **`/merci` dans le sitemap** — La page `/merci` a `noindex, nofollow` mais apparaît dans sitemap-0.xml. Contradiction : exclure du sitemap via `astro.config.mjs` (option `exclude` du plugin sitemap).
-
-10. **webmanifest icons incomplet** — `site.webmanifest` ne référence que `favicon.svg` comme icône PWA. Les fichiers `icon-192x192.png` et `icon-512x512.png` existent mais ne sont pas dans le manifeste.
-
-11. **Pages villes sans lien nav direct** — Les 5 pages géographiques (`/securite-commerce-metz`, etc.) ne sont pas accessibles depuis la navigation principale (le lien "Commerces" pointe vers `#commerces` sur la homepage).
-
-12. **`mise-en-conformite-erp` absent du footer nav** — La page est dans le footer ("Conformité ERP") mais pas dans le header. Cohérence à améliorer.
-
-13. **`meta name="keywords"`** — Toujours présent dans le Layout mais ignoré par tous les moteurs de recherche modernes. Peut être supprimé.
+1. **Skip-to-content absent** — Pas de lien d'accessibilité pour sauter au contenu principal.
+2. **0 images de contenu** — Le site n'a aucune photo de réalisations ou d'équipement. Tout est iconographique.
+3. **Fichiers d'audit dans la racine** — audit-*.md, audit-mm-securite.docx ne devraient pas être dans le repo production.
+4. **`.wrangler/cache/` potentiellement versionné** — Vérifier que .gitignore l'exclut.
+5. **URL site dans config** — `astro.config.mjs` dit `mm-securite.fr`, le domaine est correct mais le dossier projet s'appelle `mm-alarmes`.
 
 ---
 
-## Navigation (header)
+## Architecture des sections (page d'accueil)
 
-| Lien | Destination | Type |
-|------|-------------|------|
-| Services | #services | Ancre homepage |
-| Commerces | #commerces | Ancre homepage |
-| À propos | /a-propos | Page interne |
-| FAQ | #faq | Ancre homepage |
-| Blog | /blog | Page interne |
-| Devis gratuit | /devis-gratuit | Page interne (CTA) |
-
-**Absent de la nav** : pages services individuelles, pages villes, mise en conformité
+| Section | Contenu | État |
+|---------|---------|------|
+| Header | Logo + nav (Services, Commerces, À propos, FAQ, Blog) + CTA "Devis gratuit" + téléphone | ✅ |
+| Hero | H1 + sous-titre + 2 CTAs + badge + illustration dashboard + compteurs | ✅ |
+| Trust bar | Certifié NF, Conforme RGPD & ERP, Rapide, Local, Clé en main | ✅ |
+| Services | 6 cartes services avec icônes et descriptions | ✅ |
+| Commerces | Section sombre "Pensé pour les petits commerces" + types d'établissements | ✅ |
+| Témoignages | 3 témoignages (Sophie L., Philippe D., Nadia K.) + disclaimer confidentialité | ✅ |
+| Zone intervention | "Basé à Metz, j'interviens dans tout le Grand Est" | ✅ |
+| FAQ | Questions fréquentes (accordéon) | ✅ |
+| Contact | Formulaire + infos contact + disponibilités (L-V 8h-18h, Sam sur RDV) | ✅ |
+| Footer | Logo + desc + nav + services + mentions légales + copyright 2026 + crédit Marc M. | ✅ |
 
 ---
 
 ## Prochaines étapes recommandées
 
-| Étape | Skill | Estimation |
-|-------|-------|-----------|
-| 1 | **sa-01-architecture** | robots.txt conflit CF, sitemap URLs .md, content.config.ts, webmanifest — ~5 points |
-| 2 | **sa-02-design** | Contraste WCAG, design system CSS, cohérence typographique — ~4 points |
-| 3 | **sa-03-contenu** | Pages sans H1 vérifiées, cohérence contenu pages villes, blog — ~3 points |
-| 4 | **sa-04-seo** | URLs sitemap blog, Schema AggregateRating, robots.txt, llms.txt — ~6 points |
-| 5 | **sa-05-composants** | Skip link, images contenu, touch targets, nav cohérence — ~5 points |
-| 6 | **sa-06-legal** | Bannière cookies, vérification RGPD, /merci dans sitemap — ~3 points |
-| 7 | **sa-07-performance** | Google Fonts → local, Lighthouse complet, images à venir — ~5 points |
+| Étape | Skill | Estimation | Priorité |
+|-------|-------|-----------|----------|
+| Architecture | sa-01 | 5-8 points (composants, business.ts, commentaires résiduels) | Haute |
+| Design | sa-02 | 3-5 points (contraste WCAG, absence Tailwind) | Moyenne |
+| Contenu | sa-03 | 3-5 points (H2 collés, 0 photos, qualité textes) | Moyenne |
+| SEO | sa-04 | 1-3 points (SEO déjà très bon, vérification fine) | Basse |
+| Composants | sa-05 | 5-8 points (inline→composants, responsive, accessibilité visuelle) | Haute |
+| Legal | sa-06 | 1-2 points (vérification formulaire anti-spam) | Basse |
+| Performance | sa-07 | 2-4 points (Lighthouse, Observatory, PageSpeed) | Moyenne |
 
 ---
 
-## Score initial estimé : ~62/100
+## Score initial estimé : ~75/100
 
-| Domaine | Score | Commentaire |
-|---------|-------|-------------|
-| Architecture & Tech Stack | 14/20 | Astro 5 ✅, TypeScript ✅, CSS sans système ❌, fonts CDN ❌ |
-| Design & Accessibilité | 10/20 | Responsive ✅, skip link ❌, pas d'images ❌ |
-| Contenu | 12/20 | Textes de qualité ✅, 11 articles ✅, aucune image ❌ |
-| SEO | 13/20 | Schema riche ✅, robots.txt conflictuel ❌, sitemap URLs .md ❌ |
-| Legal / RGPD | 6/10 | Légal présent ✅, cookies ❌ |
-| Performance | 7/10 | CF Pages ✅, HTML compressé ✅, fonts CDN ❌ |
+Le site est bien construit et fonctionnel avec un SEO solide et de bonnes pratiques techniques (headers sécurité, polices locales, analytics privacy-first). Les principaux axes d'amélioration sont :
 
-**Score cible après corrections : ≥ 90/100**
+- **Architecture** : extraction en composants modulaires, centralisation des données métier
+- **Accessibilité** : skip-to-content, contraste WCAG AA validé, focus visible
+- **Contenu** : correction des mots collés dans les H2, ajout de photos
+
+**Score cible : ≥ 90/100**

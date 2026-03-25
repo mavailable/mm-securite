@@ -29,7 +29,14 @@ const posts = (await getCollection('blog')).sort(
 
     <link rel="canonical" href="https://mm-securite.fr/blog" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>Blog Sécurité Commerces | MM Sécurité — Metz & Grand Est</title>
+
+    <!-- Umami Analytics — privacy-first, no cookies, RGPD natif -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="13c56d5e-7dcb-4c57-a8fe-b46e9d359550" crossorigin="anonymous" is:inline></script>
+    <meta name="theme-color" content="#0c2340" />
 
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",

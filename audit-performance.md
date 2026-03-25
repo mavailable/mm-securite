@@ -1,299 +1,243 @@
-# Audit Performance & Technique — MM Sécurité
+# Audit Performance & Technique — mm-securite.fr
 
-**Date** : 2026-03-21
-**Référence** : Standards wf-09-audit-preprod
-**Stack** : Astro 5.0.0 · CSS natif · Inter (woff2 local) · Cloudflare Pages
-
----
-
-## Résumé des scores (après corrections)
-
-| Check | Score | Max | Statut |
-|-------|-------|-----|--------|
-| 1. Images (format, taille, lazy-loading) | 10 | /10 | ✅ |
-| 2. Polices (locales, taille, preload) | 5 | /5 | ✅ |
-| 3. CSS (minifié, compressHTML) | 5 | /5 | ✅ |
-| 4. JavaScript (pas de script bloquant) | 5 | /5 | ✅ |
-| 5. Analytics & événements conversion | 7 | /10 | ✅ |
-| 6. Accessibilité (skip, main, alt, focus, titres) | 10 | /10 | ✅ |
-| 7. Favicon + webmanifest | 5 | /5 | ✅ |
-| 8. HTTPS + mixed content + rel noopener | 5 | /5 | ✅ |
-| 9. Responsive (code audit) | 9 | /10 | ✅ |
-| 10. Parcours conversion complet | 10 | /10 | ✅ |
-| 11. Lighthouse (post-deploy) | ⏳ | /15 | ⏳ |
-| 12. Build réussi | 8 | /10 | ✅ |
-| **TOTAL (hors Lighthouse)** | **79** | **/85** | ✅ |
-| **Score normalisé /100** | **92.9** | **/100** | ✅ |
-
-> **Score normalisé : 92.9/100 — Seuil 90/100 atteint ✅ — Passage à sa-08-corrections autorisé.**
->
-> Note : Lighthouse est évalué à **12/15 estimé** (Astro static bien optimisé, images légères, polices locales avec preload, CSS minifié). Score total estimé post-Lighthouse : **91/100**.
+**Date** : 23 mars 2026
+**Auditeur** : Claude (sa-07)
+**Site** : https://mm-securite.fr
+**Référentiel** : wf-09 (standards pré-production)
 
 ---
 
-## Check 1 — Images (10/10)
+## 1. Images
 
-### Inventaire public/
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| Images > 500 Ko | Aucune | ✅ |
+| Format optimisé | SVG (logo, favicon, icônes), PNG (og-image 45 Ko) | ✅ |
+| Balises `<img>` brutes | Aucune dans les composants (SVGs inline) | ✅ |
+| Lazy loading | Google Maps lazy-load au clic | ✅ |
 
-| Fichier | Taille | Usage | Statut |
-|---------|--------|-------|--------|
-| og-image.png | 46 Ko | Open Graph (non rendu dans la page) | ✅ |
-| icon-512x512.png | 7 Ko | PWA manifest | ✅ |
-| icon-192x192.png | 2 Ko | PWA manifest | ✅ |
-| apple-touch-icon.png | 2 Ko | iOS | ✅ |
-| favicon-32x32.png | 467 o | Navigateurs | ✅ |
-| favicon.svg | 277 o | Navigateurs modernes | ✅ |
+**Total images** : 5 fichiers, poids max 45 Ko (og-image.png).
 
-### Résultat
+## 2. Polices
 
-- **Aucune image de contenu** (`<img>` inexistant dans les composants) — le site est entièrement textuel + icônes SVG inline ✅
-- Pas de hero image bitmap à optimiser ✅
-- Aucun chargement d'image sans `loading="lazy"` ✅
-- og-image.png (46 Ko) est uniquement utilisée pour le partage social, non rendue sur la page ✅
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| Format | woff2 exclusivement | ✅ |
+| Self-hosted | Oui (pas de CDN Google Fonts) | ✅ |
+| font-display: swap | 5/5 @font-face | ✅ |
+| Preload | Inter 400 + 700 (les plus utilisés) | ✅ |
+| Poids | ~24 Ko par fichier × 5 poids | ✅ |
 
----
+## 3. CSS
 
-## Check 2 — Polices (5/5)
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| Minification | `cssMinify: true` dans astro.config | ✅ |
+| Inlining | `inlineStylesheets: 'always'` | ✅ |
+| CSS inutilisé | Minimal (composants Astro = scoped) | ✅ |
 
-### Correction appliquée
+## 4. JavaScript
 
-Preload des 2 polices critiques absent → ajouté dans `src/layouts/Layout.astro` :
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| Scripts bloquants | Aucun | ✅ |
+| defer/async | Umami `defer`, scripts inline Astro | ✅ |
+| Dépendances | 2 uniquement (astro, @astrojs/sitemap) | ✅ |
+| Bundle size | Minimal (site statique, pas de framework client) | ✅ |
 
-```html
-<link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-<link rel="preload" href="/fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-```
+## 5. HTML
 
-### État final
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| Compression HTML | `compressHTML: true` | ✅ |
+| Structure sémantique | `<main>`, `<nav>`, `<section>`, `<footer>` | ✅ |
+| Skip-to-content | Présent et fonctionnel | ✅ |
 
-| Critère | Statut |
-|---------|--------|
-| Polices locales (pas Google Fonts CDN) | ✅ |
-| 5 fichiers woff2 : 23-25 Ko chacun (> 10 Ko) | ✅ |
-| `font-display: swap` sur tous les @font-face | ✅ |
-| Preload Inter 400 + 700 dans `<head>` | ✅ **ajouté** |
-| Pas de RGPD violation (aucun CDN externe) | ✅ |
+## 6. Analytics & Conversion
 
----
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| Analytics | Umami (privacy-first, sans cookies) | ✅ |
+| Conversion tracking | Cloudflare Zaraz (phone_click, email_click, cta_click) | ✅ |
+| Script analytics | defer, non bloquant | ✅ |
 
-## Check 3 — CSS / HTML compression (5/5)
+## 7. Accessibilité (code)
 
-| Critère | Valeur | Statut |
-|---------|--------|--------|
-| `cssMinify: true` dans astro.config.mjs | ✅ | ✅ |
-| `compressHTML: true` dans astro.config.mjs | ✅ | ✅ |
-| Feuilles CSS non utilisées | Aucune | ✅ |
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| Skip-to-content | `<a class="skip-to-content" href="#main-content">` | ✅ |
+| focus-visible | Styles définis pour tous les éléments interactifs | ✅ |
+| aria-label | Nav principale, nav footer, bouton menu, liens téléphone | ✅ |
+| aria-hidden | Tous les SVGs décoratifs | ✅ |
+| aria-expanded | Bouton hamburger (toggle dynamique) | ✅ |
+| role="status" | Message succès formulaire avec aria-live="polite" | ✅ |
+| Labels formulaire | Tous les champs avec `<label for="">` | ✅ |
+| alt textes | Pas d'images bitmap nécessitant alt | ✅ |
 
----
+## 8. Favicon & Webmanifest
 
-## Check 4 — JavaScript (5/5)
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| favicon.svg | ✅ Présent | ✅ |
+| favicon.ico | ✅ Présent | ✅ |
+| apple-touch-icon.png | ✅ Présent | ✅ |
+| icon-192.png | ✅ Présent | ✅ |
+| icon-512.png | ✅ Présent | ✅ |
+| site.webmanifest | ✅ Complet (name, short_name, theme_color, 3 icons) | ✅ |
 
-| Critère | Statut |
-|---------|--------|
-| Aucun `<script>` sans `defer`/`async`/`type="module"` | ✅ |
-| Pas de bibliothèque lourde (jQuery, Bootstrap, etc.) | ✅ |
-| Google Maps click-to-load (script injecté à la demande) | ✅ |
-| Web3Forms : appel AJAX natif (fetch), pas de SDK lourd | ✅ |
-| JSON-LD : `type="application/ld+json"` (non exécuté) | ✅ |
+## 9. HTTPS & Sécurité liens
 
----
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| Références HTTP | Aucune (sauf xmlns SVG = safe) | ✅ |
+| target="_blank" | Tous avec rel="noopener noreferrer" | ✅ |
+| Mixed content | Aucun | ✅ |
 
-## Check 5 — Analytics & Événements conversion (7/10)
+## 10. Responsive
 
-### Analytics
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| Viewport meta | `width=device-width, initial-scale=1.0` | ✅ |
+| Breakpoints | 3 (480px, 768px, 900px) | ✅ |
+| Mobile sticky CTA | Présent (Appeler + Devis) | ✅ |
+| Hamburger menu | Présent avec aria-expanded | ✅ |
+| Grilles responsives | Services 3→2→1 col, hero stack, etc. | ✅ |
 
-**Cloudflare Web Analytics** — auto-injecté par Cloudflare Pages en production.
-- Privacy-first, sans cookies, sans RGPD compliance supplémentaire ✅
-- Mesures basiques : pageviews, sessions, pays, navigateurs ✅
-- Pas d'Umami configuré → pas d'événements personnalisés (-3)
+## 11. Parcours de conversion
 
-### Liens de conversion
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| CTAs multiples | Hero, section commerces, contact, sticky mobile | ✅ |
+| Formulaire | Web3Forms, AJAX submit, redirect /merci | ✅ |
+| Téléphone | Lien tel: header + sticky mobile + contact | ✅ |
+| Avis Google | Lien dans page /merci | ✅ |
 
-| Lien | Occurrences | Statut |
-|------|-------------|--------|
-| `href="tel:+33688766648"` | 9 occurrences (header, hero, CTA, sticky, footer, 404, merci) | ✅ |
-| `href="mailto:marc@muller.im"` | 6 occurrences (contact, mentions, politique) | ✅ |
+## 12. Observatory (Mozilla)
 
-### Événements JS manquants
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| Score global | **B (75/100)** | ⚠️ |
+| CSP | Présent mais -20 pts (unsafe-inline requis par Astro) | ⚠️ |
+| SRI | -5 pts (script Umami CDN, hash non viable) | ⚠️ |
+| HSTS | max-age=63072000; includeSubDomains; preload | ✅ |
+| X-Frame-Options | DENY | ✅ |
+| X-Content-Type-Options | nosniff | ✅ |
+| Referrer-Policy | strict-origin-when-cross-origin | ✅ |
+| Permissions-Policy | Complet (geo, micro, camera, payment, usb) | ✅ |
 
-| Événement | Requis | Configuré |
-|-----------|--------|-----------|
-| form-submit | Oui | ❌ (Umami non installé) |
-| cta-click | Recommandé | ❌ |
-| phone-click | Recommandé | ❌ |
+**Limites architecturales documentées** :
+- `unsafe-inline` dans script-src : **requis** par Astro qui injecte des scripts inline. Cloudflare Pages (hébergement statique) ne supporte pas les nonces CSP côté serveur. Compromis accepté.
+- SRI non applicable au script Umami CDN : le script est mis à jour par Umami sans versioning, un hash SRI casserait le tracking à chaque mise à jour. Compromis accepté.
 
-> Pour activer les événements : installer Umami Cloud et ajouter `data-umami-event="phone-click"` sur les liens tel:.
+## 13. PageSpeed Insights
 
----
+### Mobile
 
-## Check 6 — Accessibilité code (10/10)
+| Catégorie | Score | Statut |
+|-----------|-------|--------|
+| **Performance** | **97** | ✅ |
+| Accessibility | 93 | ✅ |
+| Best Practices | 92 | ✅ |
+| **SEO** | **100** | ✅ |
 
-| Critère | Statut |
-|---------|--------|
-| Skip-link `href="#main-content"` dans `Layout.astro` | ✅ |
-| Skip-link CSS dans `ServicePage.astro` | ✅ |
-| `<main id="main-content">` dans tous les layouts | ✅ |
-| Aucun `<img>` sans attribut `alt` (zéro balise `<img>`) | ✅ |
-| SVG décoratifs avec `aria-hidden="true"` | ✅ |
-| `:focus-visible` global (ajouté sa-05) | ✅ |
-| Hiérarchie titres : H1 → H2 → H3 → H4 (pas de saut) | ✅ |
-| Un seul H1 par page | ✅ |
-| `lang="fr"` sur `<html>` | ✅ |
+**Core Web Vitals (mobile)** :
 
-### Hiérarchie des titres (index.astro)
+| Métrique | Valeur | Seuil | Statut |
+|----------|--------|-------|--------|
+| FCP | 0.3 s | < 1.8 s | ✅ |
+| LCP | 0.6 s | < 2.5 s | ✅ |
+| TBT | 0 ms | < 200 ms | ✅ |
+| CLS | 0 | < 0.1 | ✅ |
+| Speed Index | 0.3 s | < 3.4 s | ✅ |
 
-```
-H1 : Technicien en sécurité pour commerces à Metz
-H2 : Tout ce qu'il faut pour sécuriser votre commerce
-  H3 : Alarme intrusion / Vidéosurveillance / ...
-H2 : Pensé pour les petits commerces
-  H3 : Établissements accompagnés
-H2 : Ce que disent mes clients
-H2 : Basé à Metz, j'interviens dans tout le Grand Est
-H2 : Tout ce qu'il faut savoir sur la sécurité de votre commerce
-H2 : Un projet ? Une question ? Parlons-en.
-  H3 : Message envoyé ! / Marc Muller
-    H4 : Disponibilités / Navigation / Services (footer)
-```
-Structure correcte ✅
+### Desktop
 
----
+| Catégorie | Score | Statut |
+|-----------|-------|--------|
+| **Performance** | **100** | ✅ |
+| Accessibility | 92 | ✅ |
+| Best Practices | 92 | ✅ |
+| **SEO** | **100** | ✅ |
 
-## Check 7 — Favicon + Webmanifest (5/5)
+### Problèmes PageSpeed identifiés (mineurs)
 
-| Fichier | Présent | Contenu |
-|---------|---------|---------|
-| favicon.svg | ✅ | — |
-| favicon.ico | ✅ | — |
-| favicon-32x32.png | ✅ | — |
-| apple-touch-icon.png | ✅ | — |
-| site.webmanifest | ✅ | name, short_name, description, theme_color, icons (SVG + 192 + 512), lang, categories |
+1. **ARIA prohibited attributes** (-3 pts accessibilité) : Attribut potentiellement obsolète détecté par Lighthouse. Impact mineur, ne bloque pas l'utilisabilité.
+2. **Contraste couleurs** (-4 pts accessibilité) : Certains éléments secondaires (badges, texte sur fond sombre) légèrement sous le ratio WCAG AA. Vérifier les opacités des textes blancs sur fond bleu.
+3. **CSP effectiveness** (-4 pts best practices) : `unsafe-inline` pénalisé (même limite que Observatory). Architectural.
+4. **COOP header** (-2 pts best practices) : Cross-Origin-Opener-Policy manquant. Peut être ajouté dans `_headers`.
+5. **Trusted Types** (-2 pts best practices) : Politique Trusted Types non implémentée. Feature avancée, non bloquante.
 
-Webmanifest complet : `name`, `short_name`, `theme_color: "#0c2340"`, `background_color: "#ffffff"`, `display: "standalone"`, `icons (3)`, `lang: "fr"` ✅
+## 14. Tests visuels
 
----
+### Desktop (1920px)
 
-## Check 8 — HTTPS & Sécurité (5/5)
+| Page | Résultat | Statut |
+|------|----------|--------|
+| Accueil — Header | Logo, nav 6 items, téléphone, CTA "Devis gratuit" | ✅ |
+| Accueil — Hero | Titre, sous-titre, 2 CTAs, illustration dashboard | ✅ |
+| Accueil — Reassurance | 5 badges (Certifié NF, Conforme, Rapide, Local, Clé en main) | ✅ |
+| Accueil — Services | 6 cartes en grille 3×2, badges différenciants | ✅ |
+| Accueil — Commerces | Fond bleu foncé, types de commerces, CTA | ✅ |
+| Accueil — Avis | 3 témoignages avec étoiles, noms, localisations | ✅ |
+| Accueil — Zone | Villes en tags, carte lazy-load | ✅ |
+| Accueil — FAQ | Section avec accordéons | ✅ |
+| Accueil — Contact | Formulaire + carte de visite + disponibilités | ✅ |
+| Accueil — Footer | Navigation, services, mentions légales, copyright, SIRET | ✅ |
+| /mentions-legales | 7 sections, lien retour, infos LCEN complètes | ✅ |
+| /politique-de-confidentialite | 10 sections RGPD complètes | ✅ |
+| /404 | Header, message, 4 CTAs, footer | ✅ |
+| /merci | Icône check, message, CTA retour, 4 liens secondaires | ✅ |
 
-### Correction appliquée
+### Mobile (vérification programmatique)
 
-`rel="noopener"` → `rel="noopener noreferrer"` sur tous les `target="_blank"` :
+| Élément | Résultat | Statut |
+|---------|----------|--------|
+| Viewport meta | `width=device-width, initial-scale=1.0` | ✅ |
+| Media queries | 3 breakpoints (480px, 768px, 900px) | ✅ |
+| Hamburger menu | Présent, aria-expanded dynamique | ✅ |
+| Mobile sticky CTA | Présent (display:flex ≤768px) | ✅ |
+| Grilles responsives | CSS vérifié pour stack mobile | ✅ |
 
-| Fichier | Lien |
-|---------|------|
-| mentions-legales.astro | cloudflare.com + heroicons.com |
-| politique-de-confidentialite.astro | cnil.fr |
-| merci.astro | g.page/r/review (ajouté) |
-
-### État final
-
-| Critère | Statut |
-|---------|--------|
-| Aucun lien `http://` dans le code source | ✅ |
-| Tous `target="_blank"` avec `rel="noopener noreferrer"` | ✅ **corrigé** |
-| Pas de mixed content | ✅ |
-| HTTPS (Cloudflare Pages) | ✅ en production |
-
----
-
-## Check 9 — Responsive (9/10)
-
-| Critère | Statut |
-|---------|--------|
-| CSS custom avec @media queries | ✅ |
-| Breakpoints définis : 480px (mobile), 768px (tablet), 1200px (desktop) | ✅ |
-| Sticky CTA mobile (tel: + #contact) | ✅ |
-| Pas d'éléments à largeur fixe bloquant le mobile | ✅ |
-| `max-width: 1200px` + `padding` sur toutes les sections | ✅ |
-| Vérification navigateur non possible dans sandbox | -1 |
-
----
-
-## Check 10 — Parcours conversion (10/10)
-
-### Correction appliquée
-
-Lien "Laisser un avis Google" ajouté sur `/merci` → conversion post-contact.
-
-### Parcours validé
-
-| Étape | Statut |
-|-------|--------|
-| CTA visible sans scroll (Hero) | ✅ |
-| Sticky CTA mobile (appel + devis) | ✅ |
-| Téléphone cliquable `tel:` | ✅ (9 occurrences) |
-| Email cliquable `mailto:` | ✅ (6 occurrences) |
-| Social proof (témoignages section #avis) | ✅ |
-| Réassurance (certifications, garanties, chiffres) | ✅ |
-| Formulaire de contact fonctionnel (Web3Forms) | ✅ |
-| Redirection vers /merci après soumission | ✅ |
-| /merci : header + footer + CTA secondaires | ✅ (sa-06 + sa-07) |
-| /merci : lien avis Google | ✅ **ajouté** |
+> Note : Le viewport du navigateur sandbox ne peut pas être redimensionné en dessous de 1920px. Les tests mobiles sont vérifiés programmatiquement via les media queries CSS et la présence des éléments DOM. Le test PageSpeed Insights mobile (score 97) confirme le bon fonctionnement en conditions réelles.
 
 ---
 
-## Check 11 — Lighthouse (⏳ Post-déploiement)
+## Corrections recommandées
 
-> Lighthouse ne peut pas être exécuté dans le sandbox Cowork. À vérifier via [PageSpeed Insights](https://pagespeed.web.dev/) après déploiement sur Cloudflare Pages.
+### Priorité haute
+Aucune correction critique requise.
 
-### Estimation
+### Priorité moyenne
+1. **Ajouter Cross-Origin-Opener-Policy** dans `public/_headers` : `Cross-Origin-Opener-Policy: same-origin` (+2 pts Best Practices)
+2. **Vérifier les contrastes** des textes blancs sur fond bleu dans la section Commerces (opacités potentiellement trop basses)
 
-Le site présente toutes les caractéristiques d'un score élevé :
-- Aucune image bitmap de contenu (LCP très rapide)
-- Polices locales avec preload + font-display: swap
-- CSS minifié, HTML compressé
-- Aucun script bloquant
-- Schema.org complet, meta tags optimisés, robots.txt, sitemap
-
-**Score estimé post-deploy** :
-| Catégorie | Estimation |
-|-----------|-----------|
-| Performance | ≥ 90 |
-| Accessibility | ≥ 90 |
-| Best Practices | ≥ 90 |
-| SEO | ≥ 95 |
-
-### Action utilisateur
-
-```
-1. Déployer sur Cloudflare Pages (cf. sa-10-deploiement)
-2. Aller sur https://pagespeed.web.dev/
-3. Saisir https://mm-securite.fr
-4. Vérifier les 4 scores ≥ 90
-5. Vérifier Core Web Vitals : LCP < 2.5s, INP < 100ms, CLS < 0.1
-```
+### Priorité basse (compromis architecturaux acceptés)
+3. Observatory CSP `unsafe-inline` : Non corrigeable sans serveur SSR (Astro inline scripts)
+4. SRI script Umami : Non viable (CDN sans versioning)
+5. Trusted Types : Feature avancée, pas de support natif Astro
 
 ---
 
-## Check 12 — Build (8/10)
+## Score final
 
-Corrections appliquées : preload links HTML, `rel="noopener noreferrer"` (attributs HTML), lien avis Google (HTML), texte. Aucune nouvelle syntaxe Astro ou TypeScript. Build estimé ✅.
+| Domaine | Score | Poids | Pondéré |
+|---------|-------|-------|---------|
+| Images & assets | 10/10 | 10% | 1.0 |
+| Polices | 10/10 | 5% | 0.5 |
+| CSS & JS | 10/10 | 10% | 1.0 |
+| HTML & sémantique | 10/10 | 5% | 0.5 |
+| Analytics & conversion | 10/10 | 10% | 1.0 |
+| Accessibilité code | 9/10 | 10% | 0.9 |
+| Favicon & manifest | 10/10 | 5% | 0.5 |
+| HTTPS & sécurité | 10/10 | 5% | 0.5 |
+| Responsive | 10/10 | 10% | 1.0 |
+| Observatory | 7.5/10 | 10% | 0.75 |
+| PageSpeed mobile | 9.7/10 | 10% | 0.97 |
+| PageSpeed desktop | 10/10 | 5% | 0.5 |
+| Tests visuels | 10/10 | 5% | 0.5 |
 
-Déduction (-2) : Build non exécutable dans ce sandbox (binaire Rollup natif ARM64 indisponible — contrainte infrastructure). Sera vérifié lors du déploiement.
-
----
-
-## Bilan des corrections (sa-07)
-
-| Fichier | Correction | Impact |
-|---------|-----------|--------|
-| `src/layouts/Layout.astro` | Preload Inter 400 + 700 | LCP ↑ |
-| `src/pages/mentions-legales.astro` | `rel="noopener noreferrer"` (×2) | Sécurité ✅ |
-| `src/pages/politique-de-confidentialite.astro` | `rel="noopener noreferrer"` (×1) | Sécurité ✅ |
-| `src/pages/merci.astro` | Lien avis Google post-contact | Conversion ↑ |
-
-**Total : 4 corrections dans 4 fichiers.**
-
----
-
-## Actions post-déploiement (utilisateur)
-
-1. **Lighthouse** via PageSpeed Insights → vérifier ≥ 90 sur les 4 catégories
-2. **Core Web Vitals** → LCP < 2.5s, INP < 100ms, CLS < 0.1
-3. **Umami Analytics** (optionnel) → installer pour les événements de conversion
-4. **Test formulaire** en production → vérifier réception email Web3Forms
-5. **Test mobile** → vérifier sticky CTA, responsive sur iPhone/Android
+**SCORE GLOBAL : 95/100** ✅
 
 ---
 
-## Prochaine étape : **sa-08-corrections**
+*Audit réalisé le 23 mars 2026. Tous les tests sont effectués sur le site en production (https://mm-securite.fr). Les scores PageSpeed peuvent varier selon les conditions réseau.*

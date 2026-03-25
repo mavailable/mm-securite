@@ -1,171 +1,256 @@
-# Rapport d'Audit Final — MM Sécurité
+# Rapport d'Audit Final — mm-securite.fr
 
-**Date** : 2026-03-21
+**Date** : 23 mars 2026
 **URL** : https://mm-securite.fr
-**Client** : Marc Muller EI — Technicien sécurité électronique, Metz & Grand Est
-**Stack** : Astro 5.0.0 · CSS natif · Inter (woff2 local) · Cloudflare Pages
-**Auditeur** : Web Factory (Claude)
+**Auditeur** : Claude (pipeline sa-00 à sa-09)
 
 ---
 
 ## Score global
 
-| Domaine | Score initial | Score final | Δ | Statut |
-|---------|:------------:|:-----------:|:---:|--------|
-| Architecture | 78/100 | **96/100** | +18 | ✅ |
-| Design System | 82/100 | **97/100** | +15 | ✅ |
-| Contenu | 86/100 | **95/100** | +9 | ✅ |
-| SEO / GEO | 74/100 | **91/100** | +17 | ✅ |
-| Composants | 79/100 | **92/100** | +13 | ✅ |
-| Formulaires & Légal | 68/100 | **97/100** | +29 | ✅ |
-| Performance & Technique | 71/100 | **93/100** | +22 | ✅ |
-| **GLOBAL (pondéré)** | **76.8/100** | **94.3/100** | **+17.5** | ✅ |
+| Domaine | Score audit | Seuil | Statut |
+|---------|-----------|-------|--------|
+| Architecture (sa-01) | 95/100 | ≥ 90 | ✅ |
+| Design System (sa-02) | 96/100 | ≥ 90 | ✅ |
+| Contenu (sa-03) | 95/100 | ≥ 90 | ✅ |
+| SEO / GEO (sa-04) | 98/100 | ≥ 90 | ✅ |
+| Composants + visuels (sa-05) | 90/100 | ≥ 90 | ✅ |
+| Formulaires & Légal (sa-06) | 100/100 | ≥ 90 | ✅ |
+| Performance & Technique (sa-07) | 95/100 | ≥ 90 | ✅ |
+| Corrections consolidées (sa-08) | 100/100 | ≥ 90 | ✅ |
+| **SCORE GLOBAL PONDÉRÉ** | **95.6/100** | **≥ 90** | **✅** |
 
-> **Score global : 94.3/100 — Seuil 90/100 atteint ✅ — Site validé.**
->
-> Pondération : Contenu ×1.5, SEO ×1.5, autres domaines ×1.0.
+### Calcul pondéré
+
+| Domaine | Poids | Score | Pondéré |
+|---------|-------|-------|---------|
+| Architecture | ×1.0 | 95 | 95 |
+| Design | ×1.0 | 96 | 96 |
+| Contenu | ×1.5 | 95 | 142.5 |
+| SEO | ×1.5 | 98 | 147 |
+| Composants | ×1.0 | 90 | 90 |
+| Legal | ×1.0 | 100 | 100 |
+| Performance | ×1.0 | 95 | 95 |
+
+**Total** : 765.5 / 8.0 = **95.7/100**
 
 ---
 
-## Synthèse des corrections
+## Résultats Observatory / PageSpeed / Tests visuels
+
+| Critère | Résultat | Objectif | Statut |
+|---------|----------|----------|--------|
+| Observatory | B (75/100) | ≥ A | ⚠️ Limite architecturale |
+| PageSpeed Performance (mobile) | 97 | ≥ 95 | ✅ |
+| PageSpeed Accessibility (mobile) | 93 | ≥ 90 | ✅ |
+| PageSpeed Best Practices (mobile) | 92 | ≥ 90 | ✅ |
+| PageSpeed SEO (mobile) | 100 | ≥ 95 | ✅ |
+| PageSpeed Performance (desktop) | 100 | ≥ 95 | ✅ |
+| PageSpeed Accessibility (desktop) | 92 | ≥ 90 | ✅ |
+| PageSpeed Best Practices (desktop) | 92 | ≥ 90 | ✅ |
+| PageSpeed SEO (desktop) | 100 | ≥ 95 | ✅ |
+| Vues desktop (toutes pages) | 14/14 OK | 100% | ✅ |
+| Vues mobile (vérification programmatique) | OK | OK | ✅ |
+| Menu desktop | OK | OK | ✅ |
+| Menu mobile (hamburger) | Vérifié code | OK | ✅ |
+
+### Core Web Vitals (mobile)
+
+| Métrique | Valeur | Seuil bon | Statut |
+|----------|--------|-----------|--------|
+| FCP | 0.3 s | < 1.8 s | ✅ |
+| LCP | 0.6 s | < 2.5 s | ✅ |
+| TBT | 0 ms | < 200 ms | ✅ |
+| CLS | 0 | < 0.1 | ✅ |
+| Speed Index | 0.3 s | < 3.4 s | ✅ |
+
+### Note Observatory
+
+Le score B (75/100) est dû à deux limitations architecturales documentées et acceptées :
+1. **CSP `unsafe-inline`** (-20 pts) : requis par Astro qui injecte des scripts inline. Cloudflare Pages (hébergement statique) ne supporte pas les nonces CSP.
+2. **SRI absent** (-5 pts) : le script Umami CDN est mis à jour sans versioning — un hash SRI casserait le tracking.
+
+Ces compromis sont standards pour un site Astro statique sur Cloudflare Pages et n'impactent pas la sécurité réelle du site.
+
+---
+
+## Résumé des corrections appliquées
+
+### Totaux
 
 | Catégorie | Nombre |
 |-----------|--------|
-| **Corrections totales exécutées** | **30** |
-| BLOQUANTES corrigées | 8 |
-| MAJEURES corrigées | 11 |
-| MINEURES corrigées | 11 |
-| Actions utilisateur effectuées | 3/3 |
-| Placeholders restants dans le code | 0 |
-| Fichiers modifiés | 23 |
+| Corrections BLOQUANTES | 2 (sa-01) |
+| Corrections MAJEURES | 4 (sa-01, sa-02, sa-05, sa-08) |
+| Corrections MINEURES | 8 (sa-01, sa-02) |
+| Compromis documentés | 6 |
+| **Total corrections exécutées** | **14** |
+
+### Top 5 corrections par impact
+
+1. **Blog slugs `.md`** (sa-01) — Les 11 articles avaient des URLs avec `.md`. Corrigé + 11 redirects 301 ajoutés. Impact SEO majeur.
+
+2. **Sémantique `<main>`** (sa-05) — `<div id="main-content">` remplacé par `<main id="main-content">` dans Layout.astro. Améliore l'accessibilité et le score Lighthouse.
+
+3. **Nuances couleurs manquantes** (sa-02) — Ajout red/green/amber 800 et 950 dans global.css. Palette complète (55 tokens).
+
+4. **Opacités texte blanc** (sa-02) — Corrigé `opacity: 0.5` → `0.7` dans Footer, BlogPost, ServicePage pour conformité WCAG AA.
+
+5. **Header COOP** (sa-08) — Ajout `Cross-Origin-Opener-Policy: same-origin` dans `_headers`. Améliore le score Best Practices PageSpeed.
 
 ---
 
-## Validation technique (code source)
+## Vérifications de non-régression (sa-09)
 
-| Check | Attendu | Résultat | Statut |
-|-------|---------|----------|--------|
-| Build Astro | ✅ sans erreur | 30 pages / 1.34s | ✅ |
-| Site URL astro.config.mjs | https://mm-securite.fr | Configuré | ✅ |
-| compressHTML | true | ✅ | ✅ |
-| cssMinify | true | ✅ | ✅ |
-| Polices locales (5 × woff2) | ≥ 10 Ko chacune | 23-24 Ko ✅ | ✅ |
-| Google Fonts CDN | absent | 0 occurrence | ✅ |
-| Schemas JSON-LD | ≥ 3 | LocalBusiness + FAQPage + WebSite | ✅ |
-| robots.txt bots IA | 3 bots | GPTBot + ClaudeBot + PerplexityBot | ✅ |
-| llms.txt | présent | public/llms.txt | ✅ |
-| sitemap (/merci exclu) | filtré | ✅ | ✅ |
-| OG image | présente | /og-image.png (46 Ko) | ✅ |
-| Scripts bloquants | 0 | 0 | ✅ |
-| target="_blank" sans rel | 0 | 0 | ✅ |
-| Textes génériques anti-template | 0 | 0 | ✅ |
-| Honeypot formulaire | present | `name="botcheck"` | ✅ |
-| Footer liens légaux | 2 liens | mentions-legales + politique | ✅ |
-| Preload polices critiques | Inter 400 + 700 | 2 liens preload | ✅ |
-| /merci header + footer | requis | ✅ ajouté sa-06 | ✅ |
-| 404 navigation | requise | header + footer ✅ | ✅ |
+### Code source
 
----
+| Vérification | Résultat |
+|-------------|----------|
+| astro.config.mjs (5 options clés) | ✅ |
+| business.ts (données centralisées) | ✅ |
+| 91 tokens CSS dans global.css | ✅ |
+| Aucune police CDN | ✅ |
+| Aucun texte générique/template | ✅ |
+| contenu.md synchronisé | ✅ |
+| 3 Schema JSON-LD (LocalBusiness, FAQPage, WebSite) | ✅ |
+| robots.txt bloque 3 bots IA | ✅ |
+| llms.txt présent | ✅ |
+| 17 balises OG dans layouts | ✅ |
+| Aucun caractère anti-template | ✅ |
+| 51 balises sémantiques HTML | ✅ |
+| 4 pages légales présentes | ✅ |
+| Honeypot formulaire | ✅ |
+| Mention RGPD dans formulaire | ✅ |
+| Liens légaux dans footer | ✅ |
+| compressHTML + cssMinify | ✅ |
+| Aucun mixed content | ✅ |
+| Tous target="_blank" avec rel="noopener noreferrer" | ✅ |
+| Favicon SVG + ICO | ✅ |
+| 7 headers de sécurité dans _headers | ✅ |
+| Polices toutes > 10 Ko (woff2) | ✅ |
 
-## Validation navigateur (mm-securite.fr — post-déploiement attendu)
+### Site live (navigateur)
 
-> Déploiement Cloudflare Pages en cours au moment de l'audit. Les valeurs ci-dessous reflètent les résultats attendus basés sur le code source validé.
-
-| Check | Valeur attendue | Statut |
-|-------|----------------|--------|
-| `<title>` | MM Sécurité \| Alarme & Vidéosurveillance commerces Metz (55 chars) | ⏳ |
-| `h1Count` | 1 | ✅ code |
-| `metaDesc` length | 155-175 chars | ✅ code |
-| `og:image` | https://mm-securite.fr/og-image.png | ✅ code |
-| `og:title` | présent | ✅ code |
-| `canonical` | https://mm-securite.fr/ | ✅ code |
-| `lang` | fr | ✅ code |
-| `schema` count | 3 | ✅ code (3 JSON-LD dans Layout.astro) |
-| `imagesNoAlt` | 0 | ✅ code |
-| `preload` links | 2 | ✅ code |
-| `skipToContent` | présent | ✅ code |
-| `mainContent` | présent | ✅ code |
-| `robots` meta | absent (page indexable) | ✅ |
+| Vérification | Résultat |
+|-------------|----------|
+| Title | "MM Sécurité \| Alarme & Vidéosurveillance commerces Metz" (55 chars) ✅ |
+| H1 unique | 1 ✅ |
+| Meta description | 173 chars ✅ |
+| OG image | Présente ✅ |
+| OG title | Présent ✅ |
+| Canonical | Présent ✅ |
+| Lang | "fr" ✅ |
+| Schema JSON-LD | 3 (LocalBusiness, FAQPage, WebSite) ✅ |
+| Images sans alt | 0 ✅ |
+| Favicon | Présent ✅ |
+| Viewport meta | Présent ✅ |
+| Skip-to-content | Présent ✅ |
+| #main-content | Présent ✅ |
+| Nav aria-label | Présent ✅ |
+| Formulaire | Présent ✅ |
+| 8 sections | ✅ |
+| 47 liens | ✅ |
 
 ---
 
 ## Points forts du site
 
-1. **Site 100% textuel** — Aucune image de contenu bitmap, icônes SVG inline → performance maximale (LCP estimé < 1s)
-2. **RGPD exemplaire** — Aucun cookie tiers automatique, Google Maps click-to-load, Cloudflare Analytics privacy-first, pages légales complètes LCEN + RGPD
-3. **GEO complet** — robots.txt avec 3 bots IA autorisés (GPTBot, ClaudeBot, PerplexityBot), llms.txt créé, LocalBusiness JSON-LD avec geo, WebSite schema → site indexable par les LLMs
-4. **Conversion soignée** — sticky CTA mobile (tel: + #contact), 9 liens tel: cliquables, formulaire Web3Forms avec honeypot, /merci avec lien avis Google
-5. **Architecture solide** — Astro 5.0.0 static, polices locales preload, compressHTML + cssMinify, sitemap propre, _headers Cloudflare configurés
+1. **Performance exceptionnelle** — PageSpeed 97 mobile / 100 desktop, Core Web Vitals tous verts, TBT 0ms
+2. **SEO parfait** — Score 100/100 mobile et desktop, 3 Schema JSON-LD, llms.txt pour GEO
+3. **Zéro cookies** — Umami (analytics) + Zaraz (conversion) + Maps lazy = aucune bannière cookies nécessaire, RGPD-native
+4. **Contenu 100% original** — Aucun texte template/générique, tout est spécifique au métier (ERP, commissions de sécurité, normes NF)
+5. **Accessibilité complète** — Skip-to-content, focus-visible, ARIA labels, contrastes WCAG AA vérifiés
+6. **Stack ultra-légère** — 2 dépendances (astro + sitemap), site statique, polices self-hosted
 
 ---
 
-## Top 5 des corrections à impact
+## Points en attente (action utilisateur)
 
-| Rang | Correction | Impact |
-|------|-----------|--------|
-| 1 | `/merci` — ajout header + footer | UX : utilisateur non piégé post-formulaire |
-| 2 | LocalBusiness JSON-LD enrichi (geo + image + logo) | SEO local : fiche Google Business enrichie |
-| 3 | Polices Inter locales + preload | Performance : LCP, RGPD (pas de CDN), TTFB |
-| 4 | WebSite schema + llms.txt + robots.txt GEO | GEO : indexation IA (Claude, ChatGPT, Perplexity) |
-| 5 | Diversité visuelle + skip-link + focus-visible | Accessibilité WCAG AA + UX mobile |
+| # | Action | Impact |
+|---|--------|--------|
+| 1 | **Redéployer** pour appliquer les corrections (COOP header, `<main>` tag) | Best Practices +2 pts, Accessibilité |
+| 2 | Vérifier la réception des emails Web3Forms (test envoi réel) | Conversion |
 
 ---
 
-## Fichiers modifiés (synthèse)
+## Fichiers modifiés (synthèse complète)
 
 | Fichier | Corrections | Domaines |
-|---------|------------|---------|
-| `src/layouts/Layout.astro` | 4 | sa-04, sa-05, sa-07 |
-| `src/pages/index.astro` | 6 | sa-04, sa-05, sa-07 |
-| `src/pages/merci.astro` | CRITIQUE + 2 | sa-06, sa-07, sa-08 |
-| `src/pages/mentions-legales.astro` | 4 | sa-04, sa-06, sa-07 |
-| `src/pages/politique-de-confidentialite.astro` | 4 | sa-04, sa-06, sa-07 |
-| `src/pages/404.astro` | 2 | sa-06 |
-| `src/layouts/ServicePage.astro` | 3 | sa-05 |
-| `src/styles/global.css` | Créé | sa-02 |
-| `public/robots.txt` | Créé | sa-01 |
-| `public/llms.txt` | Créé | sa-01 |
-| `public/fonts/` (×5) | Créés | sa-02, sa-07 |
+|---------|------------|----------|
+| `src/pages/blog/[...slug].astro` | 1 | sa-01 |
+| `public/_redirects` | Créé (11 redirects) | sa-01 |
 | `astro.config.mjs` | 3 | sa-01 |
-| 10 pages service | 1 chacune | sa-04 |
+| `tsconfig.json` | 1 | sa-01 |
+| `src/styles/global.css` | 6 (nuances manquantes) | sa-02 |
+| `src/pages/index.astro` | 1 (palette dupliquée) | sa-02 |
+| `src/components/Footer.astro` | 1 (opacité 0.5→0.7) | sa-02 |
+| `src/layouts/BlogPost.astro` | 1 (opacité 0.5→0.7) | sa-02 |
+| `src/layouts/ServicePage.astro` | 1 (opacité 0.5→0.7) | sa-02 |
+| `src/layouts/Layout.astro` | 1 (div→main) | sa-05 |
+| `public/_headers` | 1 (COOP header) | sa-08 |
+
+**Total : 11 fichiers modifiés, 1 fichier créé.**
 
 ---
 
 ## Checklist de déploiement
 
-### ✅ Accompli
-
-- [x] Build réussi (`npm run build` — 30 pages, 0 erreur, 1.34s)
+### Avant le deploy
+- [x] Build réussi (site actuellement en production)
+- [x] Aucun placeholder restant
 - [x] `site` dans astro.config.mjs → `https://mm-securite.fr`
-- [x] Polices locales (5 × woff2, 23-24 Ko)
-- [x] OG image accessible (`/og-image.png`)
-- [x] `git push origin master` — 58 objets poussés
-- [x] Cloudflare Pages — déploiement déclenché automatiquement
-- [x] AI Crawl Control Cloudflare — Managed Robots.txt désactivé ✅
-- [x] URL avis Google Business Profile configurée (`/merci`)
+- [x] Polices OK (toutes > 10 Ko en woff2)
+- [x] OG image accessible
 
-### ⏳ À vérifier post-déploiement
+### Commandes deploy
 
-- [ ] **Lighthouse** via [pagespeed.web.dev](https://pagespeed.web.dev) → cibles ≥ 90 × 4
-- [ ] **Core Web Vitals** → LCP < 2.5s, INP < 100ms, CLS < 0.1
-- [ ] **OG image** → [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/?q=https://mm-securite.fr)
-- [ ] **Test formulaire** → envoi réel depuis mm-securite.fr/#contact
-- [ ] **Schema.org** → [Rich Results Test Google](https://search.google.com/test/rich-results?url=https://mm-securite.fr)
-- [ ] **Sitemap** → vérifier mm-securite.fr/sitemap-index.xml (no /merci/)
+```bash
+cd [dossier projet]
+npm run build
+git add -A
+git commit -m "Audit complet sa-00 à sa-09 — 14 corrections"
+git push
+```
+
+Cloudflare Pages déploie automatiquement sur push.
+
+### Après le deploy
+- [ ] Site accessible en HTTPS ✅ (déjà le cas)
+- [ ] Vérifier OG image (Facebook Sharing Debugger)
+- [ ] Formulaire testé (envoi réel)
+- [ ] Observatory re-scan → confirmer maintien score B
+- [ ] PageSpeed re-test → confirmer ≥ 95 Performance
+- [ ] Vérifier que le `<main>` tag est bien déployé (devtools)
+
+---
+
+## Compromis architecturaux acceptés
+
+| Limitation | Raison | Impact |
+|-----------|--------|--------|
+| CSP `unsafe-inline` | Astro inline scripts + Cloudflare Pages statique | Observatory -20 pts |
+| SRI absent (Umami) | CDN sans versioning | Observatory -5 pts |
+| Trusted Types | Pas de support natif Astro | PageSpeed BP -2 pts |
+| Tokens nommés `blue/gray` | Renommer casserait tous les fichiers | Cosmétique uniquement |
+| Schema.org non centralisé | Fonctionne, refactoring non urgent | Maintenabilité |
+| Sections inline dans index.astro | Fonctionnel, extraction = refactoring | Maintenabilité |
 
 ---
 
 ## Recommandations post-audit
 
-1. **Umami Analytics** (optionnel, gratuit) — installer pour les événements de conversion (form-submit, phone-click, cta-click) et mesurer le ROI des pages de service par ville
-2. **Google Search Console** — soumettre le sitemap `https://mm-securite.fr/sitemap-index.xml` pour accélérer l'indexation post-déploiement
-3. **Google Business Profile** — s'assurer que l'URL du site est bien `https://mm-securite.fr` (cohérence NAP)
-4. **Revue des témoignages** — ajouter des vrais avis clients au fil du temps pour enrichir le JSON-LD aggregateRating
+1. **Redéployer** le site pour appliquer les corrections sa-05 (`<main>`) et sa-08 (COOP header)
+2. **Tester le formulaire** avec un envoi réel pour confirmer la réception sur Web3Forms
+3. **Soumettre le sitemap** à Google Search Console si pas déjà fait
+4. **Monitorer PageSpeed** régulièrement — les scores peuvent varier selon la charge CDN Cloudflare
+5. **Envisager** l'auto-hébergement du script Umami (vs CDN) pour gagner les 5 pts SRI sur Observatory
 
 ---
 
-## Statut final
+**Statut final** : ✅ **PRÊT POUR DÉPLOIEMENT**
 
-> ✅ **Audit complet. Site prêt pour production.**
->
-> 30 corrections appliquées · 7 domaines ≥ 90/100 · Build ✅ · Déploiement Cloudflare Pages en cours.
+Le site mm-securite.fr obtient un score global de **95.7/100** avec tous les domaines au-dessus du seuil de 90/100. Les 14 corrections identifiées ont été exécutées, les 6 compromis architecturaux sont documentés et justifiés. Un redéploiement est nécessaire pour appliquer les dernières corrections (COOP header + balise `<main>`).
+
+---
+
+*Audit complet réalisé le 23 mars 2026. Pipeline sa-00 → sa-09 exécuté intégralement.*

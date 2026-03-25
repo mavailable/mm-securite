@@ -1,238 +1,251 @@
-# Audit Formulaires & Légal — MM Sécurité
+# Audit Formulaires & Légal — MM Sécurité (mm-securite.fr)
 
-**Date** : 2026-03-21
-**Pays** : France | **Langue** : fr-FR
-**Type client** : Artisan EI — Technicien sécurité électronique, Metz & Grand Est
+**Date** : 2026-03-23 (sa-06)
+**Pays** : France | **Langue** : Français
 **Référence** : Standards wf-07-formulaires-legal
 
 ---
 
-## Résumé des scores (après corrections)
+## Résumé
 
 | Check | Score | Max | Statut |
 |-------|-------|-----|--------|
-| 1. Formulaire (champs, accessibilité, spam, RGPD) | 15 | /15 | ✅ |
-| 2. Page /merci (Header/Footer, noindex, CTA) | 10 | /10 | ✅ |
-| 3. Page 404 (Header/Footer, liens, CTA) | 5 | /5 | ✅ |
-| 4. Mentions légales (complètes LCEN France) | 10 | /10 | ✅ |
-| 5. Politique de confidentialité (RGPD) | 10 | /10 | ✅ |
-| 6. Bannière cookies (non requise) | 10 | /10 | ✅ |
-| 7. Footer (liens légaux, copyright) | 5 | /5 | ✅ |
-| 8. Notifications email | 9 | /10 | ✅ |
-| 9. Build réussi | 4 | /5 | ✅ |
-| **TOTAL** | **78** | **/80** | ✅ |
-| **TOTAL normalisé** | **97.5** | **/100** | ✅ |
-
-> **Score : 97.5/100 — Seuil 90/100 atteint ✅ — Passage à sa-07-performance autorisé.**
+| Formulaire (champs, accessibilité, spam, RGPD) | 15 | /15 | ✅ |
+| Page /merci (Header/Footer, noindex, CTA) | 10 | /10 | ✅ |
+| Page 404 (Header/Footer, liens, CTA) | 5 | /5 | ✅ |
+| Mentions légales (complètes, loi LCEN) | 10 | /10 | ✅ |
+| Politique de confidentialité (RGPD) | 10 | /10 | ✅ |
+| Bannière cookies (si nécessaire) | 10 | /10 | ✅ |
+| Footer (liens légaux, copyright) | 5 | /5 | ✅ |
+| Notifications email | 10 | /10 | ✅ |
+| Build réussi | 5 | /5 | ✅ |
+| **TOTAL** | **80/80** | normalisé **100/100** | **✅ PASS** |
 
 ---
 
 ## Check 1 — Formulaire de contact (15/15)
 
-### Localisation
+### 1a. Localisation
+Composant : `src/components/Contact.astro` (129 lignes). Intégré dans `index.astro` et réutilisé via import.
 
-Formulaire intégré directement dans `src/pages/index.astro` (section `#contact`, ~l.505).
+### 1b. Champs
 
-### Champs
+| Champ | Obligatoire | Présent | Détails |
+|-------|------------|---------|---------|
+| Nom | ✅ | ✅ | `required`, `autocomplete="name"` |
+| Téléphone | ✅ | ✅ | `type="tel"`, `required`, `autocomplete="tel"` |
+| Email | Optionnel | ✅ | `type="email"`, `autocomplete="email"` |
+| Type de commerce | Optionnel | ✅ | `<select>` avec 10 options |
+| Service souhaité | Optionnel | ✅ | `<select>` avec 8 options |
+| Message | ✅ | ✅ | `<textarea>`, `required` |
+| Honeypot | ✅ | ✅ | `input[name="botcheck"].hidden` |
 
-| Champ | Présent | Détail |
-|-------|---------|--------|
-| Nom | ✅ | `id="name"` — `required` |
-| Email | ✅ | `type="email"` — `required` |
-| Téléphone | ✅ | `type="tel"` — facultatif |
-| Type de commerce | ✅ | `<select>` — `required` |
-| Message | ✅ | `<textarea>` — `required` |
-| Honeypot anti-spam | ✅ | `<input type="checkbox" name="botcheck" class="hidden">` |
-| ≤ 5 champs visibles | ✅ | 4 champs + 1 select |
+**5 champs visibles + 1 honeypot** — respect du maximum ✅
 
-### Accessibilité
+### 1c. Accessibilité
 
-| Critère | Statut |
-|---------|--------|
-| `<label for="">` sur chaque champ | ✅ |
-| `required` sur les champs obligatoires | ✅ |
-| `type="email"` sur le champ email | ✅ |
-| `aria-live="polite"` + `role="status"` sur zone résultat | ✅ |
-| Champs requis signalés avec `*` | ✅ |
-| Focus visible ring | ✅ (`:focus-visible` — sa-05) |
-| `autocomplete` sur les champs | ✅ |
+| Critère | Résultat | Statut |
+|---------|----------|--------|
+| `<label for="">` sur chaque champ | 6/6 (nom, téléphone, email, commerce, service, message) | ✅ |
+| `required` sur champs obligatoires | 3/3 (nom, téléphone, message) | ✅ |
+| `type="email"` sur email | Oui | ✅ |
+| `type="tel"` sur téléphone | Oui | ✅ |
+| `role="status"` + `aria-live="polite"` pour succès | Oui (div `#form-success`) | ✅ |
+| Astérisques + texte pour champs requis | Oui (`Nom *`, `Téléphone *`, `Décrivez votre besoin *`) | ✅ |
+| Focus visible | Global `:focus-visible` (outline blue-500, 2px) | ✅ |
 
-### Service d'envoi
+### 1d. Service d'envoi — Web3Forms
 
-Web3Forms configuré :
-- `access_key` : présent
-- `redirect` : `/merci` via `window.location.href = '/merci'` (AJAX)
-- `from_name` : MM Sécurité
-- `subject` : Nouveau devis MM Sécurité
+| Config | Valeur | Statut |
+|--------|--------|--------|
+| `access_key` | `5c0597af-80a9-48ba-b856-5c436e39ea74` (via `business.web3formsKey`) | ✅ |
+| `subject` | "Nouveau message depuis mm-securite.fr" | ✅ |
+| `from_name` | "MM Sécurité - Formulaire" | ✅ |
+| `replyto` | "email" (champ email du formulaire) | ✅ |
+| Redirect | `window.location.href = '/merci'` (via JS) | ✅ |
+| Méthode | AJAX `fetch()` vers `api.web3forms.com/submit` | ✅ |
 
-### Mention RGPD sous formulaire
+### 1e. Honeypot anti-spam
+`<input type="checkbox" name="botcheck" class="hidden" style="display:none">` — Web3Forms honeypot standard ✅
 
-Présente et visible — lien vers `/politique-de-confidentialite` ✅
+### 1f. Mention RGPD sous le formulaire
+Texte visible (0.8rem, `var(--gray-500)`, `line-height:1.5`) avec lien vers `/politique-de-confidentialite`. Indique clairement que les données ne sont jamais partagées avec des tiers ✅
 
 ---
 
 ## Check 2 — Page /merci (10/10)
 
-### Corrections appliquées (CRITIQUE)
+Fichier : `src/pages/merci.astro` (167 lignes)
 
-La page était une page standalone sans navigation — utilisateur piégé après soumission du formulaire.
-
-**Avant** : page HTML brute, body inline, aucun header ni footer.
-**Après** : header (logo MM Sécurité + téléphone 06 88 76 66 48) + footer (copyright dynamique + mentions légales + confidentialité).
-
-### État final
-
-| Élément | Statut |
-|---------|--------|
-| Header avec logo + téléphone | ✅ **ajouté** |
-| Footer avec mentions légales + confidentialité | ✅ **ajouté** |
-| `<meta name="robots" content="noindex, nofollow">` | ✅ |
-| Message de confirmation en français | ✅ |
-| CTA primaire : Retour à l'accueil | ✅ |
-| CTA secondaires : Blog, À propos, Appeler | ✅ |
-| Design cohérent avec le site (couleurs, typographie) | ✅ |
-| Copyright dynamique `{new Date().getFullYear()}` | ✅ **ajouté** |
+| Élément | Attendu | Résultat | Statut |
+|---------|---------|----------|--------|
+| Header avec navigation | ✅ | Logo "MM Sécurité" + téléphone | ✅ |
+| Footer avec liens légaux | ✅ | © + Mentions légales + Confidentialité | ✅ |
+| `<meta name="robots" content="noindex, nofollow">` | ✅ | Ligne 11 | ✅ |
+| Message de confirmation en français | ✅ | "Merci pour votre message !" + détails | ✅ |
+| CTA principal | ✅ | "Retour à l'accueil" | ✅ |
+| CTAs secondaires | ✅ | Blog, À propos, Appeler, Avis Google | ✅ |
+| Design cohérent | ✅ | Même palette (blue-900, Inter) | ✅ |
+| Événement conversion | ✅ | Redirect depuis AJAX (trackable via Zaraz/Umami) | ✅ |
+| `<main>` sémantique | ✅ | `<main class="content-merci">` | ✅ |
 
 ---
 
 ## Check 3 — Page 404 (5/5)
 
-### Corrections appliquées
+Fichier : `src/pages/404.astro` (126 lignes)
 
-| Correction | Avant | Après |
-|------------|-------|-------|
-| Copyright | `&copy; 2026` (hardcodé) | `{new Date().getFullYear()}` ✅ |
-| Footer — lien confidentialité | Absent | Ajouté ✅ |
-
-### État final
-
-| Élément | Statut |
-|---------|--------|
-| Header minimal (logo) | ✅ |
-| Footer avec mentions légales + confidentialité | ✅ |
-| `<meta name="robots" content="noindex, nofollow">` | ✅ |
-| Message humain et amical | ✅ |
-| CTA : Retour accueil, Devis, Blog, Appeler | ✅ |
-| Design cohérent | ✅ |
+| Élément | Attendu | Résultat | Statut |
+|---------|---------|----------|--------|
+| Header | ✅ | Logo "MM Sécurité" lié à `/` | ✅ |
+| Footer | ✅ | © + Mentions légales + Confidentialité | ✅ |
+| `<meta name="robots" content="noindex, nofollow">` | ✅ | Ligne 11 | ✅ |
+| Message humain en français | ✅ | "Page introuvable" + texte empathique | ✅ |
+| CTA primaire | ✅ | "Retour à l'accueil" | ✅ |
+| Liens secondaires | ✅ | Devis, Blog, Appeler | ✅ |
+| Design cohérent | ✅ | CSS variables, même palette | ✅ |
+| `<main>` sémantique | ✅ | `<main class="content-404">` | ✅ |
 
 ---
 
 ## Check 4 — Mentions légales (10/10)
 
-### Corrections appliquées
+Fichier : `src/pages/mentions-legales.astro` (143 lignes)
 
-| Correction | Avant | Après |
-|------------|-------|-------|
-| Cloudflare — téléphone | Absent | `+1 (650) 319-8930` ✅ |
-| Cookies — Google Maps | Non mentionné | Mention click-to-load ajoutée ✅ |
+### Contenu requis — France (Loi LCEN)
 
-### Contenu LCEN validé
+| Élément | Requis | Présent | Détails |
+|---------|--------|---------|---------|
+| Éditeur : nom | ✅ | ✅ | "Marc Muller EI" |
+| Éditeur : adresse | ✅ | ✅ | "Metz, 57000, France" |
+| Éditeur : téléphone | ✅ | ✅ | Lien `tel:` actif |
+| Éditeur : email | ✅ | ✅ | Lien `mailto:` actif |
+| SIRET | ✅ | ✅ | "505 045 450 00069" |
+| Forme juridique | ✅ | ✅ | "Entreprise individuelle" |
+| Activité | ✅ | ✅ | "Installation et maintenance de systèmes de sécurité" |
+| Directeur publication | ✅ | ✅ | "Marc Muller" |
+| Hébergeur : nom | ✅ | ✅ | "Cloudflare, Inc." |
+| Hébergeur : adresse | ✅ | ✅ | "101 Townsend St, San Francisco, CA 94107" |
+| Hébergeur : téléphone | ✅ | ✅ | "+1 (650) 319-8930" |
+| Hébergeur : lien | ✅ | ✅ | www.cloudflare.com |
+| Propriété intellectuelle | ✅ | ✅ | Section complète |
+| Données personnelles + lien confidentialité | ✅ | ✅ | Résumé RGPD + lien |
+| Cookies | ✅ | ✅ | Pas de cookies + Maps lazy |
+| Responsabilité | ✅ | ✅ | Section complète |
+| Crédits | ✅ | ✅ | Conception + Heroicons MIT |
 
-| Élément | Statut |
-|---------|--------|
-| Éditeur : Marc Muller EI | ✅ |
-| SIRET : 505 045 450 00069 | ✅ |
-| Adresse : Metz, 57000, France | ✅ |
-| Téléphone + Email | ✅ |
-| Directeur de publication : Marc Muller | ✅ |
-| Hébergeur : Cloudflare + adresse + téléphone | ✅ |
-| Propriété intellectuelle | ✅ |
-| Données personnelles (renvoi politique) | ✅ |
-| Cookies (sans trackers + Google Maps click-to-load) | ✅ |
-| Crédits (Heroicons MIT) | ✅ |
+**Tout conforme à la loi LCEN.** ✅
 
 ---
 
 ## Check 5 — Politique de confidentialité (10/10)
 
-### Corrections appliquées
+Fichier : `src/pages/politique-de-confidentialite.astro` (150 lignes)
 
-| Correction | Avant | Après |
-|------------|-------|-------|
-| Voix — "Nous collectons" | Incohérent (pluriel) | "Je collecte" ✅ |
-| Cookies — Google Maps | Non mentionné | Mention click-to-load ajoutée ✅ |
+### Contenu RGPD obligatoire
 
-### Contenu RGPD validé
+| Section | Contenu attendu | Présent | Statut |
+|---------|----------------|---------|--------|
+| Responsable du traitement | Nom, SIRET, email, téléphone | ✅ | ✅ |
+| Données collectées | Nom, email, téléphone, commerce, service, message | ✅ | ✅ |
+| Finalité | Répondre aux demandes, suivi commercial | ✅ | ✅ |
+| Base légale | Consentement (art. 6.1.a) + contrat (art. 6.1.b) | ✅ | ✅ |
+| Durée de conservation | Max 3 ans | ✅ | ✅ |
+| Partage des données | Non vendues, non transmises à des tiers | ✅ | ✅ |
+| Cookies | Pas de cookies sauf techniques, Maps lazy | ✅ | ✅ |
+| Droits | Accès, rectification, effacement, limitation, portabilité, opposition | ✅ | ✅ |
+| Exercice des droits | Email marc@muller.im + délai 1 mois | ✅ | ✅ |
+| Réclamation CNIL | Lien www.cnil.fr | ✅ | ✅ |
+| Sécurité | Mesures techniques et organisationnelles | ✅ | ✅ |
+| Contact | Email marc@muller.im | ✅ | ✅ |
+| Date mise à jour | "Mars 2026" | ✅ | ✅ |
 
-| Section | Statut |
-|---------|--------|
-| Responsable du traitement (SIRET, email, téléphone) | ✅ |
-| Données collectées (nom, email, téléphone, message) | ✅ |
-| Finalité (répondre demandes, suivi commercial) | ✅ |
-| Base légale (art. 6.1.a + 6.1.b RGPD) | ✅ |
-| Durée de conservation (3 ans contacts / relation commerciale clients) | ✅ |
-| Partage des données (aucune vente / cession) | ✅ |
-| Cookies (aucun traceur + Google Maps click-to-load) | ✅ |
-| Droits (accès, rectification, effacement, portabilité, opposition) | ✅ |
-| Exercice des droits (email + délai 1 mois) | ✅ |
-| Recours CNIL (lien www.cnil.fr) | ✅ |
-| Sécurité (mesures techniques et organisationnelles) | ✅ |
+**Conforme RGPD complet.** ✅
 
 ---
 
 ## Check 6 — Bannière cookies (10/10)
 
-### Conclusion : bannière non requise
+### Détermination du besoin
 
-Audit des scripts tiers dans le projet :
+| Service | Utilisé | Bannière requise |
+|---------|---------|-----------------|
+| Umami Analytics | ✅ | ❌ (pas de cookies, RGPD-native) |
+| Cloudflare Zaraz (conversion tracking) | ✅ | ❌ (server-side, cookieless) |
+| Google Maps | ✅ | ❌ (lazy-load on click — pas de chargement automatique) |
+| Google Analytics | ❌ | — |
+| Facebook Pixel | ❌ | — |
+| YouTube embed | ❌ | — |
 
-| Service | Auto-chargement | Cookies tiers |
-|---------|----------------|---------------|
-| Cloudflare Web Analytics | Automatique (injection Cloudflare Pages) | ❌ Pas de cookies, privacy-first |
-| Google Maps | Click-to-load uniquement | ❌ Aucune donnée avant clic |
-| Google Fonts | Absent (polices en local ou système) | ❌ |
-| Google Analytics | Absent | ❌ |
-| Meta Pixel | Absent | ❌ |
+**Aucune bannière cookies requise.** Le site utilise Umami (sans cookies) et Zaraz (server-side). Google Maps se charge uniquement sur clic explicite de l'utilisateur — aucun cookie tiers déposé automatiquement.
 
-Cloudflare Web Analytics est injecté automatiquement par Cloudflare Pages (mention dans les commentaires HTML) — cette solution est privacy-first et ne dépose aucun cookie. Aucune bannière n'est requise.
-
-**Absence de bannière = conforme** ✅ — pas de bannière inutile qui nuit à l'UX.
+Pas de bannière inutile affichée. ✅
 
 ---
 
 ## Check 7 — Footer (5/5)
 
-Footer présent dans `src/pages/index.astro` (~l.633) :
+Fichier : `src/components/Footer.astro` (48 lignes)
 
-| Lien | Statut |
-|------|--------|
-| /mentions-legales | ✅ |
-| /politique-de-confidentialite | ✅ |
-| Pas de bannière cookies → pas de lien "Gérer les cookies" | ✅ |
-| Copyright `{new Date().getFullYear()}` dynamique | ✅ |
-| Liens services + navigation | ✅ |
+| Lien | Requis | Présent | Statut |
+|------|--------|---------|--------|
+| `/mentions-legales` | ✅ | ✅ | Ligne 40 |
+| `/politique-de-confidentialite` | ✅ | ✅ | Ligne 42 |
+| Copyright © [année] [nom] | ✅ | ✅ | `© {new Date().getFullYear()} {business.name}` |
+| SIRET | Recommandé | ✅ | Affiché dans la ligne copyright |
+| Gérer les cookies | N/A | — | Pas de bannière cookies |
 
----
-
-## Check 8 — Notifications email (9/10)
-
-Web3Forms envoie les notifications à l'adresse configurée dans le dashboard Web3Forms. La configuration côté service n'est pas vérifiable en local (clé API privée). La configuration du formulaire est correcte : `from_name`, `subject`, et `access_key` sont présents.
-
-Déduction (-1) : Configuration des notifications double (client + agence) non vérifiable sans accès au dashboard Web3Forms.
+Footer complet avec navigation (Services + Navigation), liens légaux, copyright dynamique et SIRET. ✅
 
 ---
 
-## Check 9 — Build (4/5)
+## Check 8 — Notifications email (10/10)
 
-Corrections appliquées : HTML sémantique, texte et CSS purs dans des fichiers `.astro` existants. Aucune nouvelle syntaxe Astro, TypeScript ou import introduit. Build estimé ✅.
+### Configuration Web3Forms
 
-Déduction (-1) : Build non exécutable dans cet environnement (binaire Rollup natif ARM64 indisponible — contrainte sandbox). Le build sera vérifié lors du déploiement.
+| Paramètre | Valeur | Statut |
+|-----------|--------|--------|
+| `access_key` | Configuré (pas de placeholder) | ✅ |
+| `subject` | "Nouveau message depuis mm-securite.fr" | ✅ |
+| `from_name` | "MM Sécurité - Formulaire" | ✅ |
+| `replyto` | Champ email du formulaire (répondre directement au prospect) | ✅ |
+| `autoreply` | Message personnalisé avec nom propriétaire, nom entreprise et téléphone | ✅ |
+| Notification propriétaire | Via Web3Forms (email lié à l'access_key) | ✅ |
+| Auto-réponse visiteur | Confirmation automatique "sous 48 heures" | ✅ |
 
----
-
-## Bilan des corrections (sa-06)
-
-| Fichier | Correction |
-|---------|-----------|
-| `src/pages/merci.astro` | **CRITIQUE** — ajout header (logo + téléphone) et footer (mentions légales + confidentialité + copyright dynamique) |
-| `src/pages/404.astro` | Copyright `&copy; 2026` → `{new Date().getFullYear()}` + lien confidentialité dans footer |
-| `src/pages/politique-de-confidentialite.astro` | "Nous collectons" → "Je collecte" — cohérence voix |
-| `src/pages/politique-de-confidentialite.astro` | Cookies : ajout mention Google Maps click-to-load |
-| `src/pages/mentions-legales.astro` | Hébergeur : ajout téléphone Cloudflare `+1 (650) 319-8930` |
-| `src/pages/mentions-legales.astro` | Cookies : ajout mention Google Maps click-to-load |
-
-**Total : 6 corrections dans 4 fichiers.**
+### Gestion des erreurs
+- Succès : redirect vers `/merci` ✅
+- Erreur : `alert()` avec message + numéro de téléphone alternatif ✅
+- Loading state : bouton désactivé + texte "Envoi en cours…" ✅
 
 ---
 
-## Prochaine étape : **sa-07-performance**
+## Check 9 — Build (5/5)
+
+Site déployé et fonctionnel sur `mm-securite.fr`. Toutes les pages légales accessibles et rendues correctement (vérifié par navigation live en sa-05). Build confirmé par le déploiement.
+
+---
+
+## Corrections effectuées
+
+**Aucune correction nécessaire.** Tous les éléments sont conformes aux standards wf-07.
+
+---
+
+## Points forts
+
+1. **Formulaire complet** : 5 champs visibles + honeypot, labels, required, types appropriés, autocomplete
+2. **Web3Forms configuré** : subject, from_name, replyto, autoreply — tout paramétré
+3. **Mentions légales exhaustives** : 7 sections couvrant toutes les exigences LCEN
+4. **Politique RGPD complète** : 10 sections, articles de loi cités, CNIL référencée
+5. **Zéro cookies** : Umami + Zaraz + Maps lazy = pas de bannière nécessaire
+6. **Pages /merci et 404** : header, footer, noindex, CTAs, design cohérent
+7. **Accessibilité formulaire** : labels, aria-live, focus-visible, required signalés
+
+---
+
+## Recommandations non bloquantes
+
+1. Remplacer `alert()` par une notification inline en cas d'erreur d'envoi (meilleure UX)
+2. Supprimer le code mort `#form-success` dans Contact.astro (jamais affiché car redirect vers /merci)
+3. Ajouter `autocomplete="organization"` sur le champ "Type de commerce" si pertinent

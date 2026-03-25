@@ -45,7 +45,8 @@ const canonical = new URL(Astro.url.pathname, 'https://mm-securite.fr').href;
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <title>{title}</title>
 
-    <!-- Cloudflare Web Analytics : injection automatique via Cloudflare Pages -->
+    <!-- Umami Analytics — privacy-first, no cookies, RGPD natif -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="13c56d5e-7dcb-4c57-a8fe-b46e9d359550" crossorigin="anonymous" is:inline></script>
     <meta name="theme-color" content="#0c2340" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
@@ -447,7 +448,7 @@ const canonical = new URL(Astro.url.pathname, 'https://mm-securite.fr').href;
 
     <footer class="sp-footer">
       <p>&copy; {new Date().getFullYear()} MM Sécurité — Marc Muller EI | <a href="/">Accueil</a> | <a href="/blog">Blog</a> | <a href="/mentions-legales">Mentions légales</a> | <a href="/politique-de-confidentialite">Confidentialité</a></p>
-      <p style="font-size:0.75rem;opacity:0.7;margin-top:0.4rem;"><a href="https://marcm.fr/100-sites-artisans/" style="color:inherit;text-decoration:none;" target="_blank" rel="noopener noreferrer">Site réalisé par Marc M. · Spécialiste sites web pour techniciens sécurité</a></p>
+      <p style="font-size:0.75rem;opacity:0.85;margin-top:0.4rem;"><a href="https://marcm.fr/100-sites-artisans/" style="color:inherit;text-decoration:none;" target="_blank" rel="noopener noreferrer">Site réalisé par Marc M. · Spécialiste sites web pour techniciens sécurité</a></p>
     </footer>
   </body>
 </html>
