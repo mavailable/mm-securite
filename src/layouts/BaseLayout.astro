@@ -79,6 +79,31 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
 
     <slot name="footer" />
 
-    <script src="../scripts/scroll-reveal.ts"></script>
+    <script>
+      function initScrollReveal() {
+        const tempo = parseInt(document.documentElement.dataset.animTempo || '500', 10);
+        const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target as HTMLElement;
+              const parent = el.closest('.reveal-stagger');
+              if (parent) {
+                const siblings = Array.from(parent.querySelectorAll('.reveal, .reveal-left, .reveal-right'));
+                el.style.transitionDelay = `${siblings.indexOf(el) * (tempo * 0.3)}ms`;
+              }
+              el.classList.add('revealed');
+              observer.unobserve(el);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+        elements.forEach((el) => observer.observe(el));
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollReveal);
+      } else {
+        initScrollReveal();
+      }
+    </script>
   </body>
 </html>

@@ -19,36 +19,30 @@
 </style>
 
 <script>
-  const switcher = document.getElementById('theme-switcher');
-  const buttons = switcher?.querySelectorAll('.theme-btn');
+  const buttons = document.querySelectorAll('#theme-switcher .theme-btn');
 
-  buttons?.forEach(btn => {
+  function applyTheme(theme: string) {
+    const html = document.documentElement;
+    html.classList.remove('theme-b', 'theme-c');
+    if (theme === 'b') html.classList.add('theme-b');
+    if (theme === 'c') html.classList.add('theme-c');
+
+    buttons.forEach(b => {
+      b.classList.remove('active');
+      if ((b as HTMLElement).dataset.theme === theme) b.classList.add('active');
+    });
+
+    localStorage.setItem('theme-choice', theme);
+  }
+
+  buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       const theme = (btn as HTMLElement).dataset.theme;
-      if (!theme) return;
-
-      // Reload with new theme CSS
-      const currentUrl = new URL(window.location.href);
-      currentUrl.searchParams.set('theme', theme);
-      localStorage.setItem('theme-choice', theme);
-
-      // Update active state visually
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      // Force full page reload to swap CSS (Astro static build)
-      window.location.href = currentUrl.toString();
+      if (theme) applyTheme(theme);
     });
   });
 
-  // Restore choice on load
-  const saved = new URLSearchParams(window.location.search).get('theme')
-    || localStorage.getItem('theme-choice')
-    || 'a';
-  if (saved !== 'a') {
-    buttons?.forEach(b => {
-      b.classList.remove('active');
-      if ((b as HTMLElement).dataset.theme === saved) b.classList.add('active');
-    });
-  }
+  // Restore saved choice
+  const saved = localStorage.getItem('theme-choice') || 'a';
+  if (saved !== 'a') applyTheme(saved);
 </script>
