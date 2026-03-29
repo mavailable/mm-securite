@@ -1,7 +1,5 @@
 /* MM Sécurité V2 — Global styles */
-/* Le thème par défaut (A) est importé ici.
-   En preview, le ThemeSwitcher remplace dynamiquement le <link> CSS.
-   En production (wf-12), ce fichier importera uniquement le thème choisi. */
+@import "tailwindcss";
 @import './theme-a.css';
 @import './animations.css';
 

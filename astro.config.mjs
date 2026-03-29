@@ -24,7 +24,7 @@ export default defineConfig({
     ...(isKeystatic && keystatic ? [keystatic()] : []),
   ],
   compressHTML: true,
-  build: { inlineStylesheets: 'auto' },
+  build: { inlineStylesheets: 'always' },
   vite: {
     plugins: [tailwindcss()],
     build: { cssMinify: true },
