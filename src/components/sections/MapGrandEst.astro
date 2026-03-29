@@ -1,0 +1,135 @@
+---
+/**
+ * Carte SVG du Grand Est — zone d'intervention MM Sécurité
+ * Contours simplifiés mais géographiquement corrects des 10 départements
+ * Points des villes aux coordonnées réelles (projection Mercator simplifiée)
+ */
+
+const cities = [
+  { name: 'Metz', x: 338, y: 228, hq: true },
+  { name: 'Thionville', x: 326, y: 186 },
+  { name: 'Nancy', x: 322, y: 290 },
+  { name: 'Forbach', x: 388, y: 210 },
+  { name: 'Sarreguemines', x: 400, y: 244 },
+  { name: 'Épinal', x: 350, y: 370 },
+  { name: 'Pont-à-Mousson', x: 330, y: 258 },
+  { name: 'Hagondange', x: 334, y: 212 },
+];
+---
+
+<svg viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto" role="img" aria-label="Carte d'intervention MM Sécurité — Grand Est">
+  <title>Zone d'intervention — Grand Est</title>
+
+  <!-- Fond -->
+  <rect width="600" height="520" rx="8" fill="#0f172a" />
+
+  <!-- Titre -->
+  <text x="300" y="36" text-anchor="middle" fill="white" font-size="16" font-weight="700" font-family="system-ui, sans-serif" letter-spacing="1">ZONE D'INTERVENTION</text>
+
+  <!-- Grand Est — contour simplifié des 10 départements -->
+  <!-- Bas-Rhin, Haut-Rhin, Moselle, Meurthe-et-Moselle, Meuse, Vosges, Ardennes, Marne, Aube, Haute-Marne -->
+  <path d="
+    M 195 60
+    L 220 55 L 245 48 L 260 52 L 278 58
+    L 295 65 L 310 58 L 325 55 L 340 60 L 355 55
+    L 370 58 L 385 65 L 400 72 L 415 80
+    L 430 95 L 440 110 L 445 130
+    L 450 150 L 448 170 L 442 190
+    L 438 210 L 440 230 L 445 250
+    L 450 270 L 448 290 L 442 310
+    L 435 330 L 428 345 L 420 360
+    L 408 378 L 395 390 L 380 400
+    L 365 410 L 348 418 L 330 425
+    L 310 430 L 290 432 L 268 430
+    L 248 425 L 228 418 L 210 408
+    L 195 395 L 182 380 L 172 365
+    L 165 348 L 160 330 L 155 310
+    L 148 290 L 142 270 L 138 250
+    L 135 230 L 132 210 L 130 190
+    L 128 170 L 126 150 L 125 130
+    L 128 110 L 135 95 L 145 80
+    L 158 68 L 175 62 Z
+  " fill="#1e3a8a" fill-opacity="0.3" stroke="#3b82f6" stroke-width="1.5" />
+
+  <!-- Moselle (57) — zone principale -->
+  <path d="
+    M 310 155
+    L 330 148 L 350 150 L 370 155 L 390 165
+    L 405 178 L 415 195 L 420 215
+    L 418 235 L 412 255 L 400 268
+    L 385 275 L 365 278 L 345 280
+    L 325 278 L 308 272 L 295 262
+    L 288 248 L 285 230 L 288 210
+    L 292 192 L 298 175 L 305 162 Z
+  " fill="#2563eb" fill-opacity="0.6" stroke="#60a5fa" stroke-width="1" />
+
+  <!-- Meurthe-et-Moselle (54) -->
+  <path d="
+    M 285 230
+    L 288 248 L 295 262 L 308 272
+    L 325 278 L 345 280 L 345 295
+    L 340 312 L 332 328 L 318 340
+    L 300 345 L 282 342 L 265 335
+    L 252 322 L 245 305 L 242 288
+    L 245 270 L 252 255 L 262 242
+    L 275 234 Z
+  " fill="#2563eb" fill-opacity="0.45" stroke="#60a5fa" stroke-width="1" />
+
+  <!-- Lignes de connexion entre villes (routes) -->
+  <g stroke="#60a5fa" stroke-width="0.8" stroke-opacity="0.3" stroke-dasharray="4 3">
+    <line x1="338" y1="228" x2="326" y2="186" />
+    <line x1="338" y1="228" x2="388" y2="210" />
+    <line x1="338" y1="228" x2="400" y2="244" />
+    <line x1="338" y1="228" x2="330" y2="258" />
+    <line x1="330" y1="258" x2="322" y2="290" />
+    <line x1="322" y1="290" x2="350" y2="370" />
+    <line x1="338" y1="228" x2="334" y2="212" />
+  </g>
+
+  <!-- Villes -->
+  {cities.map(city => (
+    <g>
+      {city.hq ? (
+        <>
+          {/* Halo animé pour le siège */}
+          <circle cx={city.x} cy={city.y} r="12" fill="#f97316" fill-opacity="0.2">
+            <animate attributeName="r" values="12;18;12" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="fill-opacity" values="0.2;0.05;0.2" dur="3s" repeatCount="indefinite" />
+          </circle>
+          <circle cx={city.x} cy={city.y} r="6" fill="#f97316" stroke="white" stroke-width="2" />
+          <text x={city.x} y={city.y - 18} text-anchor="middle" fill="white" font-size="16" font-weight="700" font-family="system-ui, sans-serif">{city.name}</text>
+          <text x={city.x} y={city.y - 5} text-anchor="middle" fill="#f97316" font-size="9" font-weight="600" font-family="system-ui, sans-serif" letter-spacing="1">SIÈGE</text>
+        </>
+      ) : (
+        <>
+          <circle cx={city.x} cy={city.y} r="3.5" fill="white" />
+          <text x={city.x + 8} y={city.y + 4} fill="white" fill-opacity="0.9" font-size="11" font-weight="500" font-family="system-ui, sans-serif">{city.name}</text>
+        </>
+      )}
+    </g>
+  ))}
+
+  <!-- Légende -->
+  <g transform="translate(30, 460)">
+    <circle cx="8" cy="8" r="5" fill="#f97316" stroke="white" stroke-width="1.5" />
+    <text x="20" y="12" fill="white" fill-opacity="0.7" font-size="10" font-family="system-ui, sans-serif">Siège</text>
+
+    <circle cx="80" cy="8" r="3" fill="white" />
+    <text x="90" y="12" fill="white" fill-opacity="0.7" font-size="10" font-family="system-ui, sans-serif">Villes d'intervention</text>
+
+    <rect x="230" y="2" width="14" height="12" rx="2" fill="#2563eb" fill-opacity="0.6" />
+    <text x="250" y="12" fill="white" fill-opacity="0.7" font-size="10" font-family="system-ui, sans-serif">Moselle &amp; Meurthe-et-Moselle</text>
+
+    <rect x="430" y="2" width="14" height="12" rx="2" fill="#1e3a8a" fill-opacity="0.3" stroke="#3b82f6" stroke-width="0.5" />
+    <text x="450" y="12" fill="white" fill-opacity="0.7" font-size="10" font-family="system-ui, sans-serif">Grand Est</text>
+  </g>
+
+  <!-- Noms des départements voisins (discrets) -->
+  <text x="435" y="160" fill="white" fill-opacity="0.2" font-size="10" font-family="system-ui, sans-serif" transform="rotate(-60, 435, 160)">Bas-Rhin</text>
+  <text x="420" y="340" fill="white" fill-opacity="0.2" font-size="10" font-family="system-ui, sans-serif" transform="rotate(-45, 420, 340)">Vosges</text>
+  <text x="200" y="300" fill="white" fill-opacity="0.2" font-size="10" font-family="system-ui, sans-serif">Meuse</text>
+  <text x="170" y="140" fill="white" fill-opacity="0.2" font-size="10" font-family="system-ui, sans-serif">Ardennes</text>
+  <text x="175" y="400" fill="white" fill-opacity="0.2" font-size="10" font-family="system-ui, sans-serif">Haute-Marne</text>
+  <text x="220" y="200" fill="white" fill-opacity="0.2" font-size="10" font-family="system-ui, sans-serif">Marne</text>
+  <text x="440" y="400" fill="white" fill-opacity="0.2" font-size="10" font-family="system-ui, sans-serif" transform="rotate(-30, 440, 400)">Haut-Rhin</text>
+</svg>

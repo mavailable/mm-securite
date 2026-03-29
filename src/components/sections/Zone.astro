@@ -1,15 +1,13 @@
 ---
 /** Zone d'intervention */
-import { Image } from 'astro:assets';
-import { business } from '@data/business';
-import carteIntervention from '@/assets/images/carte-intervention.jpg';
+import MapGrandEst from './MapGrandEst.astro';
 
 const cityPages = [
-  { name: 'Metz', href: '/securite-commerce-metz', desc: 'Siège, interventions prioritaires' },
-  { name: 'Thionville', href: '/securite-commerce-thionville', desc: 'Nord Moselle, bassin frontalier' },
-  { name: 'Nancy', href: '/securite-commerce-nancy', desc: 'Meurthe-et-Moselle' },
-  { name: 'Forbach', href: '/securite-commerce-forbach', desc: 'Bassin houiller' },
-  { name: 'Sarreguemines', href: '/securite-commerce-sarreguemines', desc: 'Est Moselle' },
+  { name: 'Metz', href: '/securite-commerce-metz' },
+  { name: 'Thionville', href: '/securite-commerce-thionville' },
+  { name: 'Nancy', href: '/securite-commerce-nancy' },
+  { name: 'Forbach', href: '/securite-commerce-forbach' },
+  { name: 'Sarreguemines', href: '/securite-commerce-sarreguemines' },
 ];
 ---
 
@@ -21,7 +19,7 @@ const cityPages = [
           Basé à Metz, j'interviens dans tout le Grand Est
         </h2>
         <p class="text-neutral-600 mb-6">
-          Moselle, Meurthe-et-Moselle et au-delà — je me déplace aussi au Luxembourg pour les entreprises frontalières.
+          Moselle, Meurthe-et-Moselle et au-delà — j'interviens dans toute la région Grand Est.
         </p>
         <div class="flex flex-wrap gap-2">
           {cityPages.map(city => (
@@ -34,14 +32,7 @@ const cityPages = [
       </div>
 
       <div class="reveal-right">
-        <Image
-          src={carteIntervention}
-          alt="Carte d'intervention MM Sécurité — Metz, Thionville, Nancy, Forbach, Sarreguemines, Grand Est et Luxembourg"
-          class="w-full h-auto rounded-DEFAULT shadow-md"
-          width={800}
-          height={800}
-          loading="lazy"
-        />
+        <MapGrandEst />
       </div>
     </div>
   </div>

@@ -59,7 +59,7 @@ export const business = {
     cities: ['Metz', 'Thionville', 'Nancy', 'Forbach', 'Sarreguemines', 'Épinal', 'Pont-à-Mousson', 'Hagondange'],
     departments: ['Moselle (57)', 'Meurthe-et-Moselle (54)'],
     region: 'Grand Est',
-    international: ['Luxembourg'],
+    international: [],
   },
 
   commerceTypes: [
