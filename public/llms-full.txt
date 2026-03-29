@@ -57,7 +57,7 @@ Petits commerces et ERP catégories 4-5 : boulangeries, restaurants, salons de c
 - **Villes principales** : Metz, Thionville, Nancy, Forbach, Sarreguemines, Épinal, Pont-à-Mousson, Hagondange
 - **Départements** : Moselle (57), Meurthe-et-Moselle (54)
 - **Région** : Grand Est
-- **International** : Luxembourg (entreprises frontalières)
+- **Région** : Grand Est
 
 ## À propos
 
@@ -85,7 +85,7 @@ Un ERP (Établissement Recevant du Public) est tout bâtiment accueillant des pe
 Oui, à condition de respecter le cadre légal : panneau d'information visible à l'entrée, déclaration en préfecture pour les lieux ouverts au public, durée de conservation des images limitée à 30 jours maximum, accès restreint aux enregistrements. MM Sécurité installe des systèmes conformes et gère toutes les démarches administratives.
 
 ### Intervenez-vous en dehors de Metz ?
-Oui. Interventions dans toute la Moselle (Thionville, Forbach, Sarreguemines, Hagondange), en Meurthe-et-Moselle (Nancy, Pont-à-Mousson) et dans l'ensemble du Grand Est, y compris au Luxembourg pour les entreprises frontalières.
+Oui. Interventions dans toute la Moselle (Thionville, Forbach, Sarreguemines, Hagondange), en Meurthe-et-Moselle (Nancy, Pont-à-Mousson) et dans l'ensemble du Grand Est.
 
 ### Comment se passe une intervention ?
 Premier contact par téléphone ou formulaire. Déplacement gratuit pour évaluer les locaux. Devis détaillé sous 48 heures. Installation planifiée selon les disponibilités du client, souvent en une journée. Formation à l'utilisation du système sur place. Maintenance annuelle proposée.
