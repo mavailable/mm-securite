@@ -1,6 +1,7 @@
 ---
-/** Hero — variante dynamique : fond gradient, stats inline, 2 CTA */
-import { business } from '@data/business';
+/** Hero — variante dynamique : photo fond, overlay, stats inline, 2 CTA */
+import { Image } from 'astro:assets';
+import heroBg from '@/assets/images/hero-bg.jpg';
 
 interface Props {
   title: string;
@@ -15,11 +16,22 @@ interface Props {
 const { title, subtitle, ctaPrimary, ctaPrimaryUrl, ctaSecondary, ctaSecondaryUrl, stats } = Astro.props;
 ---
 
-<section class="relative bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950 text-white overflow-hidden">
-  <!-- Decorative grid pattern -->
-  <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+<section class="relative text-white overflow-hidden min-h-[600px] md:min-h-[700px] flex items-end">
+  <!-- Background image -->
+  <Image
+    src={heroBg}
+    alt="Technicien installant un système d'alarme dans un commerce à Metz"
+    class="absolute inset-0 w-full h-full object-cover"
+    widths={[640, 1024, 1536, 1920]}
+    sizes="100vw"
+    fetchpriority="high"
+    loading="eager"
+  />
 
-  <div class="relative max-w-6xl mx-auto px-4 py-20 md:py-32">
+  <!-- Overlay gradient -->
+  <div class="absolute inset-0 bg-gradient-to-t from-primary-950/90 via-primary-900/70 to-primary-900/40"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 py-16 md:py-24 w-full">
     <div class="max-w-3xl">
       <h1 class="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 reveal">
         {title}
@@ -37,8 +49,11 @@ const { title, subtitle, ctaPrimary, ctaPrimaryUrl, ctaSecondary, ctaSecondaryUr
         </a>
         <a
           href={ctaSecondaryUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           class="inline-flex items-center justify-center border-2 border-white/30 hover:border-white/60 text-white font-semibold py-3.5 px-7 rounded-DEFAULT min-h-[44px] text-lg transition-colors"
         >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           {ctaSecondary}
         </a>
       </div>
@@ -56,5 +71,5 @@ const { title, subtitle, ctaPrimary, ctaPrimaryUrl, ctaSecondary, ctaSecondaryUr
   </div>
 
   <!-- Accent border bottom -->
-  <div class="h-1 bg-gradient-to-r from-accent-500 via-accent-400 to-accent-600"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-500 via-accent-400 to-accent-600"></div>
 </section>
