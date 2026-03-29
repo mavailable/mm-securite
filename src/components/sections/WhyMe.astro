@@ -1,0 +1,71 @@
+---
+/** Pourquoi moi — section avantages avec layout asymétrique */
+import { business } from '@data/business';
+
+const advantages = [
+  {
+    icon: '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>',
+    title: 'Tarifs adaptés',
+    text: "Artisan indépendant, pas de frais de structure. Vous payez l'expertise technique, pas les bureaux et les commerciaux.",
+  },
+  {
+    icon: '<path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+    title: 'Interlocuteur unique',
+    text: "Du premier appel à la maintenance annuelle, c'est toujours moi. Pas de standard, pas de ticket SAV.",
+  },
+  {
+    icon: '<path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>',
+    title: 'Expert commissions de sécurité',
+    text: "Je connais les attentes des commissions ERP catégories 4 et 5. Registre, plans, SSI : tout est préparé.",
+  },
+  {
+    icon: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+    title: 'Réactif',
+    text: "Pas de planning de grand groupe. J'interviens vite et je m'adapte à vos horaires d'ouverture.",
+  },
+];
+---
+
+<section class="py-20 md:py-32 bg-primary-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <!-- Left: intro + verbatim -->
+      <div class="reveal-left">
+        <h2 class="text-2xl md:text-4xl font-heading font-bold text-primary-900 mb-4">
+          Pensé pour les petits commerces
+        </h2>
+        <p class="text-neutral-600 leading-relaxed mb-6">
+          Votre boulangerie, restaurant ou cabinet médical doit respecter les mêmes normes que les grandes enseignes — mais avec un budget adapté. C'est exactement ce que je propose.
+        </p>
+        <blockquote class="border-l-4 border-accent-500 pl-4 py-2 mb-8">
+          <p class="text-primary-800 font-heading italic text-lg">
+            "Du devis à la maintenance, vous parlez toujours à la même personne."
+          </p>
+          <cite class="text-sm text-neutral-500 not-italic mt-1 block">— Marc Muller</cite>
+        </blockquote>
+
+        <!-- Commerce types -->
+        <div class="flex flex-wrap gap-2">
+          {business.commerceTypes.map(type => (
+            <span class="text-xs bg-white border border-primary-200 text-primary-700 px-3 py-1.5 rounded-full">
+              {type}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: advantage cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal-stagger">
+        {advantages.map(adv => (
+          <article class="bg-white border border-neutral-200 rounded-DEFAULT p-5 reveal">
+            <div class="w-10 h-10 rounded-DEFAULT bg-accent-50 flex items-center justify-center mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={adv.icon} />
+            </div>
+            <h3 class="font-heading font-bold text-primary-900 mb-1">{adv.title}</h3>
+            <p class="text-sm text-neutral-600 leading-relaxed">{adv.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

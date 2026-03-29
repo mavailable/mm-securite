@@ -1,0 +1,73 @@
+---
+/** Contact — section homepage avec formulaire devis + coordonnées */
+import { business } from '@data/business';
+import ContactForm from '@components/forms/ContactForm.astro';
+---
+
+<section id="contact" class="py-20 md:py-32 bg-primary-900 text-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Left: form -->
+      <div class="reveal-left">
+        <h2 class="text-2xl md:text-4xl font-heading font-bold text-white mb-2">
+          Un projet ? Parlons-en.
+        </h2>
+        <p class="text-white/90 mb-8">Devis gratuit sous 48 heures, sans engagement.</p>
+
+        <ContactForm darkMode={true} />
+      </div>
+
+      <!-- Right: contact info -->
+      <div class="reveal-right">
+        <div class="bg-white/5 border border-white/10 rounded-DEFAULT p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-full bg-accent-500 text-white flex items-center justify-center text-xl font-bold font-heading">
+              M
+            </div>
+            <div>
+              <p class="font-heading font-bold text-white text-lg">{business.owner}</p>
+              <p class="text-white/90 text-sm">{business.ownerRole}</p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <a href={`tel:${business.phone}`} class="flex items-center gap-3 text-white hover:text-accent-400 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span class="font-semibold">{business.phoneDisplay}</span>
+            </a>
+            <a href={`mailto:${business.email}`} class="flex items-center gap-3 text-white hover:text-accent-400 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>{business.email}</span>
+            </a>
+            <div class="flex items-center gap-3 text-white/90">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div class="text-sm">
+                <p>Lundi – Vendredi : {business.hours.weekdays}</p>
+                <p>Samedi : {business.hours.saturday}</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 text-white/90">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span class="text-sm">Metz, Grand Est · Luxembourg</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RDV Cal.com placeholder -->
+        <div class="mt-6 bg-white/5 border border-white/10 rounded-DEFAULT p-6 text-center">
+          <p class="text-white font-heading font-bold mb-2">Préférez un échange direct ?</p>
+          <p class="text-white/90 text-sm mb-4">Choisissez le créneau qui vous arrange.</p>
+          <!-- TODO: Intégration Cal.com embed/lien quand URL fournie -->
+          <div class="space-y-2">
+            <div class="bg-white/10 border border-white/20 rounded-DEFAULT py-3 px-4 text-white/90 text-sm">
+              Appel téléphonique — 15-30 min
+            </div>
+            <div class="bg-white/10 border border-white/20 rounded-DEFAULT py-3 px-4 text-white/90 text-sm">
+              Visite sur place — Diagnostic gratuit
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

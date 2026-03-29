@@ -1,0 +1,54 @@
+---
+// ThemeSwitcher.astro — composant preview uniquement
+// Supprimé du projet en wf-12 (mise en production)
+---
+
+<div id="theme-switcher" class="fixed bottom-6 right-6 z-50 flex gap-2 bg-white/95 backdrop-blur-sm rounded-full shadow-lg px-4 py-3 border border-neutral-200">
+  <span class="text-sm font-medium text-neutral-600 mr-2 self-center">Thème :</span>
+  <button data-theme="a" class="theme-btn active w-10 h-10 rounded-full border-2 border-neutral-300 text-sm font-bold hover:scale-110 transition-transform" aria-label="Thème A — Sentinelle">A</button>
+  <button data-theme="b" class="theme-btn w-10 h-10 rounded-full border-2 border-neutral-300 text-sm font-bold hover:scale-110 transition-transform" aria-label="Thème B — Bastion">B</button>
+  <button data-theme="c" class="theme-btn w-10 h-10 rounded-full border-2 border-neutral-300 text-sm font-bold hover:scale-110 transition-transform" aria-label="Thème C — Confiance">C</button>
+</div>
+
+<style>
+  .theme-btn.active {
+    border-color: currentColor;
+    background-color: var(--color-primary-500);
+    color: white;
+  }
+</style>
+
+<script>
+  const switcher = document.getElementById('theme-switcher');
+  const buttons = switcher?.querySelectorAll('.theme-btn');
+
+  buttons?.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const theme = (btn as HTMLElement).dataset.theme;
+      if (!theme) return;
+
+      // Reload with new theme CSS
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('theme', theme);
+      localStorage.setItem('theme-choice', theme);
+
+      // Update active state visually
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Force full page reload to swap CSS (Astro static build)
+      window.location.href = currentUrl.toString();
+    });
+  });
+
+  // Restore choice on load
+  const saved = new URLSearchParams(window.location.search).get('theme')
+    || localStorage.getItem('theme-choice')
+    || 'a';
+  if (saved !== 'a') {
+    buttons?.forEach(b => {
+      b.classList.remove('active');
+      if ((b as HTMLElement).dataset.theme === saved) b.classList.add('active');
+    });
+  }
+</script>

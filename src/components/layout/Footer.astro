@@ -1,0 +1,84 @@
+---
+import { business, legal } from '@data/business';
+
+const currentYear = new Date().getFullYear();
+
+const serviceLinks = business.services.map(s => ({
+  label: s.name,
+  href: s.slug,
+}));
+
+const legalLinks = [
+  { label: 'Mentions légales', href: '/mentions-legales' },
+  { label: 'Politique de confidentialité', href: '/politique-de-confidentialite' },
+];
+---
+
+<footer class="bg-primary-900 text-white/90">
+  <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Marque -->
+      <div>
+        <a href="/" class="flex items-center gap-2 text-white font-heading font-bold text-xl mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span>{business.name}</span>
+        </a>
+        <p class="text-white/90 text-sm leading-relaxed mb-4">
+          Technicien indépendant en sécurité électronique pour commerces à Metz et dans le Grand Est.
+        </p>
+        <div class="space-y-2 text-sm">
+          <a href={`tel:${business.phone}`} class="flex items-center gap-2 text-white hover:text-accent-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            {business.phoneDisplay}
+          </a>
+          <a href={`mailto:${business.email}`} class="flex items-center gap-2 text-white hover:text-accent-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            {business.email}
+          </a>
+        </div>
+        <p class="text-white/90 text-xs mt-3">
+          {business.hours.weekdays} (lun-ven) · Samedi {business.hours.saturday}
+        </p>
+      </div>
+
+      <!-- Services -->
+      <nav aria-label="Services">
+        <h3 class="text-white font-heading font-bold text-sm uppercase tracking-wider mb-4">Services</h3>
+        <ul class="space-y-2">
+          {serviceLinks.map(link => (
+            <li>
+              <a href={link.href} class="text-white/90 hover:text-white text-sm transition-colors">{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Navigation -->
+      <nav aria-label="Pages">
+        <h3 class="text-white font-heading font-bold text-sm uppercase tracking-wider mb-4">Navigation</h3>
+        <ul class="space-y-2">
+          <li><a href="/" class="text-white/90 hover:text-white text-sm transition-colors">Accueil</a></li>
+          <li><a href="/a-propos" class="text-white/90 hover:text-white text-sm transition-colors">À propos</a></li>
+          <li><a href="/blog" class="text-white/90 hover:text-white text-sm transition-colors">Blog</a></li>
+          <li><a href="/devis-gratuit" class="text-white/90 hover:text-white text-sm transition-colors">Devis gratuit</a></li>
+          {legalLinks.map(link => (
+            <li>
+              <a href={link.href} class="text-white/90 hover:text-white text-sm transition-colors">{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 py-6 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-white/90">
+      <p>&copy; {currentYear} {business.name} — {business.legalName} — SIRET {legal.registrationNumber}</p>
+      <a href={business.credit.url} class="text-white/90 hover:text-white transition-colors" target="_blank" rel="noopener">
+        {business.credit.text}
+      </a>
+    </div>
+  </div>
+</footer>

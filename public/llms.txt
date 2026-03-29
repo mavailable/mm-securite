@@ -1,82 +1,28 @@
-# MM Sécurité — Marc Muller EI
+# MM Sécurité — Metz, France
 
-> Technicien indépendant en systèmes de sécurité pour commerces et petits ERP à Metz et dans le Grand Est (France).
+> Technicien indépendant en sécurité électronique pour commerces à Metz et Grand Est.
+> Alarme intrusion, incendie, vidéosurveillance, contrôle d'accès, mise en conformité ERP.
+> Interlocuteur unique du devis à la maintenance. Devis gratuit sous 48h.
+> Lundi – Vendredi : 8h – 18h · Samedi : Sur RDV.
+
+## Pages principales
+
+- [Accueil](https://mm-securite.fr): Présentation des services de sécurité pour commerces
+- [À propos](https://mm-securite.fr/a-propos): Parcours et spécialisation de Marc Muller
+- [Devis gratuit](https://mm-securite.fr/devis-gratuit): Formulaire de demande de devis
+- [Alarme intrusion](https://mm-securite.fr/alarme-intrusion-commerce): Systèmes anti-intrusion NF A2P
+- [Alarme incendie](https://mm-securite.fr/alarme-incendie-erp): SSI conforme ERP
+- [Vidéosurveillance](https://mm-securite.fr/videosurveillance-commerce): Caméras IP conformes RGPD
+- [Contrôle d'accès](https://mm-securite.fr/controle-acces-commerce): Badges, digicodes, biométrie
+- [Plans d'évacuation](https://mm-securite.fr/plan-evacuation-erp): Plans NF X 08-070
+- [Mise en conformité](https://mm-securite.fr/mise-en-conformite-erp): Audit et mise aux normes ERP
+- [Blog](https://mm-securite.fr/blog): Articles sur la sécurité des commerces
+- [Contenu complet pour LLM](https://mm-securite.fr/llms-full.txt): Version étendue
 
 ## Informations clés
 
-- **Nom commercial** : MM Sécurité
-- **Dirigeant** : Marc Muller
-- **Statut juridique** : Entreprise Individuelle (EI)
-- **SIRET** : 505 045 450 00069
-- **Localisation** : Metz, Moselle (57), Grand Est, France
-- **Zone d'intervention** : Moselle, Meurthe-et-Moselle, Grand Est, Luxembourg
-- **Téléphone** : +33 6 88 76 66 48
-- **Email** : marc@muller.im
-- **Site web** : https://mm-securite.fr
-
-## Services proposés
-
-MM Sécurité propose les services suivants pour les petits commerces et ERP (Établissements Recevant du Public) :
-
-1. **Alarme intrusion** : installation et maintenance de systèmes d'alarme anti-intrusion pour boutiques et commerces. Centrales certifiées NF A2P, détection volumétrique, alerte smartphone, levée de doute vidéo.
-2. **Alarme incendie / SSI** : système de sécurité incendie conforme aux obligations ERP. Détecteurs, déclencheurs manuels, centrale SSI, vérification annuelle, tenue du registre de sécurité.
-3. **Vidéosurveillance** : installation de caméras IP haute définition, vision nocturne, accès à distance. Installation conforme RGPD avec affichage légal et déclaration en préfecture.
-4. **Contrôle d'accès** : badges, digicodes, lecteurs biométriques pour sécuriser les réserves, bureaux et zones à accès restreint.
-5. **Plans d'évacuation** : conception de plans conformes à la norme NF X 08-070, balisage de sécurité et signalétique pour les commissions de sécurité.
-6. **Mise en conformité ERP** : audit complet et mise en conformité sécurité pour les petits établissements recevant du public (catégories 4 et 5).
-7. **Sous-traitance professionnelle** : réalisation de chantiers sécurité en sous-traitance pour installateurs et intégrateurs sur Metz et le Grand Est.
-
-## Clientèle cible
-
-MM Sécurité s'adresse principalement aux petits commerces et établissements de proximité : boulangeries, restaurants, salons de coiffure, hôtels, cabinets médicaux, boutiques, salles de sport, pharmacies, crèches et tout commerce recevant du public.
-
-## Avantages différenciants
-
-- **Technicien indépendant** : interlocuteur unique du devis à la maintenance, pas d'intermédiaire commercial.
-- **Tarifs adaptés aux petits commerces** : pas de surcoût de structure de grand groupe.
-- **Réactivité locale** : basé à Metz, devis sous 48 heures, intervention rapide.
-- **Expertise commissions de sécurité** : connaissance des attentes des commissions ERP pour une mise en conformité sans mauvaise surprise.
-- **Matériel certifié NF** : installation de matériel conforme aux normes françaises et européennes.
-
-## FAQ
-
-**Quelles sont les obligations de sécurité pour un petit commerce ?**
-Tout commerce recevant du public (ERP) doit disposer d'un système de détection incendie, de plans d'évacuation, d'un balisage de sécurité et d'un registre de sécurité à jour. Les obligations varient selon la catégorie (1 à 5) et le type d'ERP (M, N, O, etc.).
-
-**Combien coûte une installation d'alarme pour un commerce à Metz ?**
-Le coût dépend de la surface, du nombre de points de détection et du type de système choisi. En tant que technicien indépendant, les tarifs de MM Sécurité sont adaptés aux petits commerces sans surcoût de structure. Un devis gratuit et personnalisé est disponible sous 48 heures.
-
-**Intervenez-vous en dehors de Metz ?**
-Oui, MM Sécurité intervient dans toute la Moselle (Thionville, Forbach, Sarreguemines, Hagondange), en Meurthe-et-Moselle (Nancy, Pont-à-Mousson), plus largement dans le Grand Est, et au Luxembourg.
-
-**Quelle est la différence entre une alarme intrusion et une alarme incendie ?**
-L'alarme intrusion protège contre les cambriolages et effractions avec des détecteurs de mouvement et d'ouverture. L'alarme incendie (SSI) détecte les départs de feu avec des détecteurs de fumée et de chaleur. Pour un ERP, l'alarme incendie est une obligation légale, tandis que l'alarme intrusion est recommandée mais non obligatoire.
-
-**Qu'est-ce qu'un ERP et suis-je concerné ?**
-Un ERP (Établissement Recevant du Public) est tout bâtiment ou local accueillant des personnes extérieures. Si vous avez un commerce, un restaurant, un cabinet médical ou tout lieu ouvert au public, vous êtes un ERP. Les obligations de sécurité dépendent de votre catégorie (déterminée par la capacité d'accueil) et de votre type d'activité.
-
-**La vidéosurveillance est-elle conforme au RGPD ?**
-Oui, à condition de respecter certaines règles : affichage d'un panneau d'information visible, déclaration en préfecture pour les lieux ouverts au public, durée de conservation des images limitée (généralement 30 jours), et accès restreint aux images. MM Sécurité installe des systèmes conformes et vous accompagne dans les démarches administratives.
-
-## Articles de blog
-
-MM Sécurité publie régulièrement des guides pratiques pour aider les commerçants à comprendre leurs obligations et à choisir les bons équipements de sécurité.
-
-- [Obligations de sécurité pour un ERP de catégorie 5](https://mm-securite.fr/blog/obligations-securite-erp-categorie-5): Guide complet des obligations incendie, alarme et évacuation pour les petits commerces classés ERP catégorie 5.
-- [Comment choisir une alarme intrusion pour son commerce](https://mm-securite.fr/blog/choisir-alarme-intrusion-commerce): Guide pratique — filaire vs sans fil, composants essentiels, télésurveillance, erreurs à éviter et budget.
-- [Vidéosurveillance en commerce et conformité RGPD](https://mm-securite.fr/blog/videosurveillance-commerce-rgpd): Obligations légales pour installer des caméras dans un commerce — déclaration préfecture, affichage, durée de conservation, zones interdites.
-- [Préparer la visite de la commission de sécurité](https://mm-securite.fr/blog/preparer-commission-securite-commerce): Checklist complète pour passer la commission de sécurité sans stress — registre, extincteurs, plans, balisage.
-- [Cambriolage de commerce : que faire avant, pendant et après](https://mm-securite.fr/blog/cambriolage-commerce-que-faire): Réflexes immédiats, démarches assurance, et solutions de protection pour éviter un nouveau cambriolage.
-- [Contrôle d'accès pour commerce : badges, digicodes et solutions modernes](https://mm-securite.fr/blog/controle-acces-commerce-guide): Guide des technologies de contrôle d'accès — digicode, badge RFID, smartphone, biométrie — et intégration avec l'alarme.
-- [Détecteur incendie en commerce : obligations et choix du matériel](https://mm-securite.fr/blog/detecteur-incendie-obligatoire-commerce): DAAF, SSI, détecteurs de fumée vs chaleur — tout comprendre pour choisir le bon équipement selon votre activité.
-- [Plans d'évacuation : la norme NF X 08-070 expliquée](https://mm-securite.fr/blog/plan-evacuation-norme-nf-x-08-070): Contenu obligatoire, pictogrammes normalisés, format et emplacement des plans d'évacuation conformes.
-- [Sécurité d'un restaurant : obligations des ERP de type N](https://mm-securite.fr/blog/securite-restaurant-obligations-erp-type-n): Guide complet pour restaurateurs — détection incendie en cuisine, extraction, gaz, extincteurs et conformité ERP.
-- [Alarme connectée pour commerce : gérer la sécurité depuis votre smartphone](https://mm-securite.fr/blog/alarme-connectee-smartphone-commerce): Notifications temps réel, levée de doute vidéo, activation à distance — fonctionnement et avantages des alarmes connectées.
-- [Sécurité d'une boulangerie-pâtisserie : alarme, incendie et conformité](https://mm-securite.fr/blog/securite-boulangerie-patisserie): Solutions adaptées aux horaires décalés, détection incendie en fournil, alarme et vidéosurveillance pour boulangers.
-
-## Pages du site
-
-- [Accueil](https://mm-securite.fr): Page principale avec présentation des services, zone d'intervention et formulaire de contact.
-- [Blog](https://mm-securite.fr/blog): Articles et guides pratiques sur la sécurité des commerces.
-- [Mentions légales](https://mm-securite.fr/mentions-legales): Informations légales sur l'entreprise Marc Muller EI.
-- [Politique de confidentialité](https://mm-securite.fr/politique-de-confidentialite): Politique RGPD et traitement des données personnelles.
+- Téléphone : 06 88 76 66 48
+- Email : marc@muller.im
+- Zone : Metz, Thionville, Nancy, Forbach, Sarreguemines, Grand Est, Luxembourg
+- Horaires : Lun-Ven 8h-18h, Sam sur RDV
+- SIRET : 505 045 450 00069

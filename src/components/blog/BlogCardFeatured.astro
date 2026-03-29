@@ -1,0 +1,53 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  date: Date;
+  category: string;
+}
+
+const { slug, title, description, date, category } = Astro.props;
+
+const categoryColors: Record<string, { bg: string; text: string; dot: string }> = {
+  'Réglementation ERP': { bg: 'bg-primary-50', text: 'text-primary-700', dot: 'bg-primary-500' },
+  'Protection & équipements': { bg: 'bg-accent-50', text: 'text-accent-700', dot: 'bg-accent-500' },
+  'Commission de sécurité': { bg: 'bg-secondary-50', text: 'text-secondary-700', dot: 'bg-secondary-500' },
+  'Sécurité par métier': { bg: 'bg-neutral-100', text: 'text-neutral-700', dot: 'bg-neutral-500' },
+};
+
+const colors = categoryColors[category] || categoryColors['Réglementation ERP'];
+const formattedDate = date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<article class="blog-article group bg-white border border-neutral-200 rounded-DEFAULT overflow-hidden hover:shadow-lg transition-all" data-category={category}>
+  <div class="grid grid-cols-1 md:grid-cols-3">
+    <!-- Decorative panel -->
+    <div class="hidden md:flex bg-primary-800 p-8 flex-col justify-center items-center relative overflow-hidden">
+      <div class="absolute top-4 right-4 w-24 h-24 rounded-full bg-white/5"></div>
+      <div class="absolute bottom-8 left-4 w-16 h-16 rounded-full bg-white/5"></div>
+      <span class="text-white/90 text-xs font-medium uppercase tracking-wider">Dernier article</span>
+    </div>
+
+    <!-- Content -->
+    <div class="md:col-span-2 p-6 md:p-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full ${colors.bg} ${colors.text}`}>
+          <span class={`w-1.5 h-1.5 rounded-full ${colors.dot}`}></span>
+          {category}
+        </span>
+        <time class="text-xs text-neutral-400" datetime={date.toISOString()}>{formattedDate}</time>
+      </div>
+      <h3 class="font-heading font-bold text-xl md:text-2xl text-primary-900 mb-3 group-hover:text-primary-700 transition-colors">
+        <a href={`/blog/${slug}`}>
+          {title}
+        </a>
+      </h3>
+      <p class="text-neutral-600 leading-relaxed mb-4">{description}</p>
+      <a href={`/blog/${slug}`} class="inline-flex items-center gap-2 text-primary-600 font-semibold hover:gap-3 transition-all">
+        Lire l'article
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+</article>

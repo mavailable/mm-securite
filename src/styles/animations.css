@@ -1,0 +1,35 @@
+/* Animations au scroll */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--anim-tempo, 500ms) ease-out,
+              transform var(--anim-tempo, 500ms) ease-out;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity var(--anim-tempo, 500ms) ease-out,
+              transform var(--anim-tempo, 500ms) ease-out;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity var(--anim-tempo, 500ms) ease-out,
+              transform var(--anim-tempo, 500ms) ease-out;
+}
+
+.revealed {
+  opacity: 1 !important;
+  transform: translate(0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

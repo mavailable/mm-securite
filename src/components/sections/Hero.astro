@@ -1,0 +1,60 @@
+---
+/** Hero — variante dynamique : fond gradient, stats inline, 2 CTA */
+import { business } from '@data/business';
+
+interface Props {
+  title: string;
+  subtitle: string;
+  ctaPrimary: string;
+  ctaPrimaryUrl: string;
+  ctaSecondary: string;
+  ctaSecondaryUrl: string;
+  stats: { value: string; label: string }[];
+}
+
+const { title, subtitle, ctaPrimary, ctaPrimaryUrl, ctaSecondary, ctaSecondaryUrl, stats } = Astro.props;
+---
+
+<section class="relative bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950 text-white overflow-hidden">
+  <!-- Decorative grid pattern -->
+  <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 py-20 md:py-32">
+    <div class="max-w-3xl">
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 reveal">
+        {title}
+      </h1>
+      <p class="hero-subtitle text-lg md:text-xl text-white/90 leading-relaxed mb-8 max-w-2xl reveal">
+        {subtitle}
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 mb-12 reveal">
+        <a
+          href={ctaPrimaryUrl}
+          class="inline-flex items-center justify-center bg-accent-600 hover:bg-accent-700 text-white font-semibold py-3.5 px-7 rounded-DEFAULT min-h-[44px] text-lg transition-colors shadow-lg hover:shadow-xl"
+        >
+          {ctaPrimary}
+        </a>
+        <a
+          href={ctaSecondaryUrl}
+          class="inline-flex items-center justify-center border-2 border-white/30 hover:border-white/60 text-white font-semibold py-3.5 px-7 rounded-DEFAULT min-h-[44px] text-lg transition-colors"
+        >
+          {ctaSecondary}
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats inline -->
+    <div class="grid grid-cols-3 gap-6 max-w-lg reveal-stagger">
+      {stats.map(stat => (
+        <div class="reveal">
+          <p class="text-3xl md:text-4xl font-heading font-bold text-accent-400">{stat.value}</p>
+          <p class="text-sm text-white/90 mt-1">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Accent border bottom -->
+  <div class="h-1 bg-gradient-to-r from-accent-500 via-accent-400 to-accent-600"></div>
+</section>

@@ -1,0 +1,7 @@
+{
+  "name": "Alarme incendie",
+  "shortDescription": "Détection incendie conforme aux obligations ERP. Détecteurs, déclencheurs manuels, centrale SSI, vérification annuelle et registre de sécurité.",
+  "tag": "Obligatoire ERP",
+  "tagStyle": "red",
+  "order": 2
+}

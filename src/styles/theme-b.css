@@ -1,0 +1,107 @@
+/* Theme B — "Bastion" (Brut / Minimal) */
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f7f8f9;
+  --color-primary-100: #eef0f3;
+  --color-primary-200: #d5dae2;
+  --color-primary-300: #b0bac8;
+  --color-primary-400: #8494a7;
+  --color-primary-500: #5e6e82;
+  --color-primary-600: #49566a;
+  --color-primary-700: #3b4557;
+  --color-primary-800: #2d3444;
+  --color-primary-900: #1a1f2e;
+  --color-primary-950: #0d1017;
+
+  --color-secondary-50: #fafaf9;
+  --color-secondary-100: #f5f5f4;
+  --color-secondary-200: #e7e5e4;
+  --color-secondary-300: #d6d3d1;
+  --color-secondary-400: #a8a29e;
+  --color-secondary-500: #78716c;
+  --color-secondary-600: #57534e;
+  --color-secondary-700: #44403c;
+  --color-secondary-800: #292524;
+  --color-secondary-900: #1c1917;
+  --color-secondary-950: #0c0a09;
+
+  --color-accent-50: #ecfdf5;
+  --color-accent-100: #d1fae5;
+  --color-accent-200: #a7f3d0;
+  --color-accent-300: #6ee7b7;
+  --color-accent-400: #34d399;
+  --color-accent-500: #10b981;
+  --color-accent-600: #059669;
+  --color-accent-700: #047857;
+  --color-accent-800: #065f46;
+  --color-accent-900: #064e3b;
+  --color-accent-950: #022c22;
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f4f4f5;
+  --color-neutral-200: #e4e4e7;
+  --color-neutral-300: #d4d4d8;
+  --color-neutral-400: #a1a1aa;
+  --color-neutral-500: #71717a;
+  --color-neutral-600: #52525b;
+  --color-neutral-700: #3f3f46;
+  --color-neutral-800: #27272a;
+  --color-neutral-900: #18181b;
+  --color-neutral-950: #09090b;
+
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+
+  --radius-DEFAULT: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+
+  --anim-tempo: 300ms;
+}
+
+/* Oswald — Heading */
+@font-face {
+  font-family: 'Oswald';
+  src: url('/fonts/oswald-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('/fonts/oswald-latin-600-normal.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('/fonts/oswald-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Work Sans — Body */
+@font-face {
+  font-family: 'Work Sans';
+  src: url('/fonts/work-sans-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Work Sans';
+  src: url('/fonts/work-sans-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Work Sans';
+  src: url('/fonts/work-sans-latin-600-normal.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

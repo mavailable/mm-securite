@@ -1,0 +1,81 @@
+---
+/** FAQ — accordéon natif <details> + Schema.org FAQPage */
+import { business } from '@data/business';
+
+const faqs = [
+  {
+    question: 'Quelles sont les obligations de sécurité pour un petit commerce ?',
+    answer: "Tout commerce recevant du public (ERP) doit disposer d'un système de détection incendie, de plans d'évacuation conformes à la norme NF X 08-070, d'un balisage de sécurité et d'un registre de sécurité à jour. Les obligations varient selon la catégorie ERP (1 à 5) et le type d'activité. La plupart des petits commerces sont en catégorie 5 (moins de 200 personnes).",
+  },
+  {
+    question: "Combien coûte une installation d'alarme pour un commerce ?",
+    answer: "Le coût dépend de la surface, du nombre de points de détection et du type de système (filaire ou sans fil). En tant qu'artisan indépendant basé à Metz, mes tarifs sont adaptés aux petits commerces — pas de surcoûts de structure. Contactez-moi pour un devis gratuit et personnalisé sous 48 heures.",
+  },
+  {
+    question: 'Quelle différence entre alarme intrusion et alarme incendie ?',
+    answer: "L'alarme intrusion protège contre les cambriolages : détecteurs de mouvement, contacts d'ouverture, sirène, alerte smartphone. L'alarme incendie (SSI) détecte les départs de feu : détecteurs de fumée et de chaleur, déclencheurs manuels. Pour un ERP, l'alarme incendie est une obligation légale. L'alarme intrusion est recommandée mais pas obligatoire.",
+  },
+  {
+    question: "Qu'est-ce qu'un ERP et mon commerce est-il concerné ?",
+    answer: "Un ERP (Établissement Recevant du Public) est tout bâtiment accueillant des personnes extérieures à l'entreprise. Si vous avez une boulangerie, un restaurant, un salon de coiffure, un cabinet médical ou toute activité ouverte au public : vous êtes un ERP. La catégorie dépend de la capacité d'accueil — la grande majorité des petits commerces sont en catégorie 5.",
+  },
+  {
+    question: 'La vidéosurveillance est-elle conforme au RGPD ?',
+    answer: "Oui, à condition de respecter le cadre légal : panneau d'information visible à l'entrée, déclaration en préfecture pour les lieux ouverts au public, durée de conservation des images limitée (30 jours maximum), accès restreint aux enregistrements. J'installe des systèmes 100% conformes et je m'occupe de toutes les démarches.",
+  },
+  {
+    question: 'Intervenez-vous en dehors de Metz ?',
+    answer: "J'interviens dans toute la Moselle (Thionville, Forbach, Sarreguemines, Hagondange), en Meurthe-et-Moselle (Nancy, Pont-à-Mousson) et dans l'ensemble du Grand Est. Je me déplace aussi au Luxembourg pour les entreprises frontalières.",
+  },
+  {
+    question: 'Comment se passe une intervention ?',
+    answer: "Premier contact par téléphone ou formulaire. Je me déplace pour évaluer vos locaux gratuitement. Devis détaillé envoyé sous 48 heures. Si accord, installation planifiée selon vos disponibilités — souvent en une journée pour les petits commerces. Formation à l'utilisation du système sur place. Maintenance annuelle proposée.",
+  },
+  {
+    question: 'Proposez-vous un contrat de maintenance ?',
+    answer: "Oui. La maintenance annuelle est recommandée et obligatoire pour l'alarme incendie (vérification SSI). Elle comprend le test de tous les équipements, le remplacement des piles et consommables, la mise à jour du registre de sécurité et un rapport de vérification.",
+  },
+];
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer },
+  })),
+});
+---
+
+<section id="faq" class="py-16 md:py-24 bg-neutral-50">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl md:text-4xl font-heading font-bold text-primary-900 mb-8 reveal">
+      Questions fréquentes sur la sécurité de votre commerce
+    </h2>
+
+    <div class="space-y-3 reveal-stagger">
+      {faqs.map(faq => (
+        <details class="group bg-white border border-neutral-200 rounded-DEFAULT overflow-hidden reveal">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-primary-900 font-medium hover:bg-primary-50 transition-colors min-h-[44px]">
+            <span class="pr-4">{faq.question}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 text-neutral-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer px-6 pb-4 text-neutral-600 leading-relaxed text-sm">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <!-- Verbatim after FAQ -->
+    <blockquote class="mt-12 text-center reveal">
+      <p class="text-lg font-heading text-primary-800 italic">
+        "Je connais les attentes des commissions. Zéro mauvaise surprise le jour J."
+      </p>
+      <cite class="text-sm text-neutral-500 not-italic mt-2 block">— Marc Muller</cite>
+    </blockquote>
+  </div>
+
+  <script type="application/ld+json" set:html={faqSchema} />
+</section>

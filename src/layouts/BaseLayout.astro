@@ -1,0 +1,83 @@
+---
+import { business } from '@data/business';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  ogImage = business.seo.ogImage,
+  ogType = 'website',
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="fr" data-anim-tempo="300">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content={business.name} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#2563eb" />
+
+    <link rel="preload" as="font" href="/fonts/outfit-latin-700-normal.woff2" type="font/woff2" crossorigin />
+    <link rel="preload" as="font" href="/fonts/inter-latin-400-normal.woff2" type="font/woff2" crossorigin />
+
+    <title>{title}</title>
+
+    <script
+      defer
+      src={business.analytics.umamiUrl}
+      data-website-id={business.analytics.umamiId}
+    ></script>
+
+    <slot name="head" />
+  </head>
+  <body class="bg-white text-neutral-700 antialiased">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-accent-600 focus:text-white focus:px-4 focus:py-2 focus:rounded"
+    >
+      Aller au contenu principal
+    </a>
+
+    <slot name="header" />
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <slot name="footer" />
+
+    <script src="../scripts/scroll-reveal.ts"></script>
+  </body>
+</html>

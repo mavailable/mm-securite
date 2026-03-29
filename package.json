@@ -1,14 +1,40 @@
 {
   "name": "mm-securite-site",
   "type": "module",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
+    "dev:cms": "KEYSTATIC=true astro dev",
     "build": "astro build",
+    "build:cms": "KEYSTATIC=true astro build",
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^5.0.0",
-    "@astrojs/sitemap": "^3.2.0"
+    "@astrojs/cloudflare": "^12.6.0",
+    "@astrojs/react": "^4.2.0",
+    "@astrojs/sitemap": "^3.3.0",
+    "@fontsource/dm-sans": "^5.2.8",
+    "@fontsource/libre-baskerville": "^5.2.10",
+    "@fontsource/oswald": "^5.2.8",
+    "@fontsource/outfit": "^5.2.8",
+    "@fontsource/work-sans": "^5.2.8",
+    "@keystatic/astro": "^5.0.0",
+    "@keystatic/core": "^0.5.0",
+    "astro": "^5.7.0",
+    "marked": "^17.0.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-arm64-gnu": "*"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }

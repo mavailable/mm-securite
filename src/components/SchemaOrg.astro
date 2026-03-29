@@ -1,0 +1,87 @@
+---
+/**
+ * Schema.org JSON-LD — ElectricalContractor + WebSite
+ * siteUrl toujours dynamique, JAMAIS hardcodé
+ */
+import { business, legal, geo } from '@data/business';
+
+const siteUrl = business.siteUrl;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ElectricalContractor",
+  "name": business.name,
+  "legalName": business.legalName,
+  "image": `${siteUrl}/og-image.png`,
+  "description": business.description,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": business.address.city,
+    "postalCode": business.address.postalCode,
+    "addressRegion": business.address.region,
+    "addressCountry": business.address.country,
+  },
+  "telephone": business.phone,
+  "email": business.email,
+  "url": siteUrl,
+  "founder": {
+    "@type": "Person",
+    "name": business.owner,
+    "jobTitle": business.ownerRole,
+  },
+  "openingHoursSpecification": business.hours.structured.map(h => ({
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": h.days,
+    "opens": h.opens,
+    "closes": h.closes,
+  })),
+  "priceRange": "€€",
+  "currenciesAccepted": "EUR",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": geo.lat,
+    "longitude": geo.lon,
+  },
+  "areaServed": [
+    ...business.areaServed.cities.map(c => ({ "@type": "City", "name": c })),
+    { "@type": "AdministrativeArea", "name": business.areaServed.region },
+    ...business.areaServed.international.map(c => ({ "@type": "Country", "name": c })),
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services de sécurité électronique",
+    "itemListElement": business.services.map(s => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": s.name,
+        "url": `${siteUrl}${s.slug}`,
+      },
+    })),
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "3",
+    "bestRating": "5",
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "SIRET",
+    "value": legal.registrationNumberRaw,
+  },
+  "sameAs": [],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": business.name,
+  "url": siteUrl,
+  "description": business.seo.defaultDescription,
+  "inLanguage": "fr-FR",
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />

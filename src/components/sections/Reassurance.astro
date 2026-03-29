@@ -1,0 +1,27 @@
+---
+/** Bandeau de réassurance — badges horizontaux */
+const badges = [
+  { icon: 'shield-check', label: 'Certifié NF A2P' },
+  { icon: 'lock', label: 'Conforme RGPD' },
+  { icon: 'clipboard-check', label: 'Obligations ERP' },
+  { icon: 'clock', label: 'Devis sous 48h' },
+  { icon: 'map-pin', label: 'Basé à Metz' },
+  { icon: 'tool', label: 'Clé en main' },
+];
+---
+
+<section class="bg-primary-50 border-y border-primary-100 py-6">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-wrap justify-center gap-x-8 gap-y-3">
+      {badges.map(badge => (
+        <div class="flex items-center gap-2 text-primary-700 text-sm font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+          <span>{badge.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
