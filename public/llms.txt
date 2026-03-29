@@ -10,7 +10,7 @@
 - [Accueil](https://mm-securite.fr): Présentation des services de sécurité pour commerces
 - [À propos](https://mm-securite.fr/a-propos): Parcours et spécialisation de Marc Muller
 - [Devis gratuit](https://mm-securite.fr/devis-gratuit): Formulaire de demande de devis
-- [Alarme intrusion](https://mm-securite.fr/alarme-intrusion-commerce): Systèmes anti-intrusion NF A2P
+- [Alarme intrusion](https://mm-securite.fr/alarme-intrusion-commerce): Systèmes anti-intrusion professionnels
 - [Alarme incendie](https://mm-securite.fr/alarme-incendie-erp): SSI conforme ERP
 - [Vidéosurveillance](https://mm-securite.fr/videosurveillance-commerce): Caméras IP conformes RGPD
 - [Contrôle d'accès](https://mm-securite.fr/controle-acces-commerce): Badges, digicodes, biométrie

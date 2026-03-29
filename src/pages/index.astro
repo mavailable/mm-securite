@@ -15,7 +15,6 @@ import Testimonials from '@components/sections/Testimonials.astro';
 import Zone from '@components/sections/Zone.astro';
 import FAQ from '@components/sections/FAQ.astro';
 import Contact from '@components/sections/Contact.astro';
-import ThemeSwitcher from '@components/preview/ThemeSwitcher.astro';
 import SchemaOrg from '@components/SchemaOrg.astro';
 import { business } from '@data/business';
 ---
@@ -33,7 +32,7 @@ import { business } from '@data/business';
     ctaPrimary="Demander mon devis gratuit"
     ctaPrimaryUrl="/devis-gratuit"
     ctaSecondary="Prendre rendez-vous"
-    ctaSecondaryUrl="#contact"
+    ctaSecondaryUrl="https://cal.com/marc-muller/30min"
     stats={[
       { value: '48h', label: 'Devis envoyé' },
       { value: '50+', label: 'Commerces protégés' },
@@ -51,5 +50,4 @@ import { business } from '@data/business';
 
   <Footer slot="footer" />
   <MobileStickyCTA />
-  <ThemeSwitcher />
 </BaseLayout>

@@ -28,7 +28,7 @@
 ## Services
 
 ### Alarme intrusion
-Détection volumétrique, contacts d'ouverture, sirène, alerte sur smartphone avec levée de doute vidéo. Centrales certifiées NF A2P. Systèmes filaires ou sans fil selon la configuration des locaux.
+Détection volumétrique, contacts d'ouverture, sirène, alerte sur smartphone avec levée de doute vidéo. Matériel professionnel. Systèmes filaires ou sans fil selon la configuration des locaux.
 
 ### Alarme incendie ERP
 Détection automatique (fumée, chaleur), déclencheurs manuels, centrale SSI, diffuseurs sonores. Vérification annuelle obligatoire et tenue du registre de sécurité incluses.
@@ -63,7 +63,7 @@ Petits commerces et ERP catégories 4-5 : boulangeries, restaurants, salons de c
 
 Marc Muller est technicien indépendant en sécurité électronique, basé à Metz (57000). Spécialisé dans la sécurité des petits commerces et ERP, il installe et maintient lui-même tous les systèmes. Pas de sous-traitant, pas de standard téléphonique — un interlocuteur unique du devis à la maintenance.
 
-Sa spécialisation : les petits commerces qui doivent respecter les mêmes normes que les grandes enseignes, mais avec des budgets serrés. Connaissance des obligations par catégorie ERP, des attentes des commissions de sécurité, et des normes applicables : NF A2P (intrusion), NF X 08-070 (plans d'évacuation), RGPD (vidéosurveillance).
+Sa spécialisation : les petits commerces qui doivent respecter les mêmes normes que les grandes enseignes, mais avec des budgets serrés. Connaissance des obligations par catégorie ERP, des attentes des commissions de sécurité, et des normes applicables : NF X 08-070 (plans d'évacuation), RGPD (vidéosurveillance).
 
 Déplacement gratuit pour évaluation. Devis détaillé sous 48 heures. Installation planifiée selon les horaires du commerce, souvent en une journée. Conformité administrative incluse.
 
