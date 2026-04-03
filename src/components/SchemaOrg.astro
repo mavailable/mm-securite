@@ -9,7 +9,7 @@ const siteUrl = business.siteUrl;
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "ElectricalContractor",
+  "@type": ["LocalBusiness", "ElectricalContractor"],
   "name": business.name,
   "legalName": business.legalName,
   "image": `${siteUrl}/og-image.png`,
@@ -61,9 +61,9 @@ const localBusinessSchema = {
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "3",
-    "bestRating": "5",
+    "ratingValue": 5,
+    "reviewCount": 3,
+    "bestRating": 5,
   },
   "identifier": {
     "@type": "PropertyValue",
