@@ -7,6 +7,20 @@ import BlogCard from '@components/blog/BlogCard.astro';
 import { getCollection } from 'astro:content';
 import { marked } from 'marked';
 import { business } from '@data/business';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro:assets';
+import blogAlarmeConnectee from '@/assets/images/blog-alarme-connectee.jpg';
+import blogCambriolage from '@/assets/images/blog-cambriolage.jpg';
+import blogIncendieObligatoire from '@/assets/images/blog-incendie-obligatoire.jpg';
+import blogVideoRgpd from '@/assets/images/blog-videosurveillance-rgpd.jpg';
+import blogGenerique from '@/assets/images/blog-securite-generique.jpg';
+
+const blogImages: Record<string, ImageMetadata> = {
+  'alarme-connectee-smartphone-commerce': blogAlarmeConnectee,
+  'cambriolage-commerce-que-faire': blogCambriolage,
+  'detecteur-incendie-obligatoire-commerce': blogIncendieObligatoire,
+  'videosurveillance-commerce-rgpd': blogVideoRgpd,
+};
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -46,6 +60,8 @@ const categoryColors: Record<string, { bg: string; text: string; dot: string }> 
   'Sécurité par métier': { bg: 'bg-neutral-200', text: 'text-neutral-300', dot: 'bg-neutral-400' },
 };
 const colors = categoryColors[post.data.category] || categoryColors['Réglementation ERP'];
+
+const coverImage = blogImages[post.id] || blogGenerique;
 ---
 
 <BaseLayout
@@ -62,10 +78,17 @@ const colors = categoryColors[post.data.category] || categoryColors['Réglementa
   <Header slot="header" />
 
   <!-- Article header -->
-  <section class="bg-gradient-to-br from-primary-900 to-primary-950 text-white py-16 md:py-20 relative overflow-hidden">
-    <div class="absolute top-10 right-10 w-40 h-40 rounded-full bg-white/5"></div>
-    <div class="absolute bottom-10 left-20 w-24 h-24 rounded-full bg-white/5"></div>
-    <div class="max-w-3xl mx-auto px-4 relative">
+  <section class="relative text-white overflow-hidden min-h-[300px] md:min-h-[400px] flex items-end">
+    <Image
+      src={coverImage}
+      alt={post.data.title}
+      class="absolute inset-0 w-full h-full object-cover"
+      widths={[640, 1024, 1536]}
+      sizes="100vw"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-primary-950/90 via-primary-900/60 to-primary-900/30"></div>
+    <div class="max-w-3xl mx-auto px-4 py-12 md:py-16 relative w-full">
       <nav class="text-sm text-white/90 mb-4" aria-label="Fil d'Ariane">
         <a href="/" class="hover:text-accent-400 transition-colors">Accueil</a>
         <span class="mx-2">/</span>
@@ -73,14 +96,12 @@ const colors = categoryColors[post.data.category] || categoryColors['Réglementa
         <span class="mx-2">/</span>
         <span class="truncate max-w-[200px] inline-block align-bottom">{post.data.title}</span>
       </nav>
-
       <div class="flex items-center gap-3 mb-4">
-        <span class={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full bg-white/10 text-white/90`}>
+        <span class="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full bg-white/10 text-white/90">
           {post.data.category}
         </span>
         <span class="text-xs text-white/90">{readingTime} min de lecture</span>
       </div>
-
       <h1 class="text-2xl md:text-4xl font-heading font-bold text-white leading-tight mb-4">{post.data.title}</h1>
       <div class="flex items-center gap-3 text-white/90 text-sm">
         <span class="font-medium">{business.owner}</span>
@@ -138,6 +159,15 @@ const colors = categoryColors[post.data.category] || categoryColors['Réglementa
       <a href="/devis-gratuit" class="inline-flex items-center justify-center bg-accent-600 hover:bg-accent-700 text-white font-semibold py-3.5 px-8 rounded-DEFAULT min-h-[44px] transition-colors text-lg">
         Demander mon devis gratuit
       </a>
+      <div class="flex flex-wrap justify-center gap-3 mt-6">
+        <a href="/alarme-intrusion-commerce" class="text-sm text-primary-600 hover:text-primary-800 underline decoration-primary-200 hover:decoration-primary-400 transition-colors">Alarme intrusion</a>
+        <span class="text-neutral-300">·</span>
+        <a href="/videosurveillance-commerce" class="text-sm text-primary-600 hover:text-primary-800 underline decoration-primary-200 hover:decoration-primary-400 transition-colors">Vidéosurveillance</a>
+        <span class="text-neutral-300">·</span>
+        <a href="/alarme-incendie-erp" class="text-sm text-primary-600 hover:text-primary-800 underline decoration-primary-200 hover:decoration-primary-400 transition-colors">Alarme incendie</a>
+        <span class="text-neutral-300">·</span>
+        <a href="/mise-en-conformite-erp" class="text-sm text-primary-600 hover:text-primary-800 underline decoration-primary-200 hover:decoration-primary-400 transition-colors">Mise en conformité</a>
+      </div>
     </div>
   </section>
 

@@ -1,5 +1,7 @@
 ---
 import ServicePage from '@layouts/ServicePage.astro';
+import { Image } from 'astro:assets';
+import portraitImg from '@/assets/images/portrait-marc.jpg';
 import { business } from '@data/business';
 ---
 
@@ -10,6 +12,9 @@ import { business } from '@data/business';
   heroSubtitle="Technicien indépendant spécialisé dans la sécurité des commerces en Moselle et Grand Est."
   breadcrumbLabel="À propos"
 >
+  <div class="not-prose float-right ml-6 mb-6 w-48 md:w-64 rounded-DEFAULT overflow-hidden shadow-lg">
+    <Image src={portraitImg} alt="Marc Muller, technicien sécurité électronique à Metz" widths={[256, 384]} sizes="(max-width: 768px) 192px, 256px" class="w-full h-auto" />
+  </div>
   <p>
     Je suis Marc, technicien indépendant en sécurité électronique à Metz. Alarme intrusion, vidéosurveillance, incendie, contrôle d'accès — j'installe et je maintiens tout moi-même. Pas de sous-traitant, pas de standard téléphonique. Vous m'appelez, c'est moi qui réponds et qui vient.
   </p>
