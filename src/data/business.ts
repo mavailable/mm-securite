@@ -85,6 +85,22 @@ export const business = {
     text: 'Site réalisé par Marc M. · Spécialiste sites web pour artisans et commerces',
     url: 'https://marcm.fr/',
   },
+
+  // Doctrine C1 — type Schema.org (array pour multi-type)
+  schemaType: ['LocalBusiness', 'ElectricalContractor'] as ReadonlyArray<string>,
 } as const;
 
 export type Business = typeof business;
+
+// ============================================================
+// Data SEO technique supplementaire (non editable par le client)
+// Doctrine wf-00-cms §7 — champs non couverts par business.* existant.
+// ============================================================
+
+export const schemaData = {
+  priceRange: '€€',
+  currenciesAccepted: 'EUR',
+  hasOfferCatalogName: 'Services de sécurité électronique',
+  paymentAccepted: [] as string[],
+  sameAs: [] as string[],
+} as const;
