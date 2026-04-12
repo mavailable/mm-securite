@@ -2,12 +2,11 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
-import cloudflare from '@astrojs/cloudflare';
 
+// MM Securite -- static output, CMS maison actif via CF Pages Functions
 export default defineConfig({
   site: 'https://mm-securite.fr',
-  output: 'server',
-  adapter: cloudflare(),
+  output: 'static',
   integrations: [
     sitemap({
       filter: (page) =>
