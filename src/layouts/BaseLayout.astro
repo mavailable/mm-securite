@@ -79,6 +79,16 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
 
     <slot name="footer" />
 
+    <!-- CMS inline edit — charge uniquement si le cookie cms_logged_in existe -->
+    <script is:inline>
+      if (document.cookie.split(';').some(c => c.trim().startsWith('cms_logged_in='))) {
+        var s = document.createElement('script');
+        s.src = '/cms-edit.js';
+        s.defer = true;
+        document.head.appendChild(s);
+      }
+    </script>
+
     <script>
       function initScrollReveal() {
         const tempo = parseInt(document.documentElement.dataset.animTempo || '500', 10);

@@ -1,0 +1,18 @@
+{
+  "colors": {
+    "primary": "#2563eb",
+    "accent": "#f97316",
+    "dark": "#0f172a"
+  },
+  "pageNames": {
+    "/": "Accueil",
+    "/a-propos": "A Propos",
+    "/devis-gratuit": "Devis Gratuit",
+    "/alarme-intrusion-commerce": "Alarme intrusion",
+    "/alarme-incendie-erp": "Alarme incendie",
+    "/videosurveillance-commerce": "Videosurveillance",
+    "/controle-acces-commerce": "Controle d'acces",
+    "/plan-evacuation-erp": "Plans evacuation",
+    "/mise-en-conformite-erp": "Mise en conformite"
+  }
+}

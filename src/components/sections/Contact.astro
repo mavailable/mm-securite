@@ -1,7 +1,10 @@
 ---
-/** Contact — section homepage avec formulaire devis + coordonnées */
+/** Contact -- section homepage avec formulaire devis + coordonnees */
 import { business } from '@data/business';
+import { getContact } from '@data/content';
 import ContactForm from '@components/forms/ContactForm.astro';
+
+const contactData = getContact();
 ---
 
 <section id="contact" class="py-20 md:py-32 bg-primary-900 text-white">
@@ -9,10 +12,10 @@ import ContactForm from '@components/forms/ContactForm.astro';
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
       <!-- Left: form -->
       <div class="reveal-left">
-        <h2 class="text-2xl md:text-4xl font-heading font-bold text-white mb-2">
-          Un projet ? Parlons-en.
+        <h2 class="text-2xl md:text-4xl font-heading font-bold text-white mb-2" data-cms-field="contact.title">
+          {contactData.title}
         </h2>
-        <p class="text-white/90 mb-8">Devis gratuit sous 48 heures, sans engagement.</p>
+        <p class="text-white/90 mb-8" data-cms-field="contact.subtitle">{contactData.subtitle}</p>
 
         <ContactForm darkMode={true} />
       </div>

@@ -1,5 +1,51 @@
 import { defineCollection, z } from 'astro:content';
 
+const siteInfo = defineCollection({
+  type: 'data',
+  schema: z.object({
+    name: z.string(),
+    tagline: z.string(),
+    description: z.string(),
+    phone: z.string(),
+    email: z.string(),
+  }),
+});
+
+const hero = defineCollection({
+  type: 'data',
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string(),
+    ctaPrimary: z.string(),
+    ctaPrimaryUrl: z.string(),
+    ctaSecondary: z.string(),
+    ctaSecondaryUrl: z.string(),
+    stat1Value: z.string(),
+    stat1Label: z.string(),
+    stat2Value: z.string(),
+    stat2Label: z.string(),
+    stat3Value: z.string(),
+    stat3Label: z.string(),
+  }),
+});
+
+const about = defineCollection({
+  type: 'data',
+  schema: z.object({
+    title: z.string(),
+    content: z.string(),
+  }),
+});
+
+const contact = defineCollection({
+  type: 'data',
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string(),
+    buttonText: z.string(),
+  }),
+});
+
 const services = defineCollection({
   type: 'data',
   schema: z.object({
@@ -41,4 +87,13 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { services, testimonials, faq, blog };
+export const collections = {
+  'site-info': siteInfo,
+  hero,
+  about,
+  contact,
+  services,
+  testimonials,
+  faq,
+  blog,
+};
