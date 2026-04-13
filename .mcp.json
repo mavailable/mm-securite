@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "mcp-image": {
+      "command": "/opt/homebrew/bin/mcp-image",
+      "env": {
+        "GEMINI_API_KEY": "${GEMINI_API_KEY}"
+      }
+    }
+  }
+}
