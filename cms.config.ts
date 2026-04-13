@@ -61,6 +61,7 @@ const cmsConfig: CmsConfig = {
         title: { type: 'text', label: 'Titre de la section', required: true },
         subtitle: { type: 'text', label: 'Sous-titre' },
         buttonText: { type: 'text', label: 'Texte du bouton' },
+        web3formsKey: { type: 'text', label: 'Cle Web3Forms (formulaire)', description: 'Creez votre cle gratuite sur web3forms.com puis collez-la ici pour recevoir vos formulaires directement.' },
       },
     },
   },

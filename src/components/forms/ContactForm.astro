@@ -3,13 +3,22 @@
  * ContactForm — Formulaire de devis Web3Forms réutilisable
  * Utilisé dans Contact.astro (homepage) et /devis-gratuit
  */
-import { business } from '@data/business';
+import { business, web3formsKey as fallbackKey } from '@data/business';
+import fs from 'node:fs';
 
 interface Props {
   darkMode?: boolean;
 }
 
 const { darkMode = false } = Astro.props;
+
+// Web3Forms cascade: CMS content → env var → cle Marc (defaut agence)
+let cmsKey = '';
+try {
+  const raw = fs.readFileSync('src/content/contact/index.json', 'utf-8');
+  cmsKey = JSON.parse(raw).web3formsKey || '';
+} catch {}
+const web3formsKey = cmsKey || fallbackKey;
 
 const commerceOptions = business.commerceTypes;
 const serviceOptions = business.services.map(s => s.name);
@@ -26,7 +35,7 @@ const selectOptionClass = 'text-neutral-900';
 ---
 
 <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4" id="contact-form">
-  <input type="hidden" name="access_key" value={business.web3formsKey} />
+  <input type="hidden" name="access_key" value={web3formsKey} />
   <input type="hidden" name="subject" value="Nouveau message depuis mm-securite.fr" />
   <input type="hidden" name="from_name" value="MM Sécurité — Formulaire" />
   <input type="hidden" name="redirect" value={`${business.siteUrl}/merci`} />

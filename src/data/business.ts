@@ -67,7 +67,7 @@ export const business = {
     'Cabinets médicaux', 'Boutiques', 'Salles de sport', 'Pharmacies', 'Crèches',
   ],
 
-  web3formsKey: '5c0597af-80a9-48ba-b856-5c436e39ea74',
+  web3formsKeyLegacy: '5c0597af-80a9-48ba-b856-5c436e39ea74', // kept for reference
 
   analytics: {
     umamiId: '13c56d5e-7dcb-4c57-a8fe-b46e9d359550',
@@ -104,3 +104,8 @@ export const schemaData = {
   paymentAccepted: [] as string[],
   sameAs: [] as string[],
 } as const;
+
+// Web3Forms API key — cascade: CMS content → env var → cle Marc (defaut agence)
+const WEB3FORMS_DEFAULT = '9667fcf8-c7da-4b7a-8432-0ec25215c75e';
+export const web3formsDefault = WEB3FORMS_DEFAULT;
+export const web3formsKey = import.meta.env.WEB3FORMS_KEY || WEB3FORMS_DEFAULT;
