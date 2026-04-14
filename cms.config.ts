@@ -9,6 +9,19 @@ const cmsConfig: CmsConfig = {
   branch: 'dev',
   siteName: 'MM Securite',
 
+  site: {
+    ownerName: 'Marc Muller',
+    phone: '+33688766648',
+    phoneDisplay: '06 88 76 66 48',
+    email: 'marc@muller.im',
+    siteUrl: 'https://mm-securite.fr',
+    previewUrl: 'https://mm-securite.pages.dev',
+    clientType: 'entreprise-locale',
+    tagline: 'Securite electronique pour commerces a Metz et Grand Est',
+    umamiShareUrl: 'https://cloud.umami.is/share/J9EQPfUhxVl9puGB/mm-securite.fr',
+    umamiSiteId: '13c56d5e-7dcb-4c57-a8fe-b46e9d359550',
+  },
+
   singletons: {
     'site-info': {
       label: 'Informations generales',
