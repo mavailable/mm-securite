@@ -1,0 +1,34 @@
+{
+  "ideas": [
+    {
+      "title": "Maintenance alarme commerce : ce qu'un contrat doit couvrir (et ce qui doit rester à part)",
+      "source": "FAQ récurrente commerçants — aucun article sur la partie contrat/maintenance",
+      "status": "a-faire",
+      "notes": "Détaille visite annuelle, pièces d'usure, télésurveillance optionnelle, SAV en cas de panne. Transparence prix, éviter les pièges contrat longue durée."
+    },
+    {
+      "title": "Sécurité d'une pharmacie : obligations, contraintes et bonnes pratiques",
+      "source": "Vertical non couvert — complément de boulangerie/restaurant",
+      "status": "a-faire",
+      "notes": "Spécificités pharmacie : coffre stupéfiants, vidéo zone comptoir, alarme anti-hold-up, contrôle d'accès zone stock. Mix obligation légale + préférences assureurs."
+    },
+    {
+      "title": "Le jour où j'ai installé une alarme pour un hôtel 3 étoiles",
+      "source": "Récit terrain / coulisses — aucun article narratif de chantier",
+      "status": "a-faire",
+      "notes": "Anecdote chantier : contraintes hôtel (clients, chambres, réception 24/7), solutions adoptées. Vocal Marc conseillé pour ton personnel."
+    },
+    {
+      "title": "Caméra IA en 2026 : ce que ça change pour un commerce (et les limites à connaître)",
+      "source": "Actualité tech — angle manquant dans les 11 articles actuels",
+      "status": "a-faire",
+      "notes": "Détection intrusion, comptage, alerte incident. Limites : faux positifs, coût, stockage, RGPD. Ne pas survendre."
+    },
+    {
+      "title": "Commerçants : combien doit coûter votre installation sécurité (et pourquoi)",
+      "source": "Frein d'achat majeur — décomposition prix transparente",
+      "status": "a-faire",
+      "notes": "Fourchettes réelles par surface et type d'équipement. Ce qui fait varier : câblage, nombre de détecteurs, intégration caisse. Oppose 'alarme connectée Leroy Merlin' vs pro installé."
+    }
+  ]
+}
