@@ -5,7 +5,7 @@
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
   Cross-Origin-Opener-Policy: same-origin
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://app.cal.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com https://cloud.umami.is https://api-gateway.umami.dev; form-action 'self' https://api.web3forms.com; frame-src https://app.cal.com; frame-ancestors 'none'; base-uri 'self'; manifest-src 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://app.cal.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com https://cloud.umami.is https://gateway.umami.is https://api-gateway.umami.dev; form-action 'self' https://api.web3forms.com; frame-src https://app.cal.com; frame-ancestors 'none'; base-uri 'self'; manifest-src 'self'; object-src 'none'
 
 /admin
   ! Content-Security-Policy
