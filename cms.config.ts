@@ -1,4 +1,4 @@
-import type { CmsConfig } from './cms.types';
+import type { CmsConfig } from '@marc/cms-engine/types';
 
 // ============================================================
 // Configuration CMS — MM Securite
@@ -8,6 +8,11 @@ const cmsConfig: CmsConfig = {
   repo: 'mavailable/mm-securite',
   branch: 'dev',
   siteName: 'MM Securite',
+
+  // Modules du moteur montés dans /admin (AdminIsland les importe via le scaffold).
+  // marketing : parité avec l'inline (endpoint marketing-plan présent ; onglet gaté
+  // par marketing.enabled, absent ici, donc invisible tant que non activé).
+  modules: ['marketing'],
 
   site: {
     ownerName: 'Marc Muller',
