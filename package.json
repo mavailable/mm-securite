@@ -4,8 +4,9 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
+    "preinstall": "node ./scripts/setup-private-dep.mjs",
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "cms-engine-doctor && cms-engine-sync-assets && cms-engine-scaffold && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -16,11 +17,7 @@
     "@fontsource/oswald": "^5.2.8",
     "@fontsource/outfit": "^5.2.8",
     "@fontsource/work-sans": "^5.2.8",
-    "@tiptap/core": "^2.11.0",
-    "@tiptap/extension-link": "^2.11.0",
-    "@tiptap/pm": "^2.11.0",
-    "@tiptap/react": "^2.11.0",
-    "@tiptap/starter-kit": "^2.11.0",
+    "@marc/cms-engine": "github:mavailable/cms-engine#v0.10.0",
     "astro": "^5.7.0",
     "marked": "^17.0.5",
     "react": "^19.0.0",
