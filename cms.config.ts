@@ -8,6 +8,33 @@ const cmsConfig: CmsConfig = {
   repo: 'mavailable/mm-securite',
   branch: 'dev',
   siteName: 'MM Securite',
+  // Pas de siteLogo : aucun asset logo (seulement des favicons). Fallback texte
+  // siteName (règle wf-00-cms §5).
+
+  // Branding admin — variante CLAIRE dérivée du theme actif (theme-a "Sentinelle" :
+  // primary Cobalt, secondary Slate, accent Orange ; fonts Outfit/Inter). L'accent
+  // admin est le cobalt (identité dominante) ; l'orange du site échoue le contraste
+  // sur blanc (3.0/4.0) donc reste hors thème. Gate admin-theme-validate.py OK.
+  // Contrastes WCAG : accent 6.70 / accentDeep sur accentSoft 9.46 / ink 17.0 /
+  //   inkSoft 14.63 / muted 7.58 / muted2 4.76 sur blanc (muted3 2.56 WARN).
+  adminTheme: {
+    accent: '#1d4ed8',        // cobalt (boutons, liens, onglet actif)
+    accentDeep: '#1e3a8a',    // cobalt foncé (texte sur pastille accentSoft, badges)
+    accentSoft: '#eff5ff',    // bleu très pâle (pastilles, boutons secondaires)
+    accentBorder: '#bfdbfe',  // bleu clair (bordures accent)
+    ink: '#0f1a3d',           // navy encre (titres)
+    inkSoft: '#1e293b',       // ardoise foncée (labels)
+    muted: '#475569',         // ardoise (paragraphes)
+    muted2: '#64748b',        // ardoise clair (méta, contacts)
+    muted3: '#94a3b8',        // ardoise pâle (hints, dates)
+    line: '#dbeafe',          // ligne bleu clair (bordures de cartes)
+    lineSoft: '#f1f5f9',      // séparateur ardoise très doux
+    borderInput: '#cbd5e1',   // bordure ardoise des champs
+    surface: '#ffffff',       // fond des cartes
+    bg: '#f5f8fd',            // bleu-blanc froid (fond de l'espace)
+    fontBody: "'Inter', system-ui, sans-serif",     // même corps que le site
+    fontHeading: "'Outfit', system-ui, sans-serif", // même titrage que le site
+  },
 
   // Modules du moteur montés dans /admin (AdminIsland les importe via le scaffold).
   // marketing : parité avec l'inline (endpoint marketing-plan présent ; onglet gaté
