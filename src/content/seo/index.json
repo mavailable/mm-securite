@@ -1,0 +1,123 @@
+{
+  "global": {
+    "siteName": "",
+    "separator": "",
+    "defaultOgImage": "/images/og-image.jpg"
+  },
+  "pages": {
+    "/": {
+      "title": "MM Sécurité · Alarme & Vidéosurveillance commerces Metz",
+      "description": "Marc Muller, technicien sécurité pour commerces à Metz. Alarme intrusion, incendie, vidéosurveillance, contrôle d'accès, conformité ERP. Devis gratuit sous 48h.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/404": {
+      "title": "Page introuvable — MM Sécurité",
+      "description": "Cette page n'existe pas ou a été déplacée.",
+      "ogImage": "",
+      "noindex": true
+    },
+    "/a-propos": {
+      "title": "Marc Muller · Technicien sécurité à Metz",
+      "description": "Technicien indépendant en sécurité électronique pour commerces à Metz et Grand Est. Un seul interlocuteur du devis à la maintenance.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/alarme-incendie-erp": {
+      "title": "Alarme incendie ERP · MM Sécurité Metz",
+      "description": "Système sécurité incendie conforme ERP pour commerces à Metz. Détection, SSI, vérification annuelle. Technicien certifié.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/alarme-intrusion-commerce": {
+      "title": "Alarme intrusion commerce · MM Sécurité Metz",
+      "description": "Installation alarme anti-intrusion pour commerces à Metz. Alerte smartphone, levée de doute vidéo, matériel professionnel. Devis gratuit.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/blog": {
+      "title": "Blog sécurité commerces · MM Sécurité Metz",
+      "description": "Conseils et obligations de sécurité pour commerces : normes ERP, RGPD vidéosurveillance, alarme intrusion, commission de sécurité.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/controle-acces-commerce": {
+      "title": "Contrôle d'accès commerce · MM Sécurité Metz",
+      "description": "Badges, digicodes, biométrie pour commerces à Metz. Sécurisez vos réserves et zones restreintes. Devis gratuit.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/devis-gratuit": {
+      "title": "Devis gratuit sécurité commerce · MM Sécurité Metz",
+      "description": "Demandez votre devis gratuit pour alarme, vidéosurveillance ou mise en conformité ERP. Réponse personnalisée sous 48h. Metz et Grand Est.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/mentions-legales": {
+      "title": "Mentions légales · MM Sécurité",
+      "description": "Mentions légales du site mm-securite.fr. Éditeur : Marc Muller EI, SIRET 505 045 450 00069, Metz.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/merci": {
+      "title": "Merci pour votre message ! — MM Sécurité",
+      "description": "Votre demande a bien été envoyée. Je vous recontacte sous 48 heures.",
+      "ogImage": "",
+      "noindex": true
+    },
+    "/mise-en-conformite-erp": {
+      "title": "Mise en conformité ERP · MM Sécurité Metz",
+      "description": "Audit et mise aux normes sécurité pour petits ERP (cat. 4-5) à Metz. Boulangeries, restaurants, salons. Devis gratuit.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/plan-evacuation-erp": {
+      "title": "Plans évacuation ERP NF X 08-070 · MM Sécurité",
+      "description": "Plans d'évacuation conformes NF X 08-070 pour commerces. Balisage, signalétique, préparation commission de sécurité.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/politique-de-confidentialite": {
+      "title": "Politique de confidentialité · MM Sécurité",
+      "description": "Politique de confidentialité et traitement des données personnelles du site mm-securite.fr. RGPD conforme.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/securite-commerce-forbach": {
+      "title": "Sécurité commerces Forbach · MM Sécurité",
+      "description": "Installation sécurité pour commerces à Forbach. Alarme intrusion, incendie ERP, vidéosurveillance. Devis gratuit sous 48h.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/securite-commerce-metz": {
+      "title": "Sécurité commerces Metz · MM Sécurité",
+      "description": "Technicien sécurité pour commerces à Metz. Alarme, vidéosurveillance, incendie, contrôle d'accès. Intervention rapide, devis gratuit.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/securite-commerce-nancy": {
+      "title": "Sécurité commerces Nancy · MM Sécurité",
+      "description": "Sécurité électronique pour commerces à Nancy. Alarme, vidéo, incendie, conformité ERP. Technicien indépendant, devis gratuit.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/securite-commerce-sarreguemines": {
+      "title": "Sécurité commerces Sarreguemines · MM Sécurité",
+      "description": "Sécurité électronique pour commerces à Sarreguemines. Alarme, vidéo RGPD, incendie ERP. Technicien Metz, devis gratuit.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/securite-commerce-thionville": {
+      "title": "Sécurité commerces Thionville · MM Sécurité",
+      "description": "Alarme et vidéosurveillance pour commerces à Thionville. Technicien basé à Metz, interventions rapides nord Moselle.",
+      "ogImage": "",
+      "noindex": false
+    },
+    "/videosurveillance-commerce": {
+      "title": "Vidéosurveillance commerce · MM Sécurité Metz",
+      "description": "Caméras IP pour commerces à Metz, installation conforme RGPD. Vision nocturne, accès distant smartphone. Devis gratuit.",
+      "ogImage": "",
+      "noindex": false
+    }
+  }
+}

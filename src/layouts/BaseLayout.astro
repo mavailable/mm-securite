@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { business } from '@data/business';
+import { getPageSeo } from '@data/seo';
 import CmsEditLoader from '@marc/cms-engine/astro';
 
 interface Props {
@@ -19,8 +20,19 @@ const {
   noindex = false,
 } = Astro.props;
 
+// ─── SEO editable par le client via /admin -> ecran « SEO » (#/seo) ────────
+// Titre / description / image OG / noindex PAR ROUTE, depuis le singleton `seo`.
+// Champ vide -> valeur passee par la page : les ARTICLES de blog gardent leur
+// SEO derive du contenu (volontairement absents du fichier). La case noindex
+// fait foi pour les routes declarees. Doctrine : wf-00-cms §7bis.
+const pageSeo = getPageSeo(Astro.url.pathname);
+const resolvedTitle = pageSeo?.title || title;
+const resolvedDescription = pageSeo?.description || description;
+const resolvedOgImage = pageSeo?.ogImage || ogImage;
+const resolvedNoindex = pageSeo ? (pageSeo.noindex ?? noindex) : noindex;
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const ogImageURL = new URL(ogImage, Astro.site).href;
+const ogImageURL = new URL(resolvedOgImage, Astro.site).href;
 ---
 
 <!doctype html>
@@ -28,11 +40,11 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="description" content={resolvedDescription} />
+    {resolvedNoindex && <meta name="robots" content="noindex, nofollow" />}
 
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={resolvedTitle} />
+    <meta property="og:description" content={resolvedDescription} />
     <meta property="og:image" content={ogImageURL} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content={ogType} />
@@ -40,8 +52,8 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
     <meta property="og:site_name" content={business.name} />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content={resolvedTitle} />
+    <meta name="twitter:description" content={resolvedDescription} />
     <meta name="twitter:image" content={ogImageURL} />
 
     <link rel="canonical" href={canonicalURL} />
@@ -54,7 +66,7 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
     <link rel="preload" as="font" href="/fonts/outfit-latin-700-normal.woff2" type="font/woff2" crossorigin />
     <link rel="preload" as="font" href="/fonts/inter-latin-400-normal.woff2" type="font/woff2" crossorigin />
 
-    <title>{title}</title>
+    <title>{resolvedTitle}</title>
 
     <script
       defer

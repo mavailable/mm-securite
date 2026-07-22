@@ -87,6 +87,12 @@ const blog = defineCollection({
   }),
 });
 
+// NB : le singleton `seo` (src/content/seo/index.json, ecran « SEO » du /admin)
+// n'est VOLONTAIREMENT pas declare ici. Ce projet utilise les collections
+// legacy `type: 'data'` : y ajouter une collection change l'ordre de sortie de
+// getCollection() sur les autres (constate sur les temoignages de l'accueil).
+// src/data/seo.ts lit le fichier directement sur le disque, la declaration est
+// donc inutile au rendu. Cf. wf-00-cms §7bis.
 export const collections = {
   'site-info': siteInfo,
   hero,

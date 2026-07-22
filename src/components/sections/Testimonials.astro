@@ -2,7 +2,10 @@
 /** Temoignages -- variante grille 3 colonnes, source CMS */
 import { getCollection } from 'astro:content';
 
-const entries = await getCollection('testimonials');
+// Ordre EXPLICITE (alphabetique par slug) : getCollection() ne garantit aucun
+// ordre, et il bougeait selon les dossiers presents sous src/content/ (constate
+// en ajoutant le singleton `seo`). L'ordre fige ici est celui deja en ligne.
+const entries = (await getCollection('testimonials')).sort((a, b) => a.id.localeCompare(b.id));
 const testimonials = entries.map((e) => ({
   _slug: e.id,
   ...e.data,
