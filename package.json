@@ -19,7 +19,6 @@
     "@fontsource/work-sans": "^5.2.8",
     "@marc/cms-engine": "github:mavailable/cms-engine#v0.27.0",
     "astro": "^5.7.0",
-    "marked": "^17.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
