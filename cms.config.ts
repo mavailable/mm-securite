@@ -56,6 +56,8 @@ const cmsConfig: CmsConfig = {
     tagline: 'Securite electronique pour commerces a Metz et Grand Est',
     umamiShareUrl: 'https://cloud.umami.is/share/J9EQPfUhxVl9puGB/mm-securite.fr',
     umamiSiteId: '13c56d5e-7dcb-4c57-a8fe-b46e9d359550',
+    // Sans proxy, les KPI visiteurs/vues de la HealthCard restent a "—".
+    umamiProxyUrl: 'https://umami-proxy.marc-f10.workers.dev',
   },
 
   singletons: {
