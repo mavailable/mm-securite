@@ -57,7 +57,6 @@ Petits commerces et ERP catégories 4-5 : boulangeries, restaurants, salons de c
 - **Villes principales** : Metz, Thionville, Nancy, Forbach, Sarreguemines, Épinal, Pont-à-Mousson, Hagondange
 - **Départements** : Moselle (57), Meurthe-et-Moselle (54)
 - **Région** : Grand Est
-- **Région** : Grand Est
 
 ## À propos
 
