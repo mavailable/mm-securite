@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "node ./scripts/setup-private-dep.mjs",
     "dev": "astro dev",
-    "build": "cms-engine-doctor && cms-engine-sync-assets && cms-engine-scaffold && astro build",
+    "build": "cms-engine-doctor && cms-engine-sync-assets && cms-engine-scaffold && astro build && cms-engine-pages",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -17,7 +17,7 @@
     "@fontsource/oswald": "^5.2.8",
     "@fontsource/outfit": "^5.2.8",
     "@fontsource/work-sans": "^5.2.8",
-    "@marc/cms-engine": "github:mavailable/cms-engine#v0.30.1",
+    "@marc/cms-engine": "github:mavailable/cms-engine#v0.87.0",
     "astro": "^5.7.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
