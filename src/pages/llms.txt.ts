@@ -8,7 +8,7 @@ import { business, legal } from '../data/business';
 export async function GET() {
   const info = getSiteInfo();
   // Meme source et meme ordre que /blog/ et /blog/[slug]/.
-  const posts = (await getCollection('blog')).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+  const posts = (await getCollection('blog')).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime() || a.id.localeCompare(b.id));
   const h = business.hours;
 
   const body = `${LLMS_HEAD}## Pages principales

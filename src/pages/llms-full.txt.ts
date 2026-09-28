@@ -19,7 +19,7 @@ export async function GET() {
   const services = (await getCollection('services')).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
   const faq = (await getCollection('faq')).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
   const avis = (await getCollection('testimonials')).sort((a, b) => a.id.localeCompare(b.id));
-  const posts = (await getCollection('blog')).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+  const posts = (await getCollection('blog')).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime() || a.id.localeCompare(b.id));
   const pageService = (name: string) => business.services.find((s) => s.name === name)?.slug;
 
   const body = `${LLMS_FULL_HEAD}## Informations générales
